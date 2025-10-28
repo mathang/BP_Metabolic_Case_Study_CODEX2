@@ -1286,7 +1286,7 @@ function goToNextSlide() {
 
 function shouldSkipSlide(index) {
   const slideData = SLIDE_DECK_CONTENT[index];
-  return slideData && slideData.slideNumber === 20;
+  return Boolean(slideData && slideData.skip === true);
 }
 
 function isNextSlideBeyondEnd() {
