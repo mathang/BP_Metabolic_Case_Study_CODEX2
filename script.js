@@ -15,19 +15,19 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 3,
     "type": "info",
     "title": "Patient History: Pre-Exercise Screen",
-    "content": "Calvin recently visited his GP for the first time in many years. Although a measurement was not initially taken, Calvin's GP noticed that his waist circumference was far larger than normal..."
+    "content": "Calvin recently visited his GP for the first time in many years. Although a measurement was not initially taken, Calvin's GP noticed that his waist circumference was far larger than normal and decided to order more tests. He is married and a non-smoker. He is an airline pilot, so is often sedentary for long periods of time, especially during long haul flights. In addition, his occupation means that his daily routine is constantly changing, depending on his flight schedule.\n\nCurrent physical activity includes lifting weights 1-2 times per week (if there is a gym) and a game of bowls (if he can fit it in). He also enjoys walking."
   },
   {
     "slideNumber": 4,
     "type": "info",
     "title": "Patient History: Family History",
-    "content": "Calvin's GP also discussed his family history. The GP discovers that Calvin's sister has just found out that she has high cholesterol, albeit diagnosed from a booth in a shopping centre..."
+    "content": "Calvin's GP also discussed his family history. The GP discovers that Calvin's sister has just found out that she has high cholesterol, albeit diagnosed from a booth in a shopping centre. His father is alive and 77 years old, but had a heart attack at age 50 and has suffered from mild/moderate hypertension from 45 years of age. There is no other family history of note."
   },
   {
     "slideNumber": 5,
     "type": "info",
     "title": "Patient History: Clinical Test Results",
-    "content": "In response to Calvin's initial tests and family history, his GP ordered a more extensive panel of tests. The results are listed below.\n\n- GENDER: MALE\n- BMI: >25\n- OCCUPATION: DOMESTIC/INTERNATIONAL AIRLINE PILOT..."
+    "content": "In response to Calvin's initial tests and family history, his GP ordered a more extensive panel of tests. The results are listed below.\n\n- GENDER: MALE\n- BMI: >25\n- OCCUPATION: DOMESTIC AIRLINE PILOT\n- MARITAL STATUS: MARRIED\n- SMOKER: NO\n- AGE: 57\n- WEIGHT: 100 kg\n- HEIGHT: 186 cm\n- WAIST CIRCUMFERENCE: 104 cm\n- HIP CIRCUMFERENCE: 108 cm\n- RESTING HR: 80 bpm\n- RESTING BP: 155/95 (2nd measure)\n- TOTAL CHOLESTEROL: 6.1 mmol/l\n- HDL: 1.0 mmol/l\n- LDL: 3.9 mmol/l\n- TRIGLYCERIDES: 1.2 mmol/l\n- FASTING BLOOD GLUCOSE: 6.3 mmol/l"
   },
   {
     "slideNumber": 6,
@@ -47,7 +47,7 @@ const SLIDE_DECK_CONTENT = [
       "Sedentary Profession"
     ],
     "correctAnswer": ["Age", "Male gender"],
-    "feedback": "Age and male gender are non-modifiable risk factors. In contrast, the others are modifiable, which means they can be addressed or brought to within normal ranges through diet, exercise and medication when required..."
+    "feedback": "Age and male gender are non-modifiable risk factors. In contrast, the others are modifiable, which means they can be addressed or brought to within normal ranges through diet, exercise, medications and/or lifestyle changes. In particular it is important to note, that even though his profession is sedentary, we can modify this risk factor by including regular activity breaks."
   },
   {
     "slideNumber": 7,
