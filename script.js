@@ -9,25 +9,25 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 2,
     "type": "info",
     "title": "Referral Details",
-    "content": "Calvin is a 57 year old male who has been referred to you by his GP to help reduce his risk of cardiovascular disease. His GP has started him on Asprin and referred him to you for lifestyle changes. He is hoping he can avoid pressing medication for the hypertension. Firstly, it is important to learn a bit more about the patient - click the "Open Patient History" button to open the 1) Completed pre-exercise screening form, 2) Pre-exercise screening information and 3) Family history details."
+    "content": "Calvin is a 57 year old male who has been referred to you by his GP to help reduce his risk of cardiovascular disease. His GP has started him on Aspirin and referred him to you for lifestyle intervention..."
   },
   {
     "slideNumber": 3,
     "type": "info",
     "title": "Patient History: Pre-Exercise Screen",
-    "content": "Calvin recently visited his GP for the first time in many years. Although a measurement was not initially taken, Calvin's GP noticed that his waist circumference was far larger than normal and decided to order more tests. He is married and a non-smoker. He is an airline pilot, so is often sedentary for long periods of time, especially during long haul flights. In addition, his occupation means that his daily routine is constantly changing, depending on his flight schedule.\n\nCurrent physical activity includes lifting weights 1-2 times per week (if there is a gym) and a game of bowls (if he can fit it in). He also enjoys walking."
+    "content": "Calvin recently visited his GP for the first time in many years. Although a measurement was not initially taken, Calvin's GP noticed that his waist circumference was far larger than normal..."
   },
   {
     "slideNumber": 4,
     "type": "info",
     "title": "Patient History: Family History",
-    "content": "Calvin's GP also discussed his family history. The GP discovers that Calvin's sister has just found out that she has high cholesterol, albeit diagnosed from a booth in a shopping centre. His father is alive and 77 years old, but had a heart attack at age 50 and has suffered from mild/moderate hypertension from 45 years of age. There is no other family history of note."
+    "content": "Calvin's GP also discussed his family history. The GP discovers that Calvin's sister has just found out that she has high cholesterol, albeit diagnosed from a booth in a shopping centre..."
   },
   {
     "slideNumber": 5,
     "type": "info",
     "title": "Patient History: Clinical Test Results",
-    "content": "In response to Calvin's initial tests and family history, his GP ordered a more extensive panel of tests. The results are listed below.\n\n- GENDER: MALE\n- BMI: >25\n- OCCUPATION: DOMESTIC AIRLINE PILOT\n- MARITAL STATUS: MARRIED\n- SMOKER: NO\n- AGE: 57\n- WEIGHT: 100 kg\n- HEIGHT: 186 cm\n- WAIST CIRCUMFERENCE: 104 cm\n- HIP CIRCUMFERENCE: 108 cm\n- RESTING HR: 80 bpm\n- RESTING BP: 155/95 (2nd measure)\n- TOTAL CHOLESTEROL: 6.1 mmol/l\n- HDL: 1.0 mmol/l\n- LDL: 3.9 mmol/l\n- TRIGLYCERIDES: 1.2 mmol/l\n- FASTING BLOOD GLUCOSE: 6.3 mmol/l"
+    "content": "In response to Calvin's initial tests and family history, his GP ordered a more extensive panel of tests. The results are listed below.\n\n- GENDER: MALE\n- BMI: >25\n- OCCUPATION: DOMESTIC/INTERNATIONAL AIRLINE PILOT..."
   },
   {
     "slideNumber": 6,
@@ -47,13 +47,13 @@ const SLIDE_DECK_CONTENT = [
       "Sedentary Profession"
     ],
     "correctAnswer": ["Age", "Male gender"],
-    "feedback": "Age and male gender are non-modifiable risk factors. In contrast, the others are modifiable, which means they can be addressed or brought to within normal ranges through diet, exercise, medications and/or lifestyle changes. In particular it is important to note, that even though his profession is sedentary, we can modify this risk factor by including regular activity breaks."
+    "feedback": "Age and male gender are non-modifiable risk factors. In contrast, the others are modifiable, which means they can be addressed or brought to within normal ranges through diet, exercise and medication when required..."
   },
   {
     "slideNumber": 7,
     "type": "textInput",
     "title": "Calculating Calvin's BMI",
-    "question": "In order to treat Calvin effectively we must first do a preliminary clinical assessment to identify his risk factors. Firstly, we must calculate his BMI based on his: Height: 186 cm\nWeight: 100 kg\n\nType your answer in the text box below (keep all working to 1 decimal place).",
+    "question": "In order to treat Calvin effectively we must first do a preliminary clinical assessment to identify his risk factors. Firstly, we must calculate his BMI based on his: Height: 186 cm, Weight: 100 kg...",
     "label": "Enter Answer:",
     "correctAnswer": "28.9",
     "feedback": "Click 'Next' to continue."
@@ -62,19 +62,22 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 8,
     "type": "radio",
     "title": "The Cholesterol Test",
-    "question": "Calvin’s current physical activity includes lifting weights (if he is somewhere where there is a gym) and a game of golf each week. Family history: father alive at 77 years, but had a heart attack from 45 years of age. No other family history of note. The aim of this case study is for you, as an exercise professional, to identify safe and effective strategies that will help Calvin reduce his blood pressure to a normal level, and improve his waist measurement and overall cardiovascular health.Before we move on, we must consider an important factor in Calvin’s assessment. Is there a problem with having cholesterol checked at a health booth and if so what is the most likley effect? Select from the key words.",
+    "question": "Calvin’s current physical activity includes lifting weights (if he is somewhere where there is a gym) and a game of golf each week. Family history: father alive at 77 years, but had previous cardiac disease...",
     "options": ["Yes", "No", "False positive", "False negative"],
-    "correctAnswer": ["False positive", "Yes"],
-    "feedback": "Potentially, yes. If the person is not fasting or has a fatty residue from a hand cream on their hands, this test will not give you a true indication of the cholesterol level. For example, the patient may give a false positive result, that is, a result higher than usual."
+    "correctAnswer": ["False positive"],
+    "feedback": "Potentially, yes. If the person is not fasting or has a fatty residue from a hand cream on their hands, this test will not give you a true indication of the cholesterol level. For example, it may be a false positive..."
   },
   {
     "slideNumber": 9,
     "type": "textInput",
     "title": "Defining and Translating Personal Goals",
-    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish realistic goals. Calvin wants to exercise regularly, reduce his weight, blood pressure and waist measurement. Based on this information and the doctor’s referral/clinical indications, please write one short-term goal for his blood pressure and one long-term goal for his participation in regular exercise.List one short term goal below:",
-    "label": "List one short term goal below:",
-    "label": "List one LONG term goal below:",  
-    "feedback": "Your short term goal for his blood pressure should look something like this: To reduce his resting blood pressure to less than 150/85mmHg within 8-12 weeks. \n\nYour long term goal for regular exercise should look something like this: To have Calvin completing any form of exercise for >40 minutes five days per week in 6 months from now.\n\nIf your goals look similar to these, congratulations, you are correct!"
+    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish realistic goals. Calvin wants to exercise regularly, reduce his blood pressure and lose weight...",
+    "labels": [
+      "List one short term goal below:",
+      "List one LONG term goal below:"
+    ],
+    "correctAnswer": null,
+    "feedback": "Your short term goal for his blood pressure should look something like this: To reduce his resting blood pressure to less than 150/85mmHg within 8-12 weeks. \n\nYour long term goal for his weight should be more ambitious and longer term..."
   },
   {
     "slideNumber": 10,
@@ -133,14 +136,14 @@ const SLIDE_DECK_CONTENT = [
     "question": "From the previous slide we learnt that Calvin's Risk Score was 6. What is Calvin's Initial ACSM Risk Category?",
     "options": ["Low", "Moderate", "High"],
     "correctAnswer": "Moderate",
-    "feedback": "Calvin's Initial ACSM Risk Category is Moderate. Calvin has six risk factors and is automatically moderate risk as he is male and over the age of 45 years. He falls into the moderate risk category. He is not high risk because he does not have diagnosed disease, or symptoms. High HDL level is 1.0 mmol/L which is not high enough to be protective. Therefore, you cannot subtract one for this risk score."
+    "feedback": "Calvin's Initial ACSM Risk Category is Moderate. Calvin has six risk factors and is automatically moderate risk as he is male and over the age of 45 years. He falls into the moderate category..."
   },
   {
     "slideNumber": 12,
     "type": "dropdown_multi",
     "title": "Physician Supervision Recommendation",
-    "content": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below.",
-      "questions": [
+    "content": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that should be asked...",
+    "questions": [
       {
         "q": "What is the recommendation for Calvin with respect to requiring a physician to supervise him during his submaximal exercise test?",
         "options": ["Not Necessary", "Recommended"],
@@ -171,7 +174,7 @@ const SLIDE_DECK_CONTENT = [
     "question": "Given what you have learnt so far, do you believe this man has metabolic syndrome? (Select Yes/No and Justify)",
     "label": "Justify your answer:",
     "correctAnswer": "He has increased waist, increased LDL, low HDL and increased fasting blood glucose",
-    "feedback": "Calvin is moderately at risk of developing cardiovascular disease. In addition he meets the criteria listed by the International Diabetes Federation for Metabolic Syndrome. He has central obesity with a waist circumference >94cm. He has hypertension and a fasting blood glucose level over 5.6 mmol/L. He satisfies the federation's criteria for metabolic syndrome. In addition his HDL is less than 1.03 mmol/L."
+    "feedback": "Calvin is moderately at risk of developing cardiovascular disease. In addition he meets the criteria listed by the International Diabetes Federation for Metabolic Syndrome. He has central obesity, dyslipidaemia and elevated fasting glucose..."
   },
   {
     "slideNumber": 14,
@@ -185,7 +188,7 @@ const SLIDE_DECK_CONTENT = [
       "Equally at-risk spouse"
     ],
     "correctAnswer": ["Profession", "Availability of exercise facilities"],
-    "feedback": "Profession: As an airline pilot he would be doing a lot of travel, hence time would be an issue. Availability of exercise facilities: Long flights and odd working hours would mean that immediate access to gym facilities would be limited. Supportive home environment: Is his wife supportive of his much needed life style change, or does she share her husband's unhealthy choice of lifestyle? For the moment, this is not a potential barrier, however, more questions would need to be asked to confirm this."
+    "feedback": "Profession: As an airline pilot he would be doing a lot of travel, hence time would be an issue. Availability of exercise facilities: Long flights and odd working hours would mean that exercise opportunities may be limited..."
   },
   {
     "slideNumber": 15,
@@ -200,13 +203,13 @@ const SLIDE_DECK_CONTENT = [
       "HR and BP pre and post exercise and heart rate, BP and RPE at 3-5 minute intervals during exercise."
     ],
     "correctAnswer": "Pre and post HR and BP, as well as HR and RPE at 5-10 minute intervals during exercise.",
-    "feedback": "As we do not have any results of a clinical exercise test, we have to keep him clinically safe. Therefore, if training is supervised HR, BP (pre, post & at 5-10 min intervals during exercise) until predictable response is occurring then once per mode of exercise. RPE should be monitored as well to ensure it is not too high. He should be instructed that his RPE should be kept within a definite range below his hypertensive threshold determined from his clinical exercise test."
+    "feedback": "As we do not have any results of a clinical exercise test, we have to keep him clinically safe. Therefore, if training is supervised HR, BP (pre, post & at 5-10 min intervals during exercise) is appropriate..."
   },
   {
     "slideNumber": 16,
     "type": "checkbox",
     "title": "Exercise Prescription",
-    "question": "It's now time to write an exercise program for your client. We first need to choose an appropriate mode of exercise to help Calvin reduce his risk (there are at least two correct answers - select all you think are applicable)",
+    "question": "It's now time to write an exercise program for your client. We first need to choose an appropriate mode of exercise to help Calvin reduce his risk (there are at least two correct answers).",
     "options": [
       "Flexibility Training",
       "Aerobic Exercise Training",
@@ -219,44 +222,43 @@ const SLIDE_DECK_CONTENT = [
       "Core Stability Training",
       "Progressive Resistance Training"
     ],
-    "feedback": "Calvin would benefit from both aerobic and progressive resistance training. If you added core stability, that's excellent, as with his back pain he would definitely benefit from this."
+    "feedback": "Calvin would benefit from both aerobic and progressive resistance training. If you added core stability, that's excellent, as with his back pain he would definitely benefit from this..."
   },
-{
-  "slideNumber": 17,
-  "type": "multiQuestion",   // <-- use a custom type your engine treats as containing multiple sub-questions
-  "title": "Aerobic Exercise Training",
-  "questions": [
-    {
-      "id": "adherence",
-      "prompt": "What question would you ask to ensure Calvin adheres to an exercise program?",
-      "type": "single",
-      "options": [
-        "Tell Calvin to join a gym.",
-        "Identify an exercise he can do easily away from home, when overseas.",
-        "Ask Calvin which type of exercise he likes to do most.",
-        "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home."
-      ],
-      "correctAnswer": "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home.",
-      "feedback": "You should ask Calvin which type of exercise he likes to do and, as he enjoys walking and it is easy to do away from home, you may want to prescribe interval walking at a moderate to high intensity."
-    },
-    {
-      "id": "precautions",
-      "prompt": "Are there any precautions to take into account for his exercise intensity? (Select all that apply.)",
-      "type": "checkbox",
-      "options": [
-        "His knee and lower back pain.",
-        "Whether he has a hypertensive threshold.",
-        "Exercise training location."
-      ],
-      "correctAnswer": [
-        "His knee and lower back pain.",
-        "Whether he has a hypertensive threshold."
-      ],
-      "feedback": "Exercise intensity should remain below any ischaemic or hypertensive threshold observed during stress testing. Also consider his knee and lower back pain when prescribing intensity."
-    }
-  ]
-}
-,
+  {
+    "slideNumber": 17,
+    "type": "multiQuestion",
+    "title": "Aerobic Exercise Training",
+    "questions": [
+      {
+        "id": "adherence",
+        "prompt": "What question would you ask to ensure Calvin adheres to an exercise program?",
+        "type": "single",
+        "options": [
+          "Tell Calvin to join a gym.",
+          "Identify an exercise he can do easily away from home, when overseas.",
+          "Ask Calvin which type of exercise he likes to do most.",
+          "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home."
+        ],
+        "correctAnswer": "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home.",
+        "feedback": "You should ask Calvin which type of exercise he likes to do and, as he enjoys walking and it is easy to do away from home, you may want to prescribe interval walking at a moderate tempo..."
+      },
+      {
+        "id": "precautions",
+        "prompt": "Are there any precautions to take into account for his exercise intensity? (Select all that apply.)",
+        "type": "checkbox",
+        "options": [
+          "His knee and lower back pain.",
+          "Whether he has a hypertensive threshold.",
+          "Exercise training location."
+        ],
+        "correctAnswer": [
+          "His knee and lower back pain.",
+          "Whether he has a hypertensive threshold."
+        ],
+        "feedback": "Exercise intensity should remain below any ischaemic or hypertensive threshold observed during stress testing. Also consider his knee and lower back pain when prescribing intensity..."
+      }
+    ]
+  },
   {
     "slideNumber": 18,
     "type": "dropdown",
@@ -272,7 +274,7 @@ const SLIDE_DECK_CONTENT = [
       "All of the above"
     ],
     "correctAnswer": "All of the above",
-    "feedback": "Correct! All these tests could be appropriate. If he can join a gym that has global locations, then you should complete a RM test for each of the major muscle groups. If he can not and does not want to join the gym, you should use functional tests such as the lunge, squat, push up, abdominal flexor endurance and plank to assess his muscle strength."
+    "feedback": "Correct! All these tests could be appropriate. If he can join a gym that has global locations, then you should complete a RM test for each of the major muscle groups..."
   },
   {
     "slideNumber": 19,
@@ -288,17 +290,17 @@ const SLIDE_DECK_CONTENT = [
       "All of the above"
     ],
     "correctAnswer": "All of the above",
-    "feedback": "Blood pressure: Calvin will need to have his blood pressure monitored regularly and make sure he exercises below any thresholds. If possible he should get his BP measured at least once in the unengaged limb, during the active phase of weight training to check it is not spiking. He should also have it monitored on the upright bike and with overhead resistance training. His exercise technique needs to be watched. Watch the patient continues to breathe properly during each mode of exercise. And if doing free standing functional training ensure the technique is correct so he doesn't cause any knee or back pain. He should have his blood glucose levels checked regularly to ensure he does not develop diabetes. When he is at home in Sydney, he should complete supervised exercise sessions to ensure he is on track and training at the correct intensities."
+    "feedback": "Blood pressure: Calvin will need to have his blood pressure monitored regularly and make sure he exercises below any thresholds. If possible he should get his BP measured at least once..."
   },
-{
-  "slideNumber": 20,
-  "type": "radio",
-  "title": "Aerobic Exercise Intensity",
-  "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what intensity should the aerobic component of the exercise program start at?",
-  "options": ["40% VO2Reserve", "60% VO2Reserve", "80% VO2Reserve"],
-  "correctAnswer": "60% VO2Reserve",
-  "feedback": "Current recommendations for metabolic syndrome are to exercise at about 60% VO2max or ~70% HRmax. This level maximizes benefits while minimizing possible adverse effects of more vigorous exercise. For weight loss, exercising at a lower intensity for longer decreases RER toward ~0.7, and longer durations increase total energy expenditure. If intensity is set too high, the patient may exceed a hypertensive threshold, which would blunt the exercise training effect on blood pressure."
-},
+  {
+    "slideNumber": 20,
+    "type": "radio",
+    "title": "Aerobic Exercise Intensity",
+    "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what intensity should the aerobic component of the exercise program be?",
+    "options": ["40% VO2Reserve", "60% VO2Reserve", "80% VO2Reserve"],
+    "correctAnswer": "60% VO2Reserve",
+    "feedback": "Current recommendations for metabolic syndrome are to exercise at about 60% VO2max or ~70% HRmax. This level maximizes benefits while minimizing possible adverse effects of more vigorous exercise..."
+  },
   {
     "slideNumber": 21,
     "type": "radio",
@@ -315,17 +317,17 @@ const SLIDE_DECK_CONTENT = [
     "question": "How often per week would you tell Calvin to complete his exercise program?",
     "options": ["Daily", "3-4 days per week", "5 days per week"],
     "correctAnswer": "5 days per week",
-    "feedback": "Current recommendations for metabolic syndrome are to exercise 5 days per week. The effect of a single bout of exercise on insulin sensitivity lasts 24-72 hours. Depending on the exercise intensity and duration, the effect on insulin sensitivity is generally not greater than 72 hours, therefore it is recommended that the time between successive sessions is no more than 72 hours. That is, no more than 2 consecutive days without aerobic activity."
+    "feedback": "Current recommendations for metabolic syndrome are to exercise 5 days per week. The effect of a single bout of exercise on insulin sensitivity lasts 24-72 hours..."
   },
   {
-  "slideNumber": 23,
-  "type": "textInput",
-  "title": "PRT Exercise Prescription",
-  "question": "Using the FITT principle, write out your recommendations for progressive resistance training (PRT) for someone with metabolic syndrome.",
-  "label": "Enter answer here:",
-  "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–20 reps depending on intensity.",
-  "feedback": "Using the FITT principle, an appropriate answer would be:\\n\\n• Frequency: 2–3 days per week\\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until you know their response to PRT.\\n• Type: Circuit or whole-body training of the large muscle groups\\n• Time (Volume): Low intensity = high volume (2–3 × 12–20 reps); Moderate intensity = moderate volume (2–3 × 8–10 reps)."
-}
+    "slideNumber": 23,
+    "type": "textInput",
+    "title": "PRT Exercise Prescription",
+    "question": "Using the FITT principle, write out your recommendations for progressive resistance training (PRT) for someone with metabolic syndrome.",
+    "label": "Enter answer here:",
+    "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–12 reps per exercise...",
+    "feedback": "Using the FITT principle, an appropriate answer would be:\n\n• Frequency: 2–3 days per week\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until cleared by a clinician..."
+  }
 ];
 
 const REFERENCE_SLIDE_NUMBERS = [3, 5];
@@ -407,6 +409,9 @@ function createSlide(slideData, index) {
       break;
     case 'form':
       section.appendChild(createFormSection(slideData));
+      break;
+    case 'multiQuestion':
+      section.appendChild(createMultiQuestionSection(slideData));
       break;
     default:
       break;
@@ -525,13 +530,25 @@ function createCheckboxOptions(slideData) {
 
 function createTextInput(slideData) {
   const wrapper = document.createElement('div');
-  const label = document.createElement('label');
-  label.textContent = slideData.label || 'Your answer:';
-  const textarea = document.createElement('textarea');
-  textarea.classList.add('text-input');
-  textarea.setAttribute('aria-label', slideData.label || 'Your answer');
-  wrapper.appendChild(label);
-  wrapper.appendChild(textarea);
+  wrapper.classList.add('textinput-wrapper');
+
+  // support either single label or multiple labels (labels array)
+  const labels = Array.isArray(slideData.labels) ? slideData.labels : [slideData.label || 'Your answer:'];
+
+  labels.forEach((lbl, i) => {
+    const group = document.createElement('div');
+    group.classList.add('textinput-group');
+    const label = document.createElement('label');
+    label.textContent = lbl;
+    const textarea = document.createElement('textarea');
+    textarea.classList.add('text-input');
+    textarea.dataset.index = i;
+    textarea.setAttribute('aria-label', lbl || `Answer ${i + 1}`);
+    group.appendChild(label);
+    group.appendChild(textarea);
+    wrapper.appendChild(group);
+  });
+
   return wrapper;
 }
 
@@ -632,6 +649,54 @@ function createFormSection(slideData) {
   return wrapper;
 }
 
+function createMultiQuestionSection(slideData) {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('multi-question-section');
+
+  slideData.questions.forEach((q, qi) => {
+    const container = document.createElement('div');
+    container.classList.add('multi-question');
+    container.dataset.qIndex = qi;
+
+    const prompt = document.createElement('p');
+    prompt.textContent = q.prompt;
+    container.appendChild(prompt);
+
+    if (q.type === 'single') {
+      const name = `multi-${slideData.slideNumber}-${qi}`;
+      q.options.forEach((opt, idx) => {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = name;
+        input.value = opt;
+        input.id = `${name}-${idx}`;
+        label.setAttribute('for', input.id);
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(opt));
+        container.appendChild(label);
+      });
+    } else if (q.type === 'checkbox') {
+      q.options.forEach((opt, idx) => {
+        const id = `multi-cb-${slideData.slideNumber}-${qi}-${idx}`;
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.value = opt;
+        input.id = id;
+        label.setAttribute('for', id);
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(opt));
+        container.appendChild(label);
+      });
+    }
+
+    wrapper.appendChild(container);
+  });
+
+  return wrapper;
+}
+
 function createNextButton() {
   const button = document.createElement('button');
   button.classList.add('next-button');
@@ -654,9 +719,18 @@ function validateSlide(slideElement, slideData) {
       return validateMultiDropdown(slideElement, slideData);
     case 'form':
       return validateForm(slideElement, slideData);
+    case 'multiQuestion':
+      return validateMultiQuestion(slideElement, slideData);
     default:
       return { valid: false, correct: false };
   }
+}
+
+function isAnswerMatch(value, correctAnswer) {
+  if (Array.isArray(correctAnswer)) {
+    return correctAnswer.includes(value);
+  }
+  return value === correctAnswer;
 }
 
 function validateRadio(slideElement, slideData) {
@@ -664,7 +738,7 @@ function validateRadio(slideElement, slideData) {
   if (!selected) {
     return { valid: false, correct: false, error: 'Please choose an option to continue.' };
   }
-  const isCorrect = selected.value === slideData.correctAnswer;
+  const isCorrect = isAnswerMatch(selected.value, slideData.correctAnswer);
   return { valid: true, correct: isCorrect };
 }
 
@@ -679,12 +753,33 @@ function validateCheckbox(slideElement, slideData) {
 }
 
 function validateTextInput(slideElement, slideData) {
-  const input = slideElement.querySelector('textarea');
-  const value = (input?.value || '').trim();
-  if (!value) {
+  const textareas = Array.from(slideElement.querySelectorAll('textarea'));
+  if (!textareas.length) {
+    return { valid: false, correct: false, error: 'No input found.' };
+  }
+
+  const values = textareas.map((ta) => (ta.value || '').trim());
+  if (values.some((v) => !v)) {
     return { valid: false, correct: false, error: 'Please enter your answer before moving on.' };
   }
-  const isCorrect = compareTextAnswers(value, slideData.correctAnswer || '');
+
+  if (slideData.correctAnswer == null) {
+    // open response - accept as valid but not correct
+    return { valid: true, correct: false };
+  }
+
+  // support single expected string or array of expected answers
+  const expected = slideData.correctAnswer;
+  if (Array.isArray(expected)) {
+    if (expected.length !== values.length) {
+      return { valid: true, correct: false };
+    }
+    const allMatch = values.every((v, i) => compareTextAnswers(v, expected[i] || ''));
+    return { valid: true, correct: allMatch };
+  }
+
+  // single expected answer - only compare first textarea
+  const isCorrect = compareTextAnswers(values[0], expected);
   return { valid: true, correct: isCorrect };
 }
 
@@ -694,7 +789,8 @@ function validateDropdown(slideElement, slideData) {
   if (!value) {
     return { valid: false, correct: false, error: 'Please choose an option to continue.' };
   }
-  return { valid: true, correct: value === slideData.correctAnswer };
+  const isCorrect = isAnswerMatch(value, slideData.correctAnswer);
+  return { valid: true, correct: isCorrect };
 }
 
 function validateMultiDropdown(slideElement, slideData) {
@@ -729,6 +825,42 @@ function validateForm(slideElement, slideData) {
   const totalCorrect = parseInt(totalValue, 10) === parseInt(slideData.correctAnswer, 10);
 
   return { valid: true, correct: fieldsCorrect && totalCorrect };
+}
+
+function validateMultiQuestion(slideElement, slideData) {
+  const containers = Array.from(slideElement.querySelectorAll('.multi-question'));
+  if (!containers.length) {
+    return { valid: false, correct: false, error: 'No questions found.' };
+  }
+
+  let allValid = true;
+  let allCorrect = true;
+
+  for (const container of containers) {
+    const qIndex = Number(container.dataset.qIndex);
+    const q = slideData.questions[qIndex];
+    if (q.type === 'single') {
+      const selected = container.querySelector('input[type="radio"]:checked');
+      if (!selected) {
+        return { valid: false, correct: false, error: 'Please answer each question before continuing.' };
+      }
+      if (!isAnswerMatch(selected.value, q.correctAnswer)) {
+        allCorrect = false;
+      }
+    } else if (q.type === 'checkbox') {
+      const checked = Array.from(container.querySelectorAll('input[type="checkbox"]:checked')).map((i) => i.value);
+      if (!checked.length) {
+        return { valid: false, correct: false, error: 'Please answer each question before continuing.' };
+      }
+      const expected = q.correctAnswer || [];
+      const isQCorrect = checked.length === expected.length && checked.every((v) => expected.includes(v));
+      if (!isQCorrect) {
+        allCorrect = false;
+      }
+    }
+  }
+
+  return { valid: true, correct: allCorrect };
 }
 
 function compareTextAnswers(userAnswer, expectedAnswer) {
