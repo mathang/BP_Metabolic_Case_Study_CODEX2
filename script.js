@@ -1,9 +1,29 @@
 const SLIDE_DECK_CONTENT = [
   {
     "slideNumber": 1,
-    "type": "info",
+    "type": "introForm",
     "title": "Metabolic Syndrome",
-    "content": "Course Code: BCEP Competency Assurance Check \nCourse Convenor: Dr. Belinda Parmenter"
+    "content": "Course Code: BCEP Competency Assurance Check \nCourse Convenor: Dr. Belinda Parmenter\n\nPlease enter your details below to begin the case study.",
+    "studentFields": [
+      {
+        "id": "firstName",
+        "label": "First name",
+        "type": "text",
+        "autocomplete": "given-name"
+      },
+      {
+        "id": "lastName",
+        "label": "Last name",
+        "type": "text",
+        "autocomplete": "family-name"
+      },
+      {
+        "id": "studentEmail",
+        "label": "Student email",
+        "type": "email",
+        "autocomplete": "email"
+      }
+    ]
   },
   {
     "slideNumber": 2,
@@ -46,16 +66,14 @@ const SLIDE_DECK_CONTENT = [
       "Triglycerides",
       "Sedentary Profession"
     ],
-    "correctAnswer": ["Age", "Male gender"],
     "feedback": "Age and male gender are non-modifiable risk factors. In contrast, the others are modifiable, which means they can be addressed or brought to within normal ranges through diet, exercise, medications and/or lifestyle changes. In particular it is important to note, that even though his profession is sedentary, we can modify this risk factor by including regular activity breaks."
   },
   {
     "slideNumber": 7,
     "type": "textInput",
     "title": "Calculating Calvin's BMI",
-    "question": "In order to treat Calvin effectively we must first do a preliminary clinical assessment to identify his risk factors. Firstly, we must calculate his BMI based on his: Height: 186 cm\nWeight: 100 kg\n\nType your answer in the text box below (keep all working to 1 decimal place).",
+    "question": "In order to treat Calvin effectively we must first do a preliminary clinical assessment to identify his risk factors. Firstly, we must calculate his BMI based on his: \nHeight: 186 cm\nWeight: 100 kg\n\nType your answer in the text box below (keep all working to 1 decimal place).",
     "label": "Enter Answer:",
-    "correctAnswer": "28.9",
     "feedback": "Click 'Next' to continue."
   },
   {
@@ -63,20 +81,18 @@ const SLIDE_DECK_CONTENT = [
     "type": "radio",
     "title": "The Cholesterol Test",
     "question": "Calvin’s current physical activity includes lifting weights (if he is somewhere where there is a gym) and a game of golf each week. Family history: father alive at 77 years, but had a heart attack from 45 years of age. No other family history of note. The aim of this case study is for you, as an exercise professional, to identify safe and effective strategies that will help Calvin reduce his blood pressure to a normal level, and improve his waist measurement and overall cardiovascular health.Before we move on, we must consider an important factor in Calvin’s assessment. Is there a problem with having cholesterol checked at a health booth and if so what is the most likley effect? Select from the key words.",
-    "options": ["Yes", "No", "False positive", "False negative"],
-    "correctAnswer": ["False positive"],
+    "options": ["Yes - False positive", "No", "Yes - False negative"],
     "feedback": "Potentially, yes. If the person is not fasting or has a fatty residue from a hand cream on their hands, this test will not give you a true indication of the cholesterol level. For example, the patient may give a false positive result, that is, a result higher than usual."
   },
   {
     "slideNumber": 9,
     "type": "textInput",
     "title": "Defining and Translating Personal Goals",
-    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish realistic goals. Calvin wants to exercise regularly, reduce his weight, blood pressure and waist measurement. Based on this information and the doctor’s referral/clinical indications, please write one short-term goal for his blood pressure and one long-term goal for his participation in regular exercise.List one short term goal below:",
+    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish realistic goals. Calvin wants to exercise regularly, reduce his weight, blood pressure and waist measurement. Based on this information and the doctor’s referral/clinical indications, please write one short-term goal for his blood pressure and one long-term goal for his participation in regular exercise. \n List one short term goal below:",
     "labels": [
       "List one short term goal below:",
       "List one LONG term goal below:"
     ],
-    "correctAnswer": null,
     "feedback": "Your short term goal for his blood pressure should look something like this: To reduce his resting blood pressure to less than 150/85mmHg within 8-12 weeks. \n\nYour long term goal for regular exercise should look something like this: To have Calvin completing any form of exercise for >40 minutes five days per week in 6 months from now.\n\nIf your goals look similar to these, congratulations, you are correct!"
   },
   {
@@ -145,7 +161,7 @@ const SLIDE_DECK_CONTENT = [
     "content": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below.",
     "questions": [
       {
-        "q": "What is the recommendation for Calvin with respect to requiring a physician to supervise him during his submaximal exercise test?",
+        "q": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below. \n\n What is the recommendation for Calvin with respect to requiring a physician to supervise him during his submaximal exercise test?",
         "options": ["Not Necessary", "Recommended"],
         "correct": "Not Necessary"
       },
@@ -171,8 +187,8 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 13,
     "type": "textInput",
     "title": "Is this Metabolic Syndrome?",
-    "question": "Given what you have learnt so far, do you believe this man has metabolic syndrome? (Select Yes/No and Justify)",
-    "label": "Justify your answer:",
+    "question": "Given what you have learnt so far, do you believe this man has metabolic syndrome? (Type Yes or No and then your 1-2 sentence justification for why you chose this)",
+    "label": "Your answer:",
     "correctAnswer": "He has increased waist, increased LDL, low HDL and increased fasting blood glucose",
     "feedback": "Calvin is moderately at risk of developing cardiovascular disease. In addition he meets the criteria listed by the International Diabetes Federation for Metabolic Syndrome. He has central obesity with a waist circumference >94cm. He has hypertension and a fasting blood glucose level over 5.6 mmol/L. He satisfies the federation's criteria for metabolic syndrome. In addition his HDL is less than 1.03 mmol/L."
   },
@@ -334,6 +350,21 @@ const REFERENCE_SLIDE_NUMBERS = [3, 5];
 const REFERENCE_PDF_URL =
   'https://github.com/mathang/BP_Metabolic_Case_Study_CODEX/blob/main/Pre-exercise%20Screen.pdf';
 
+// Set this to the Web App URL generated by your Google Apps Script deployment.
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbws4sfNtrxowtBlEBqUQeh8NUKhDxNy4AeGcR95kB9WhNr-YC0ybdMcCDHjXUFLtZJS9w/exec';
+
+const studentDetails = {
+  firstName: '',
+  lastName: '',
+  studentEmail: '',
+};
+
+const sessionId = createSessionId();
+const responseLog = [];
+let submissionQueue = Promise.resolve();
+let googleUrlWarningShown = false;
+let submissionMode = 'cors';
+
 const slideContainer = document.getElementById('slideContainer');
 const scoreValue = document.getElementById('scoreValue');
 const modalOverlay = document.getElementById('modalOverlay');
@@ -345,7 +376,8 @@ let currentSlideIndex = 0;
 let score = 0;
 let completionShown = false;
 
-const maxScore = SLIDE_DECK_CONTENT.filter((slide) => slide.type !== 'info').length * 10;
+const maxScore =
+  SLIDE_DECK_CONTENT.filter((slide) => !['info', 'introForm'].includes(slide.type)).length * 10;
 const slides = SLIDE_DECK_CONTENT.map((slideData, index) => {
   const slideElement = createSlide(slideData, index);
   slideContainer.appendChild(slideElement);
@@ -383,9 +415,11 @@ function createSlide(slideData, index) {
     return section;
   }
 
-  const questionParagraph = document.createElement('p');
-  questionParagraph.innerHTML = (slideData.question || '').replace(/\n/g, '<br>');
-  section.appendChild(questionParagraph);
+  if (slideData.question) {
+    const questionParagraph = document.createElement('p');
+    questionParagraph.innerHTML = (slideData.question || '').replace(/\n/g, '<br>');
+    section.appendChild(questionParagraph);
+  }
 
   const errorMessage = document.createElement('div');
   errorMessage.classList.add('error-message');
@@ -413,6 +447,9 @@ function createSlide(slideData, index) {
     case 'multiQuestion':
       section.appendChild(createMultiQuestionSection(slideData));
       break;
+    case 'introForm':
+      section.appendChild(createIntroForm(slideData));
+      break;
     default:
       break;
   }
@@ -430,14 +467,17 @@ function createSlide(slideData, index) {
 
     errorMessage.classList.add('hidden');
 
-    if (validation.correct && section.dataset.answeredCorrectly !== 'true') {
+    recordSlideResponse(section, slideData, validation);
+
+    if (validation.correct === true && section.dataset.answeredCorrectly !== 'true') {
       score += 10;
       updateScoreDisplay();
       section.dataset.answeredCorrectly = 'true';
     }
 
     const isLastSlide = isNextSlideBeyondEnd();
-    showModal(validation.correct ? 'Correct!' : 'Incorrect', slideData.feedback || '', isLastSlide);
+    const modalHeading = determineModalTitle(validation.correct);
+    showModal(modalHeading, slideData.feedback || '', isLastSlide);
   });
 
   section.appendChild(nextButton);
@@ -482,6 +522,49 @@ function appendInfoContent(section, content) {
       section.appendChild(paragraph);
     }
   });
+}
+
+function createIntroForm(slideData) {
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('intro-form');
+
+  const infoBlock = document.createElement('div');
+  infoBlock.classList.add('intro-form__info');
+  appendInfoContent(infoBlock, slideData.content || '');
+  wrapper.appendChild(infoBlock);
+
+  const fieldsContainer = document.createElement('div');
+  fieldsContainer.classList.add('intro-form__fields');
+
+  (slideData.studentFields || []).forEach((field) => {
+    const fieldWrapper = document.createElement('div');
+    fieldWrapper.classList.add('intro-form__field');
+
+    const label = document.createElement('label');
+    const inputId = `student-${field.id}`;
+    label.setAttribute('for', inputId);
+    label.textContent = field.label;
+
+    const input = document.createElement('input');
+    input.id = inputId;
+    input.type = field.type || 'text';
+    input.required = field.required !== false;
+    input.dataset.studentField = field.id;
+    input.classList.add('text-input');
+    if (field.autocomplete) {
+      input.autocomplete = field.autocomplete;
+    }
+    if (field.placeholder) {
+      input.placeholder = field.placeholder;
+    }
+
+    fieldWrapper.appendChild(label);
+    fieldWrapper.appendChild(input);
+    fieldsContainer.appendChild(fieldWrapper);
+  });
+
+  wrapper.appendChild(fieldsContainer);
+  return wrapper;
 }
 
 function createRadioOptions(slideData) {
@@ -721,6 +804,8 @@ function validateSlide(slideElement, slideData) {
       return validateForm(slideElement, slideData);
     case 'multiQuestion':
       return validateMultiQuestion(slideElement, slideData);
+    case 'introForm':
+      return validateIntroForm(slideElement, slideData);
     default:
       return { valid: false, correct: false };
   }
@@ -764,8 +849,8 @@ function validateTextInput(slideElement, slideData) {
   }
 
   if (slideData.correctAnswer == null) {
-    // open response - accept as valid but not correct
-    return { valid: true, correct: false };
+    // open response - accept as valid but not auto-graded
+    return { valid: true, correct: null };
   }
 
   // support single expected string or array of expected answers
@@ -863,6 +948,34 @@ function validateMultiQuestion(slideElement, slideData) {
   return { valid: true, correct: allCorrect };
 }
 
+function validateIntroForm(slideElement, slideData) {
+  const inputs = Array.from(slideElement.querySelectorAll('input[data-student-field]'));
+  if (!inputs.length) {
+    return { valid: false, correct: null, error: 'Student detail fields are missing.' };
+  }
+
+  for (const input of inputs) {
+    const value = (input.value || '').trim();
+    if (!value) {
+      const label = slideData.studentFields?.find((field) => field.id === input.dataset.studentField)?.label;
+      return {
+        valid: false,
+        correct: null,
+        error: `Please enter your ${label ? label.toLowerCase() : 'details'} to continue.`,
+      };
+    }
+
+    if (input.type === 'email') {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(value)) {
+        return { valid: false, correct: null, error: 'Please enter a valid email address.' };
+      }
+    }
+  }
+
+  return { valid: true, correct: null };
+}
+
 function compareTextAnswers(userAnswer, expectedAnswer) {
   if (!expectedAnswer) {
     return false;
@@ -903,6 +1016,225 @@ function updateScoreDisplay() {
   scoreValue.textContent = score.toString();
 }
 
+function recordSlideResponse(slideElement, slideData, validation) {
+  if (!slideData || slideData.type === 'info') {
+    return;
+  }
+
+  const response = extractResponseFromSlide(slideElement, slideData);
+  if (response == null) {
+    return;
+  }
+
+  if (slideData.type === 'introForm' && typeof response === 'object') {
+    Object.keys(response).forEach((key) => {
+      if (Object.prototype.hasOwnProperty.call(studentDetails, key)) {
+        studentDetails[key] = response[key];
+      }
+    });
+  }
+
+  const entry = {
+    slideNumber: slideData.slideNumber,
+    title: slideData.title,
+    type: slideData.type,
+    response,
+    correct: validation.correct ?? null,
+  };
+
+  upsertResponseLog(entry);
+}
+
+function extractResponseFromSlide(slideElement, slideData) {
+  switch (slideData.type) {
+    case 'introForm': {
+      const inputs = Array.from(slideElement.querySelectorAll('input[data-student-field]'));
+      if (!inputs.length) {
+        return null;
+      }
+      return inputs.reduce((acc, input) => {
+        acc[input.dataset.studentField] = (input.value || '').trim();
+        return acc;
+      }, {});
+    }
+    case 'radio': {
+      const selected = slideElement.querySelector('input[type="radio"]:checked');
+      return selected ? selected.value : null;
+    }
+    case 'checkbox': {
+      const checked = Array.from(slideElement.querySelectorAll('input[type="checkbox"]:checked')).map((input) => input.value);
+      return checked;
+    }
+    case 'textInput': {
+      const textareas = Array.from(slideElement.querySelectorAll('textarea'));
+      if (!textareas.length) {
+        return null;
+      }
+      const values = textareas.map((textarea) => (textarea.value || '').trim());
+      return values.length === 1 ? values[0] : values;
+    }
+    case 'dropdown': {
+      const select = slideElement.querySelector('select');
+      return select ? select.value : null;
+    }
+    case 'dropdown_multi': {
+      return (slideData.questions || []).map((question, idx) => {
+        const select = slideElement.querySelector(`select[data-question-index="${idx}"]`);
+        return {
+          question: question.q,
+          answer: select ? select.value : '',
+        };
+      });
+    }
+    case 'form': {
+      const fieldResponses = (slideData.fields || []).map((field, idx) => {
+        const select = slideElement.querySelector(`select[data-field-index="${idx}"]`);
+        return {
+          label: field.label,
+          answer: select ? select.value : '',
+        };
+      });
+      const totalInput = slideElement.querySelector('input[type="number"]');
+      return {
+        fields: fieldResponses,
+        total: totalInput ? (totalInput.value || '').trim() : '',
+      };
+    }
+    case 'multiQuestion': {
+      return (slideData.questions || []).map((q, idx) => {
+        const container = slideElement.querySelector(`.multi-question[data-q-index="${idx}"]`);
+        if (!container) {
+          return { question: q.prompt || q.q, answer: '' };
+        }
+
+        if (q.type === 'single') {
+          const selected = container.querySelector('input[type="radio"]:checked');
+          return { question: q.prompt || q.q, answer: selected ? selected.value : '' };
+        }
+
+        if (q.type === 'checkbox') {
+          const checked = Array.from(container.querySelectorAll('input[type="checkbox"]:checked')).map((input) => input.value);
+          return { question: q.prompt || q.q, answer: checked };
+        }
+
+        return { question: q.prompt || q.q, answer: '' };
+      });
+    }
+    default:
+      return null;
+  }
+}
+
+function upsertResponseLog(entry) {
+  const index = responseLog.findIndex((item) => item.slideNumber === entry.slideNumber);
+  if (index >= 0) {
+    responseLog[index] = entry;
+  } else {
+    responseLog.push(entry);
+  }
+}
+
+function determineModalTitle(correctValue) {
+  if (correctValue === true) {
+    return 'Correct!';
+  }
+  if (correctValue === false) {
+    return 'Incorrect';
+  }
+  return 'Response recorded';
+}
+
+function queueProgressSubmission(context = {}) {
+  if (!GOOGLE_SCRIPT_URL) {
+    if (!googleUrlWarningShown) {
+      console.warn('Google Apps Script URL is not configured. Responses will not be submitted.');
+      googleUrlWarningShown = true;
+    }
+    return;
+  }
+
+  submissionQueue = submissionQueue
+    .catch(() => {})
+    .then(() => submitResponses(context));
+}
+
+async function submitResponses(context = {}) {
+  const payload = buildSubmissionPayload(context);
+
+  try {
+    await sendSubmissionRequest(payload, submissionMode);
+  } catch (error) {
+    if (submissionMode === 'cors' && isLikelyCorsError(error)) {
+      console.warn(
+        'CORS request to Google Apps Script failed. Falling back to a no-cors request so progress can still be logged.',
+        error
+      );
+      submissionMode = 'no-cors';
+      try {
+        await sendSubmissionRequest(payload, submissionMode);
+      } catch (fallbackError) {
+        console.error('Failed to submit responses to Google Sheets.', fallbackError);
+      }
+      return;
+    }
+
+    console.error('Failed to submit responses to Google Sheets.', error);
+  }
+}
+
+function isLikelyCorsError(error) {
+  if (!error) {
+    return false;
+  }
+
+  if (typeof TypeError !== 'undefined' && error instanceof TypeError) {
+    return true;
+  }
+
+  const message = typeof error.message === 'string' ? error.message.toLowerCase() : '';
+  return message.includes('failed to fetch') || message.includes('cors');
+}
+
+async function sendSubmissionRequest(payload, mode) {
+  const headers =
+    mode === 'cors'
+      ? {
+          'Content-Type': 'application/json',
+        }
+      : {
+          'Content-Type': 'text/plain;charset=utf-8',
+        };
+
+  const response = await fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    mode,
+    headers,
+    body: JSON.stringify(payload),
+  });
+
+  if (mode === 'cors' && response.type !== 'opaque' && !response.ok) {
+    throw new Error(`Request failed with status ${response.status}`);
+  }
+}
+
+function buildSubmissionPayload(context = {}) {
+  return {
+    sessionId,
+    timestamp: new Date().toISOString(),
+    score,
+    maxScore,
+    studentDetails: { ...studentDetails },
+    responses: responseLog.map((entry) => ({
+      slideNumber: entry.slideNumber,
+      title: entry.title,
+      type: entry.type,
+      response: entry.response,
+      correct: entry.correct,
+    })),
+    context,
+  };
+}
+
 function showModal(title, message, isFinalStep) {
   modalTitle.textContent = title;
   modalMessage.innerHTML = message.replace(/\n/g, '<br>');
@@ -921,16 +1253,29 @@ function showSlide(index) {
 }
 
 function goToNextSlide() {
+  const currentSlideData = SLIDE_DECK_CONTENT[currentSlideIndex];
   const currentSlide = slides[currentSlideIndex];
   if (currentSlide) {
     currentSlide.classList.remove('active');
   }
 
-  currentSlideIndex += 1;
-
-  while (currentSlideIndex < slides.length && shouldSkipSlide(currentSlideIndex)) {
-    currentSlideIndex += 1;
+  let nextIndex = currentSlideIndex + 1;
+  while (nextIndex < slides.length && shouldSkipSlide(nextIndex)) {
+    nextIndex += 1;
   }
+
+  const nextSlideData = nextIndex < slides.length ? SLIDE_DECK_CONTENT[nextIndex] : null;
+
+  const submissionEvent = nextSlideData ? 'slideAdvance' : 'moduleCompleted';
+
+  queueProgressSubmission({
+    event: submissionEvent,
+    fromSlide: currentSlideData ? currentSlideData.slideNumber : null,
+    toSlide: nextSlideData ? nextSlideData.slideNumber : null,
+    completed: !nextSlideData,
+  });
+
+  currentSlideIndex = nextIndex;
 
   if (currentSlideIndex < slides.length) {
     slides[currentSlideIndex].classList.add('active');
@@ -1076,6 +1421,16 @@ function formatTextBlock(text) {
     .map((line) => line.trim())
     .filter((line) => line)
     .join('<br>');
+}
+
+function createSessionId() {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+
+  const timestamp = Date.now().toString(36);
+  const random = Math.random().toString(36).slice(2, 10);
+  return `session-${timestamp}-${random}`;
 }
 
 function escapeHtml(text) {
