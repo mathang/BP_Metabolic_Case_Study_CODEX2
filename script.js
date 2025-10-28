@@ -188,7 +188,7 @@ const SLIDE_DECK_CONTENT = [
       "Equally at-risk spouse"
     ],
     "correctAnswer": ["Profession", "Availability of exercise facilities"],
-    "feedback": "Profession: As an airline pilot he would be doing a lot of travel, hence time would be an issue. Availability of exercise facilities: Long flights and odd working hours would mean that exercise opportunities may be limited..."
+    "feedback": "Profession: As an airline pilot he would be doing a lot of travel, hence time would be an issue. Availability of exercise facilities: Long flights and odd working hours would mean that immediate access to gym facilities would be limited. Supportive home environment: Is his wife supportive of his much needed life style change, or does she share her husband's unhealthy choice of lifestyle? For the moment, this is not a potential barrier, however, more questions would need to be asked to confirm this."
   },
   {
     "slideNumber": 15,
@@ -203,13 +203,13 @@ const SLIDE_DECK_CONTENT = [
       "HR and BP pre and post exercise and heart rate, BP and RPE at 3-5 minute intervals during exercise."
     ],
     "correctAnswer": "Pre and post HR and BP, as well as HR and RPE at 5-10 minute intervals during exercise.",
-    "feedback": "As we do not have any results of a clinical exercise test, we have to keep him clinically safe. Therefore, if training is supervised HR, BP (pre, post & at 5-10 min intervals during exercise) is appropriate..."
+    "feedback": "As we do not have any results of a clinical exercise test, we have to keep him clinically safe. Therefore, if training is supervised HR, BP (pre, post & at 5-10 min intervals during exercise) until predictable response is occurring then once per mode of exercise. RPE should be monitored as well to ensure it is not too high. He should be instructed that his RPE should be kept within a definite range below his hypertensive threshold determined from his clinical exercise test."
   },
   {
     "slideNumber": 16,
     "type": "checkbox",
     "title": "Exercise Prescription",
-    "question": "It's now time to write an exercise program for your client. We first need to choose an appropriate mode of exercise to help Calvin reduce his risk (there are at least two correct answers).",
+    "question": "It's now time to write an exercise program for your client. We first need to choose an appropriate mode of exercise to help Calvin reduce his risk (there are at least two correct answers - select all you think are applicable)",
     "options": [
       "Flexibility Training",
       "Aerobic Exercise Training",
@@ -222,7 +222,7 @@ const SLIDE_DECK_CONTENT = [
       "Core Stability Training",
       "Progressive Resistance Training"
     ],
-    "feedback": "Calvin would benefit from both aerobic and progressive resistance training. If you added core stability, that's excellent, as with his back pain he would definitely benefit from this..."
+    "feedback": "Calvin would benefit from both aerobic and progressive resistance training. If you added core stability, that's excellent, as with his back pain he would definitely benefit from this."
   },
   {
     "slideNumber": 17,
@@ -240,7 +240,7 @@ const SLIDE_DECK_CONTENT = [
           "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home."
         ],
         "correctAnswer": "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home.",
-        "feedback": "You should ask Calvin which type of exercise he likes to do and, as he enjoys walking and it is easy to do away from home, you may want to prescribe interval walking at a moderate tempo..."
+      "feedback": "You should ask Calvin which type of exercise he likes to do and, as he enjoys walking and it is easy to do away from home, you may want to prescribe interval walking at a moderate to high intensity."
       },
       {
         "id": "precautions",
@@ -255,7 +255,7 @@ const SLIDE_DECK_CONTENT = [
           "His knee and lower back pain.",
           "Whether he has a hypertensive threshold."
         ],
-        "feedback": "Exercise intensity should remain below any ischaemic or hypertensive threshold observed during stress testing. Also consider his knee and lower back pain when prescribing intensity..."
+      "feedback": "Exercise intensity should remain below any ischaemic or hypertensive threshold observed during stress testing. Also consider his knee and lower back pain when prescribing intensity."
       }
     ]
   },
@@ -274,7 +274,7 @@ const SLIDE_DECK_CONTENT = [
       "All of the above"
     ],
     "correctAnswer": "All of the above",
-    "feedback": "Correct! All these tests could be appropriate. If he can join a gym that has global locations, then you should complete a RM test for each of the major muscle groups..."
+    "feedback": "All these tests could be appropriate. If he can join a gym that has global locations, then you should complete a RM test for each of the major muscle groups. If he can not and does not want to join the gym, you should use functional tests such as the lunge, squat, push up, abdominal flexor endurance and plank to assess his muscle strength."
   },
   {
     "slideNumber": 19,
@@ -290,16 +290,16 @@ const SLIDE_DECK_CONTENT = [
       "All of the above"
     ],
     "correctAnswer": "All of the above",
-    "feedback": "Blood pressure: Calvin will need to have his blood pressure monitored regularly and make sure he exercises below any thresholds. If possible he should get his BP measured at least once..."
+    "feedback": "Blood pressure: Calvin will need to have his blood pressure monitored regularly and make sure he exercises below any thresholds. If possible he should get his BP measured at least once in the unengaged limb, during the active phase of weight training to check it is not spiking. He should also have it monitored on the upright bike and with overhead resistance training. His exercise technique needs to be watched. Watch the patient continues to breathe properly during each mode of exercise. And if doing free standing functional training ensure the technique is correct so he doesn't cause any knee or back pain. He should have his blood glucose levels checked regularly to ensure he does not develop diabetes. When he is at home in Sydney, he should complete supervised exercise sessions to ensure he is on track and training at the correct intensities."
   },
   {
     "slideNumber": 20,
     "type": "radio",
     "title": "Aerobic Exercise Intensity",
-    "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what intensity should the aerobic component of the exercise program be?",
+    "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what intensity should the aerobic component of the exercise program start at?",
     "options": ["40% VO2Reserve", "60% VO2Reserve", "80% VO2Reserve"],
     "correctAnswer": "60% VO2Reserve",
-    "feedback": "Current recommendations for metabolic syndrome are to exercise at about 60% VO2max or ~70% HRmax. This level maximizes benefits while minimizing possible adverse effects of more vigorous exercise..."
+    "feedback": "Current recommendations for metabolic syndrome are to exercise at about 60% VO2max or ~70% HRmax. This level maximizes benefits while minimizing possible adverse effects of more vigorous exercise. For weight loss, exercising at a lower intensity for longer decreases RER toward ~0.7, and longer durations increase total energy expenditure. If intensity is set too high, the patient may exceed a hypertensive threshold, which would blunt the exercise training effect on blood pressure."
   },
   {
     "slideNumber": 21,
@@ -317,7 +317,7 @@ const SLIDE_DECK_CONTENT = [
     "question": "How often per week would you tell Calvin to complete his exercise program?",
     "options": ["Daily", "3-4 days per week", "5 days per week"],
     "correctAnswer": "5 days per week",
-    "feedback": "Current recommendations for metabolic syndrome are to exercise 5 days per week. The effect of a single bout of exercise on insulin sensitivity lasts 24-72 hours..."
+    "feedback": "Current recommendations for metabolic syndrome are to exercise 5 days per week. The effect of a single bout of exercise on insulin sensitivity lasts 24-72 hours. Depending on the exercise intensity and duration, the effect on insulin sensitivity is generally not greater than 72 hours, therefore it is recommended that the time between successive sessions is no more than 72 hours. That is, no more than 2 consecutive days without aerobic activity."
   },
   {
     "slideNumber": 23,
@@ -325,8 +325,8 @@ const SLIDE_DECK_CONTENT = [
     "title": "PRT Exercise Prescription",
     "question": "Using the FITT principle, write out your recommendations for progressive resistance training (PRT) for someone with metabolic syndrome.",
     "label": "Enter answer here:",
-    "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–12 reps per exercise...",
-    "feedback": "Using the FITT principle, an appropriate answer would be:\n\n• Frequency: 2–3 days per week\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until cleared by a clinician..."
+  "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–20 reps depending on intensity.",
+  "feedback": "Using the FITT principle, an appropriate answer would be:\\n\\n• Frequency: 2–3 days per week\\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until you know their response to PRT.\\n• Type: Circuit or whole-body training of the large muscle groups\\n• Time (Volume): Low intensity = high volume (2–3 × 12–20 reps); Moderate intensity = moderate volume (2–3 × 8–10 reps)."
   }
 ];
 
