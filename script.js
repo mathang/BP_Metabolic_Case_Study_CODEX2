@@ -9,7 +9,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 2,
     "type": "info",
     "title": "Referral Details",
-    "content": "Calvin is a 57 year old male who has been referred to you by his GP to help reduce his risk of cardiovascular disease. His GP has started him on Asprin and referred him to you for lifestyle changes. He is hoping he can avoid pressing medication for the hypertension. Firstly, it is important to learn a bit more about the patient - click the "Open Patient History" button to open the 1) Completed pre-exercise screening form, 2) Pre-exercise screening information and 3) Family history details."
+    "content": "Calvin is a 57 year old male who has been referred to you by his GP to help reduce his risk of cardiovascular disease. His GP has started him on Asprin and referred him to you for lifestyle changes. He is hoping he can avoid pressing medication for the hypertension. Firstly, it is important to learn a bit more about the patient - click the Open Patient History button to open the 1) Completed pre-exercise screening form, 2) Pre-exercise screening information and 3) Family history details."
   },
   {
     "slideNumber": 3,
