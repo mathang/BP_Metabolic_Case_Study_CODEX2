@@ -758,43 +758,50 @@ function createMultiQuestionSection(slideData) {
     prompt.innerHTML = formatHtmlText(q.prompt || '');
     container.appendChild(prompt);
 
-    if (q.type === 'single') {
-      const name = `multi-${slideData.slideNumber}-${qi}`;
-      q.options.forEach((opt, idx) => {
-        const optionText = opt == null ? '' : opt;
-        const displayText = typeof optionText === 'string' ? optionText : String(optionText);
-        const value = stripHtml(displayText);
-        const label = document.createElement('label');
-        const input = document.createElement('input');
-        input.type = 'radio';
-        input.name = name;
-        input.value = value;
-        input.id = `${name}-${idx}`;
-        label.setAttribute('for', input.id);
-        label.appendChild(input);
-        const span = document.createElement('span');
-        span.innerHTML = formatHtmlText(displayText);
-        label.appendChild(span);
-        container.appendChild(label);
-      });
-    } else if (q.type === 'checkbox') {
-      q.options.forEach((opt, idx) => {
-        const optionText = opt == null ? '' : opt;
-        const displayText = typeof optionText === 'string' ? optionText : String(optionText);
-        const value = stripHtml(displayText);
-        const id = `multi-cb-${slideData.slideNumber}-${qi}-${idx}`;
-        const label = document.createElement('label');
-        const input = document.createElement('input');
-        input.type = 'checkbox';
-        input.value = value;
-        input.id = id;
-        label.setAttribute('for', id);
-        label.appendChild(input);
-        const span = document.createElement('span');
-        span.innerHTML = formatHtmlText(displayText);
-        label.appendChild(span);
-        container.appendChild(label);
-      });
+    if (q.type === 'single' || q.type === 'checkbox') {
+      const optionsContainer = document.createElement('div');
+      optionsContainer.classList.add('options-group');
+
+      if (q.type === 'single') {
+        const name = `multi-${slideData.slideNumber}-${qi}`;
+        q.options.forEach((opt, idx) => {
+          const optionText = opt == null ? '' : opt;
+          const displayText = typeof optionText === 'string' ? optionText : String(optionText);
+          const value = stripHtml(displayText);
+          const label = document.createElement('label');
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = name;
+          input.value = value;
+          input.id = `${name}-${idx}`;
+          label.setAttribute('for', input.id);
+          label.appendChild(input);
+          const span = document.createElement('span');
+          span.innerHTML = formatHtmlText(displayText);
+          label.appendChild(span);
+          optionsContainer.appendChild(label);
+        });
+      } else {
+        q.options.forEach((opt, idx) => {
+          const optionText = opt == null ? '' : opt;
+          const displayText = typeof optionText === 'string' ? optionText : String(optionText);
+          const value = stripHtml(displayText);
+          const id = `multi-cb-${slideData.slideNumber}-${qi}-${idx}`;
+          const label = document.createElement('label');
+          const input = document.createElement('input');
+          input.type = 'checkbox';
+          input.value = value;
+          input.id = id;
+          label.setAttribute('for', id);
+          label.appendChild(input);
+          const span = document.createElement('span');
+          span.innerHTML = formatHtmlText(displayText);
+          label.appendChild(span);
+          optionsContainer.appendChild(label);
+        });
+      }
+
+      container.appendChild(optionsContainer);
     }
 
     wrapper.appendChild(container);
