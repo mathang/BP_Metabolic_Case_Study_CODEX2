@@ -52,9 +52,13 @@ body {
 .slide::before {
   content: "";
   position: absolute;
-  inset: clamp(16px, 4vw, 48px);
+  width: 202px;
+  height: 249px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbL5RQRadj4eJJBrTLtNKa8WdDFbQCguI0ng&s")
-    center/contain no-repeat;
+    center/202px 249px no-repeat;
   opacity: 0.15;
   z-index: 0;
   pointer-events: none;
