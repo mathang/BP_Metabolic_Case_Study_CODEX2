@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180">
+  <rect width="320" height="180" fill="none"/>
+  <rect x="0" y="0" width="140" height="140" fill="#004b9b"/>
+  <polygon fill="#ffffff" points="40,20 55,78 12,78 80,132 70,88 118,116 92,74 128,60 86,54 98,12 68,46"/>
+  <polygon fill="#f8c300" points="148,26 158,74 212,64 168,92 192,136 150,108 118,150 130,102 84,112 128,84 104,40 146,68"/>
+  <text x="150" y="150" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="70" font-weight="600" fill="#1f2a44">Uni</text>
+  <text x="250" y="150" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="70" font-weight="600" fill="#1f2a44">SC</text>
+</svg>

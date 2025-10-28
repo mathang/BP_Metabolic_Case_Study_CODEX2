@@ -45,6 +45,23 @@ body {
   display: none;
   flex-direction: column;
   gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: clamp(16px, 4vw, 48px);
+  background: url("assets/unisc-logo.svg") center/contain no-repeat;
+  opacity: 0.25;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.slide > * {
+  position: relative;
+  z-index: 1;
 }
 
 .slide.active {

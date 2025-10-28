@@ -3,7 +3,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 1,
     "type": "introForm",
     "title": "Metabolic Syndrome",
-    "content": "Course Code: BCEP Competency Assurance Check \nCourse Convenor: Dr. Belinda Parmenter\n\nPlease enter your details below to begin the case study.",
+    "content": "Course Code: BCEP Competency Assurance Check \nCourse Convenor: Professor Belinda Parmenter\n\nPlease enter your details below to begin the case study.",
     "studentFields": [
       {
         "id": "firstName",
@@ -1356,7 +1356,7 @@ function buildReportLines() {
   const lines = [];
   const now = new Date();
 
-  lines.push('HESC3504 Metabolic Syndrome Case Study Report');
+  lines.push('SPX Metabolic Syndrome Case Study Report');
   lines.push(`Generated on: ${now.toLocaleString()}`);
   lines.push('');
   lines.push('Student Details:');
