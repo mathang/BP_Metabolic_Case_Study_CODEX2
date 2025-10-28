@@ -161,7 +161,7 @@ const SLIDE_DECK_CONTENT = [
     "content": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below.",
     "questions": [
       {
-        "q": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below. /n/n What is the recommendation for Calvin with respect to requiring a physician to supervise him during his submaximal exercise test?",
+        "q": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below. \n\n What is the recommendation for Calvin with respect to requiring a physician to supervise him during his submaximal exercise test?",
         "options": ["Not Necessary", "Recommended"],
         "correct": "Not Necessary"
       },
@@ -187,8 +187,8 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 13,
     "type": "textInput",
     "title": "Is this Metabolic Syndrome?",
-    "question": "Given what you have learnt so far, do you believe this man has metabolic syndrome? (Select Yes/No and Justify)",
-    "label": "Justify your answer:",
+    "question": "Given what you have learnt so far, do you believe this man has metabolic syndrome? (Type Yes or No and then your 1-2 sentence justification for why you chose this)",
+    "label": "Your answer:",
     "correctAnswer": "He has increased waist, increased LDL, low HDL and increased fasting blood glucose",
     "feedback": "Calvin is moderately at risk of developing cardiovascular disease. In addition he meets the criteria listed by the International Diabetes Federation for Metabolic Syndrome. He has central obesity with a waist circumference >94cm. He has hypertension and a fasting blood glucose level over 5.6 mmol/L. He satisfies the federation's criteria for metabolic syndrome. In addition his HDL is less than 1.03 mmol/L."
   },
@@ -251,9 +251,9 @@ const SLIDE_DECK_CONTENT = [
         "type": "single",
         "options": [
           "Tell Calvin to join a gym.",
-          "Identify an exercise he can do easily away from home, when overseas.",
-          "Ask Calvin which type of exercise he likes to do most.",
-          "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home."
+          "\nIdentify an exercise he can do easily away from home, when overseas.",
+          "\nAsk Calvin which type of exercise he likes to do most.",
+          "\nAsk Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home."
         ],
         "correctAnswer": "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home.",
       "feedback": "You should ask Calvin which type of exercise he likes to do and, as he enjoys walking and it is easy to do away from home, you may want to prescribe interval walking at a moderate to high intensity."
