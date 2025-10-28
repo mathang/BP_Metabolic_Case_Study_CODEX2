@@ -1740,9 +1740,9 @@ function openReferenceMaterials() {
     SLIDE_DECK_CONTENT.find((slide) => slide.slideNumber === slideNumber)
   ).filter(Boolean);
 
-  referenceSlides.forEach((slide) => {
-    openReferenceSlideWindow(slide);
-  });
+  if (referenceSlides.length > 0) {
+    openReferenceSlidesWindow(referenceSlides);
+  }
 
   const pdfWindow = window.open(REFERENCE_PDF_URL, '_blank', 'noopener');
   if (pdfWindow) {
@@ -1750,8 +1750,8 @@ function openReferenceMaterials() {
   }
 }
 
-function openReferenceSlideWindow(slideData) {
-  const html = buildReferenceSlideDocument(slideData);
+function openReferenceSlidesWindow(slides) {
+  const html = buildReferenceSlidesDocument(slides);
   const referenceWindow = window.open('about:blank', '_blank');
   if (!referenceWindow) {
     console.warn('Reference window blocked by browser.');
@@ -1769,57 +1769,104 @@ function openReferenceSlideWindow(slideData) {
   }
 }
 
-function buildReferenceSlideDocument(slideData) {
+function buildReferenceSlidesDocument(slides) {
+  const slideSections = slides.map((slide) => buildReferenceSlideSection(slide)).join('');
+
   return `<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8">
-        <title>${escapeHtml(slideData.title)}</title>
+        <title>Patient History References</title>
         <style>
+          :root {
+            color-scheme: light;
+          }
           body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 30px;
-            background: #f0f4ff;
+            padding: 40px 16px;
+            background: #eef3ff;
             color: #1f1f1f;
           }
-          .reference-content {
-            max-width: 760px;
+          .reference-wrapper {
+            max-width: 860px;
             margin: 0 auto;
-            background: #ffffff;
-            border: 4px solid #3440eb;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
           }
-          .reference-content h1 {
-            margin-top: 0;
+          .reference-slide {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 4px solid #3440eb;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+            overflow: hidden;
+          }
+          .reference-slide + .reference-slide {
+            margin-top: 28px;
+          }
+          .reference-header {
             background: #3440eb;
             color: #ffffff;
-            padding: 18px 22px;
-            border-radius: 8px;
-            font-size: 1.6rem;
+            padding: 20px 24px;
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
           }
-          .reference-content p {
-            line-height: 1.6;
+          .reference-number {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: 0.85;
+          }
+          .reference-title {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+          .reference-body {
+            padding: 26px 28px 32px;
+            line-height: 1.65;
             font-size: 1rem;
           }
-          .reference-content ul {
-            padding-left: 20px;
+          .reference-body p {
+            margin-top: 0;
+            margin-bottom: 1.2em;
           }
-          .reference-content li {
-            line-height: 1.6;
-            font-size: 1rem;
+          .reference-body ul {
+            margin: 0 0 1.2em;
+            padding-left: 24px;
+          }
+          .reference-body li {
+            margin-bottom: 0.75em;
+          }
+          strong {
+            font-weight: 700;
           }
         </style>
       </head>
       <body>
-        <main class="reference-content">
-          <h1>${escapeHtml(slideData.title)}</h1>
-          ${buildReferenceContent(slideData)}
+        <main class="reference-wrapper">
+          ${slideSections}
         </main>
       </body>
     </html>`;
+}
+
+function buildReferenceSlideSection(slideData) {
+  const title = escapeHtml(slideData.title || '');
+  const slideLabel =
+    typeof slideData.slideNumber === 'number'
+      ? `<span class="reference-number">Slide ${slideData.slideNumber}</span>`
+      : '';
+
+  return `<article class="reference-slide" id="reference-slide-${slideData.slideNumber || 'section'}">
+      <header class="reference-header">
+        ${slideLabel}
+        <h2 class="reference-title">${title}</h2>
+      </header>
+      <div class="reference-body">
+        ${buildReferenceContent(slideData)}
+      </div>
+    </article>`;
 }
 
 function buildReferenceContent(slideData) {

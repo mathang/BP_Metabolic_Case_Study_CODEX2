@@ -59,7 +59,7 @@ body {
   transform: translate(-50%, -50%);
   background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbL5RQRadj4eJJBrTLtNKa8WdDFbQCguI0ng&s")
     center/202px 249px no-repeat;
-  opacity: 0.15;
+  opacity: 0.1;
   z-index: 0;
   pointer-events: none;
 }
