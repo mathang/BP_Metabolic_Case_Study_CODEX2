@@ -68,6 +68,34 @@ body {
   font-size: 1.6rem;
 }
 
+.intro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.intro-form__info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.intro-form__fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.intro-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.intro-form__field label {
+  font-weight: 600;
+}
+
 .reference-button {
   align-self: flex-start;
   background: #3440eb;
