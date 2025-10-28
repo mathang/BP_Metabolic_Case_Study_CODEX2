@@ -367,6 +367,7 @@ const sessionId = createSessionId();
 const responseLog = [];
 let submissionQueue = Promise.resolve();
 let googleUrlWarningShown = false;
+let submissionMode = 'cors';
 
 const slideContainer = document.getElementById('slideContainer');
 const scoreValue = document.getElementById('scoreValue');
@@ -1165,20 +1166,58 @@ async function submitResponses(context = {}) {
   const payload = buildSubmissionPayload(context);
 
   try {
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}`);
-    }
+    await sendSubmissionRequest(payload, submissionMode);
   } catch (error) {
+    if (submissionMode === 'cors' && isLikelyCorsError(error)) {
+      console.warn(
+        'CORS request to Google Apps Script failed. Falling back to a no-cors request so progress can still be logged.',
+        error
+      );
+      submissionMode = 'no-cors';
+      try {
+        await sendSubmissionRequest(payload, submissionMode);
+      } catch (fallbackError) {
+        console.error('Failed to submit responses to Google Sheets.', fallbackError);
+      }
+      return;
+    }
+
     console.error('Failed to submit responses to Google Sheets.', error);
+  }
+}
+
+function isLikelyCorsError(error) {
+  if (!error) {
+    return false;
+  }
+
+  if (typeof TypeError !== 'undefined' && error instanceof TypeError) {
+    return true;
+  }
+
+  const message = typeof error.message === 'string' ? error.message.toLowerCase() : '';
+  return message.includes('failed to fetch') || message.includes('cors');
+}
+
+async function sendSubmissionRequest(payload, mode) {
+  const headers =
+    mode === 'cors'
+      ? {
+          'Content-Type': 'application/json',
+        }
+      : {
+          'Content-Type': 'text/plain;charset=utf-8',
+        };
+
+  const response = await fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    mode,
+    headers,
+    body: JSON.stringify(payload),
+  });
+
+  if (mode === 'cors' && response.type !== 'opaque' && !response.ok) {
+    throw new Error(`Request failed with status ${response.status}`);
   }
 }
 

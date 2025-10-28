@@ -40,7 +40,11 @@ function doPost(e) {
     JSON.stringify(body.responses || []),
   ]);
 
-  return ContentService.createTextOutput('Success').setMimeType(ContentService.MimeType.TEXT);
+  const output = ContentService.createTextOutput('Success');
+  output.setMimeType(ContentService.MimeType.TEXT);
+  output.setHeader('Access-Control-Allow-Origin', '*');
+  output.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  return output;
 }
 ```
 
@@ -51,7 +55,7 @@ The `sessionId` column lets you group together all rows created by the same stud
 6. Copy the **Web app URL** that Google provides after deployment.
 7. Open `script.js` in this project and set the `GOOGLE_SCRIPT_URL` constant to the copied URL.
 
-Each time a student moves to the next slide the module sends their details, current score, and the full answer log collected so far to the Apps Script endpoint. This means a single attempt will append multiple rows—one for every slide transition—ensuring partial attempts are retained. If the URL is left blank, the submission step is skipped and a warning is logged in the browser console.
+Each time a student moves to the next slide the module sends their details, current score, and the full answer log collected so far to the Apps Script endpoint. This means a single attempt will append multiple rows—one for every slide transition—ensuring partial attempts are retained. If the URL is left blank, the submission step is skipped and a warning is logged in the browser console. When the browser reports a CORS error the app automatically retries the submission in a fallback mode so that responses are still delivered, but adding the headers shown above will prevent those warnings entirely.
 
 ## Development
 
