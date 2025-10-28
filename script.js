@@ -67,7 +67,7 @@ const SLIDE_DECK_CONTENT = [
       "Sedentary Profession"
     ],
     "correctAnswer": ["Age", "Male gender"],
-    "feedback": "Age and male gender are non-modifiable risk factors. In contrast, the others are modifiable, which means they can be addressed or brought to within normal ranges through diet, exercise, medications and/or lifestyle changes. In particular it is important to note, that even though his profession is sedentary, we can modify this risk factor by including regular activity breaks."
+    //"feedback": "Age and male gender are non-modifiable risk factors. In contrast, the others are modifiable, which means they can be addressed or brought to within normal ranges through diet, exercise, medications and/or lifestyle changes. In particular it is important to note, that even though his profession is sedentary, we can modify this risk factor by including regular activity breaks."
   },
   {
     "slideNumber": 7,
@@ -76,7 +76,7 @@ const SLIDE_DECK_CONTENT = [
     "question": "In order to treat Calvin effectively we must first do a preliminary clinical assessment to identify his risk factors. Firstly, we must calculate his BMI based on his: \nHeight: 186 cm\nWeight: 100 kg\n\nType your answer in the text box below (keep all working to 1 decimal place).",
     "label": "Enter Answer:",
     "correctAnswer": "28.9",
-    "feedback": "Click 'Next' to continue."
+    //"feedback": "Click 'Next' to continue."
   },
   {
     "slideNumber": 8,
@@ -91,7 +91,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 9,
     "type": "textInput",
     "title": "Defining and Translating Personal Goals",
-    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish realistic goals. Calvin wants to exercise regularly, reduce his weight, blood pressure and waist measurement. Based on this information and the doctor’s referral/clinical indications, please write one short-term goal for his blood pressure and one long-term goal for his participation in regular exercise.List one short term goal below:",
+    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish realistic goals. Calvin wants to exercise regularly, reduce his weight, blood pressure and waist measurement. Based on this information and the doctor’s referral/clinical indications, please write one short-term goal for his blood pressure and one long-term goal for his participation in regular exercise. \n List one short term goal below:",
     "labels": [
       "List one short term goal below:",
       "List one LONG term goal below:"
