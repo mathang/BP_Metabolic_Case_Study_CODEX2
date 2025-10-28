@@ -363,8 +363,10 @@ const studentDetails = {
   studentEmail: '',
 };
 
+const sessionId = createSessionId();
 const responseLog = [];
-let submissionAttempted = false;
+let submissionQueue = Promise.resolve();
+let googleUrlWarningShown = false;
 
 const slideContainer = document.getElementById('slideContainer');
 const scoreValue = document.getElementById('scoreValue');
@@ -1145,30 +1147,22 @@ function determineModalTitle(correctValue) {
   return 'Response recorded';
 }
 
-async function submitResponses() {
-  if (submissionAttempted) {
-    return;
-  }
-  submissionAttempted = true;
-
+function queueProgressSubmission(context = {}) {
   if (!GOOGLE_SCRIPT_URL) {
-    console.warn('Google Apps Script URL is not configured. Responses will not be submitted.');
+    if (!googleUrlWarningShown) {
+      console.warn('Google Apps Script URL is not configured. Responses will not be submitted.');
+      googleUrlWarningShown = true;
+    }
     return;
   }
 
-  const payload = {
-    timestamp: new Date().toISOString(),
-    score,
-    maxScore,
-    studentDetails: { ...studentDetails },
-    responses: responseLog.map((entry) => ({
-      slideNumber: entry.slideNumber,
-      title: entry.title,
-      type: entry.type,
-      response: entry.response,
-      correct: entry.correct,
-    })),
-  };
+  submissionQueue = submissionQueue
+    .catch(() => {})
+    .then(() => submitResponses(context));
+}
+
+async function submitResponses(context = {}) {
+  const payload = buildSubmissionPayload(context);
 
   try {
     const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -1186,6 +1180,24 @@ async function submitResponses() {
   } catch (error) {
     console.error('Failed to submit responses to Google Sheets.', error);
   }
+}
+
+function buildSubmissionPayload(context = {}) {
+  return {
+    sessionId,
+    timestamp: new Date().toISOString(),
+    score,
+    maxScore,
+    studentDetails: { ...studentDetails },
+    responses: responseLog.map((entry) => ({
+      slideNumber: entry.slideNumber,
+      title: entry.title,
+      type: entry.type,
+      response: entry.response,
+      correct: entry.correct,
+    })),
+    context,
+  };
 }
 
 function showModal(title, message, isFinalStep) {
@@ -1206,16 +1218,29 @@ function showSlide(index) {
 }
 
 function goToNextSlide() {
+  const currentSlideData = SLIDE_DECK_CONTENT[currentSlideIndex];
   const currentSlide = slides[currentSlideIndex];
   if (currentSlide) {
     currentSlide.classList.remove('active');
   }
 
-  currentSlideIndex += 1;
-
-  while (currentSlideIndex < slides.length && shouldSkipSlide(currentSlideIndex)) {
-    currentSlideIndex += 1;
+  let nextIndex = currentSlideIndex + 1;
+  while (nextIndex < slides.length && shouldSkipSlide(nextIndex)) {
+    nextIndex += 1;
   }
+
+  const nextSlideData = nextIndex < slides.length ? SLIDE_DECK_CONTENT[nextIndex] : null;
+
+  const submissionEvent = nextSlideData ? 'slideAdvance' : 'moduleCompleted';
+
+  queueProgressSubmission({
+    event: submissionEvent,
+    fromSlide: currentSlideData ? currentSlideData.slideNumber : null,
+    toSlide: nextSlideData ? nextSlideData.slideNumber : null,
+    completed: !nextSlideData,
+  });
+
+  currentSlideIndex = nextIndex;
 
   if (currentSlideIndex < slides.length) {
     slides[currentSlideIndex].classList.add('active');
@@ -1252,8 +1277,6 @@ function showCompletionMessage() {
   const summary = document.createElement('p');
   summary.innerHTML = `Great work! Your final score is <strong>${score}</strong> out of <strong>${maxScore}</strong>.`;
   completion.appendChild(summary);
-
-  submitResponses();
 
   slideContainer.innerHTML = '';
   slideContainer.appendChild(completion);
@@ -1363,6 +1386,16 @@ function formatTextBlock(text) {
     .map((line) => line.trim())
     .filter((line) => line)
     .join('<br>');
+}
+
+function createSessionId() {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+
+  const timestamp = Date.now().toString(36);
+  const random = Math.random().toString(36).slice(2, 10);
+  return `session-${timestamp}-${random}`;
 }
 
 function escapeHtml(text) {

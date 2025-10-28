@@ -5,7 +5,7 @@ This repository contains an interactive, browser-based learning module for the H
 ## New features
 
 * The opening slide now collects each student's first name, last name, and student email address before they can begin the case study.
-* Every answer a student provides is captured (including multi-part and free-text responses) and prepared for export to Google Sheets via an Apps Script webhook.
+* Every answer a student provides is captured (including multi-part and free-text responses) and the aggregated progress is sent to Google Sheets every time the learner advances to the next slide.
 
 ## Configuring Google Sheets logging
 
@@ -27,6 +27,11 @@ function doPost(e) {
   const body = JSON.parse(e.postData.contents);
   sheet.appendRow([
     new Date(),
+    body.sessionId || '',
+    body.context?.event || '',
+    body.context?.fromSlide || '',
+    body.context?.toSlide || '',
+    body.context?.completed ? 'Yes' : 'No',
     body.studentDetails?.firstName || '',
     body.studentDetails?.lastName || '',
     body.studentDetails?.studentEmail || '',
@@ -39,12 +44,14 @@ function doPost(e) {
 }
 ```
 
+The `sessionId` column lets you group together all rows created by the same student attempt, while the event and slide columns show which transition triggered the update.
+
 4. Click **Deploy → Test deployments** once to authorise, then choose **Deploy → New deployment**.
 5. Select **Web app**, set **Execute as** to *Me*, and **Who has access** to *Anyone* (or *Anyone with the link*).
 6. Copy the **Web app URL** that Google provides after deployment.
 7. Open `script.js` in this project and set the `GOOGLE_SCRIPT_URL` constant to the copied URL.
 
-The next time a student reaches the completion screen, their details, score, and full answer log will be sent to the Apps Script endpoint and appended to the sheet. If the URL is left blank, the submission step is skipped and a warning is logged in the browser console.
+Each time a student moves to the next slide the module sends their details, current score, and the full answer log collected so far to the Apps Script endpoint. This means a single attempt will append multiple rows—one for every slide transition—ensuring partial attempts are retained. If the URL is left blank, the submission step is skipped and a warning is logged in the browser console.
 
 ## Development
 
