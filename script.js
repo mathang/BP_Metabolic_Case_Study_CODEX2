@@ -1751,15 +1751,26 @@ function openReferenceMaterials() {
 }
 
 function openReferenceSlideWindow(slideData) {
-  const referenceWindow = window.open('', '_blank', 'noopener');
+  const html = buildReferenceSlideDocument(slideData);
+  const referenceWindow = window.open('about:blank', '_blank');
   if (!referenceWindow) {
     console.warn('Reference window blocked by browser.');
     return;
   }
 
-  referenceWindow.opener = null;
-  referenceWindow.document.open();
-  referenceWindow.document.write(`<!DOCTYPE html>
+  try {
+    referenceWindow.opener = null;
+    referenceWindow.document.open('text/html', 'replace');
+    referenceWindow.document.write(html);
+    referenceWindow.document.close();
+  } catch (error) {
+    console.error('Unable to inject reference slide content into the new window.', error);
+    referenceWindow.location = `data:text/html;charset=utf-8,${encodeURIComponent(html)}`;
+  }
+}
+
+function buildReferenceSlideDocument(slideData) {
+  return `<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8">
@@ -1808,29 +1819,48 @@ function openReferenceSlideWindow(slideData) {
           ${buildReferenceContent(slideData)}
         </main>
       </body>
-    </html>`);
-  referenceWindow.document.close();
+    </html>`;
 }
 
 function buildReferenceContent(slideData) {
   if (slideData.type === 'info') {
     return (slideData.content || '')
       .split(/\n\n+/)
-      .map((segment) => `<p>${formatTextBlock(segment)}</p>`)
+      .map((segment) => `<p>${formatReferenceTextBlock(segment)}</p>`)
       .join('');
   }
 
   let html = '';
   if (slideData.question) {
-    html += `<p>${formatTextBlock(slideData.question)}</p>`;
+    html += `<p>${formatReferenceTextBlock(slideData.question)}</p>`;
   }
 
   if (Array.isArray(slideData.options) && slideData.options.length > 0) {
-    const listItems = slideData.options.map((option) => `<li>${escapeHtml(option)}</li>`).join('');
+    const listItems = slideData.options
+      .map((option) => `<li>${formatReferenceOption(option)}</li>`)
+      .join('');
     html += `<ul>${listItems}</ul>`;
   }
 
   return html;
+}
+
+function formatReferenceTextBlock(text) {
+  return escapeHtmlPreservingStrong(text)
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line)
+    .join('<br>');
+}
+
+function formatReferenceOption(text) {
+  return escapeHtmlPreservingStrong(text).trim();
+}
+
+function escapeHtmlPreservingStrong(text) {
+  return escapeHtml(text)
+    .replace(/&lt;strong&gt;/gi, '<strong>')
+    .replace(/&lt;\/strong&gt;/gi, '</strong>');
 }
 
 function formatTextBlock(text) {
