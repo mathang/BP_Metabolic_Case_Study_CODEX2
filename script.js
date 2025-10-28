@@ -248,12 +248,12 @@ const SLIDE_DECK_CONTENT = [
       {
         "id": "adherence",
         "prompt": "What question would you ask to ensure Calvin adheres to an exercise program?",
-        "type": "single",
+        "type": "radio",
         "options": [
           "Tell Calvin to join a gym.",
-          "\nIdentify an exercise he can do easily away from home, when overseas.",
-          "\nAsk Calvin which type of exercise he likes to do most.",
-          "\nAsk Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home."
+          "Identify an exercise he can do easily away from home, when overseas.",
+          "Ask Calvin which type of exercise he likes to do most.",
+          "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home."
         ],
         "correctAnswer": "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home.",
       "feedback": "You should ask Calvin which type of exercise he likes to do and, as he enjoys walking and it is easy to do away from home, you may want to prescribe interval walking at a moderate to high intensity."
