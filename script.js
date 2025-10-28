@@ -338,7 +338,7 @@ const SLIDE_DECK_CONTENT = [
   {
     "slideNumber": 23,
     "type": "textInput",
-    "title": "PRT Exercise Prescription",
+    "title": "Progressive Resistance Training Exercise Prescription",
     "question": "Using the FITT principle, write out your recommendations for progressive resistance training (PRT) for someone with metabolic syndrome.",
     "label": "Enter answer here:",
   "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–20 reps depending on intensity.",
