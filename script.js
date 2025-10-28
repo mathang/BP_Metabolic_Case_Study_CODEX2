@@ -1254,11 +1254,435 @@ function showCompletionMessage() {
   completion.appendChild(heading);
 
   const summary = document.createElement('p');
-  summary.textContent = 'Thank you for completing the case study.';
+  summary.classList.add('completion-message__note');
+  summary.textContent =
+    'Thank you for completing the case study - You MUST download this report for your records. Download by clicking the "Click to Download Report" button';
   completion.appendChild(summary);
+
+  const downloadButton = document.createElement('button');
+  downloadButton.type = 'button';
+  downloadButton.classList.add('download-report-button');
+  downloadButton.textContent = 'Click to Download Report';
+  downloadButton.addEventListener('click', () => {
+    try {
+      generateAndDownloadReport();
+    } catch (error) {
+      console.error('Failed to generate the PDF report.', error);
+      alert('Unable to generate the PDF report at this time. Please try again.');
+    }
+  });
+  completion.appendChild(downloadButton);
 
   slideContainer.innerHTML = '';
   slideContainer.appendChild(completion);
+}
+
+function generateAndDownloadReport() {
+  const reportLines = buildReportLines();
+  const pdfString = createSimplePdf(reportLines);
+  const encoder = new TextEncoder();
+  const pdfBytes = encoder.encode(pdfString);
+  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+  const url = URL.createObjectURL(blob);
+
+  const { firstName, lastName } = studentDetails;
+  const namePortion = [firstName, lastName]
+    .map((part) => (part || '').trim())
+    .filter(Boolean)
+    .join('_');
+  const fileName = `${namePortion ? `${namePortion}_` : ''}metabolic_case_study_report.pdf`;
+
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = fileName;
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
+  URL.revokeObjectURL(url);
+}
+
+function buildReportLines() {
+  const lines = [];
+  const now = new Date();
+
+  lines.push('HESC3504 Metabolic Syndrome Case Study Report');
+  lines.push(`Generated on: ${now.toLocaleString()}`);
+  lines.push('');
+  lines.push('Student Details:');
+  appendWrappedLines(lines, `First name: ${studentDetails.firstName || 'Not provided'}`, '  ');
+  appendWrappedLines(lines, `Last name: ${studentDetails.lastName || 'Not provided'}`, '  ');
+  appendWrappedLines(lines, `Student email: ${studentDetails.studentEmail || 'Not provided'}`, '  ');
+
+  lines.push('');
+  lines.push('Case Study Content and Responses:');
+
+  SLIDE_DECK_CONTENT.forEach((slide) => {
+    lines.push('');
+    appendWrappedLines(lines, `Slide ${slide.slideNumber}: ${slide.title}`, '');
+    appendWrappedLines(lines, `Slide Type: ${formatSlideType(slide.type)}`, '  ');
+
+    const slideContentLines = getSlideContentLinesForReport(slide);
+    slideContentLines.forEach((line) => {
+      lines.push(line);
+    });
+
+    const responseEntry = responseLog.find((entry) => entry.slideNumber === slide.slideNumber);
+    lines.push('  Learner Response:');
+    const responseLines = formatResponseLinesForReport(responseEntry ? responseEntry.response : null);
+    responseLines.forEach((line) => {
+      lines.push(line);
+    });
+  });
+
+  return lines;
+}
+
+function formatSlideType(type) {
+  if (!type) {
+    return 'Unknown';
+  }
+  return type
+    .toString()
+    .split(/[_-]/)
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(' ');
+}
+
+function getSlideContentLinesForReport(slide) {
+  const lines = [];
+
+  if (slide.content) {
+    lines.push('  Content:');
+    appendWrappedLines(lines, slide.content, '    ');
+  }
+
+  if (slide.question) {
+    lines.push('  Question:');
+    appendWrappedLines(lines, slide.question, '    ');
+  }
+
+  if (Array.isArray(slide.options) && slide.options.length > 0) {
+    lines.push('  Options:');
+    slide.options.forEach((option, index) => {
+      appendWrappedLines(lines, `${index + 1}. ${option}`, '    ');
+    });
+  }
+
+  if (slide.feedback) {
+    lines.push('  Feedback:');
+    appendWrappedLines(lines, slide.feedback, '    ');
+  }
+
+  if (Array.isArray(slide.studentFields) && slide.studentFields.length > 0) {
+    lines.push('  Student Fields:');
+    slide.studentFields.forEach((field) => {
+      appendWrappedLines(lines, `${field.label || field.id || 'Field'} (${field.type || 'input'})`, '    ');
+    });
+  }
+
+  if (Array.isArray(slide.fields) && slide.fields.length > 0) {
+    lines.push('  Form Fields:');
+    slide.fields.forEach((field) => {
+      appendWrappedLines(lines, `${field.label || 'Field'} - Criteria: ${field.criteria || 'Not specified'}`, '    ');
+    });
+  }
+
+  if (Array.isArray(slide.questions) && slide.questions.length > 0) {
+    lines.push('  Additional Questions:');
+    slide.questions.forEach((question, index) => {
+      const prompt = question.q || question.prompt || `Question ${index + 1}`;
+      appendWrappedLines(lines, prompt, '    ');
+      if (Array.isArray(question.options) && question.options.length > 0) {
+        question.options.forEach((option, optionIndex) => {
+          appendWrappedLines(lines, `${optionIndex + 1}. ${option}`, '      ');
+        });
+      }
+    });
+  }
+
+  return lines;
+}
+
+function formatResponseLinesForReport(response) {
+  const lines = [];
+  const indent = '    ';
+
+  if (response == null || (typeof response === 'string' && !response.trim())) {
+    lines.push(`${indent}No response provided.`);
+    return lines;
+  }
+
+  if (Array.isArray(response)) {
+    if (response.length === 0) {
+      lines.push(`${indent}No response provided.`);
+      return lines;
+    }
+
+    response.forEach((item, index) => {
+      if (typeof item === 'string') {
+        appendWrappedLines(lines, item, indent);
+      } else if (item && typeof item === 'object') {
+        const label = item.question || item.prompt || item.label || `Item ${index + 1}`;
+        const answerText = formatAnswerValue(item.answer);
+        appendWrappedLines(lines, `${label}: ${answerText}`, indent);
+      } else {
+        appendWrappedLines(lines, String(item), indent);
+      }
+    });
+
+    return lines;
+  }
+
+  if (typeof response === 'object') {
+    if (Array.isArray(response.fields)) {
+      response.fields.forEach((field, index) => {
+        const label = field.label || `Field ${index + 1}`;
+        appendWrappedLines(lines, `${label}: ${formatAnswerValue(field.answer)}`, indent);
+      });
+    }
+
+    if (Object.prototype.hasOwnProperty.call(response, 'total')) {
+      appendWrappedLines(lines, `Total: ${formatAnswerValue(response.total)}`, indent);
+    }
+
+    const remainingKeys = Object.keys(response).filter((key) => key !== 'fields' && key !== 'total');
+    remainingKeys.forEach((key) => {
+      appendWrappedLines(lines, `${formatLabel(key)}: ${formatAnswerValue(response[key])}`, indent);
+    });
+
+    if (!lines.length) {
+      lines.push(`${indent}No response provided.`);
+    }
+
+    return lines;
+  }
+
+  appendWrappedLines(lines, formatAnswerValue(response), indent);
+  return lines;
+}
+
+function appendWrappedLines(target, text, indent = '') {
+  const wrapped = wrapTextBlock(text || '');
+  if (!wrapped.length) {
+    target.push(indent ? indent.trimEnd() : '');
+    return;
+  }
+
+  wrapped.forEach((line) => {
+    if (!line) {
+      target.push('');
+    } else {
+      target.push(`${indent}${line}`);
+    }
+  });
+}
+
+function wrapTextBlock(text) {
+  const lines = [];
+  const normalized = (text || '')
+    .toString()
+    .replace(/\r/g, '')
+    .split('\n');
+
+  normalized.forEach((rawLine) => {
+    const trimmed = rawLine.trim();
+    if (!trimmed) {
+      lines.push('');
+      return;
+    }
+    lines.push(...wrapSingleLine(trimmed));
+  });
+
+  return lines;
+}
+
+function wrapSingleLine(line, maxLength = 90) {
+  const words = line.split(/\s+/).filter(Boolean);
+  if (!words.length) {
+    return [''];
+  }
+
+  const wrapped = [];
+  let current = '';
+
+  words.forEach((word) => {
+    if (!current) {
+      current = word;
+      return;
+    }
+
+    if ((current + ' ' + word).length > maxLength) {
+      wrapped.push(current);
+      if (word.length > maxLength) {
+        const segments = word.match(new RegExp(`.{1,${maxLength}}`, 'g')) || [];
+        segments.forEach((segment, index) => {
+          if (index === segments.length - 1) {
+            current = segment;
+          } else {
+            wrapped.push(segment);
+          }
+        });
+      } else {
+        current = word;
+      }
+    } else {
+      current += ` ${word}`;
+    }
+  });
+
+  if (current) {
+    wrapped.push(current);
+  }
+
+  return wrapped;
+}
+
+function formatAnswerValue(value) {
+  if (Array.isArray(value)) {
+    if (!value.length) {
+      return 'No selection';
+    }
+    return value
+      .map((item) => {
+        if (typeof item === 'string') {
+          return item;
+        }
+        if (item && typeof item === 'object') {
+          return Object.values(item)
+            .filter(Boolean)
+            .join(' - ');
+        }
+        return String(item);
+      })
+      .join(', ');
+  }
+
+  if (value == null || value === '') {
+    return 'No response provided';
+  }
+
+  return String(value);
+}
+
+function formatLabel(text) {
+  return text
+    .toString()
+    .split(/[_-]/)
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(' ');
+}
+
+function createSimplePdf(lines) {
+  const normalizedLines = normalizeLinesForPdf(lines);
+  const pageLineLimit = 45;
+  const pages = [];
+
+  for (let i = 0; i < normalizedLines.length; i += pageLineLimit) {
+    pages.push(normalizedLines.slice(i, i + pageLineLimit));
+  }
+
+  if (!pages.length) {
+    pages.push(['']);
+  }
+
+  const pageCount = pages.length;
+  const catalogId = 1;
+  const pagesId = 2;
+  const pageObjStartId = 3;
+  const contentObjStartId = pageObjStartId + pageCount;
+  const fontObjId = contentObjStartId + pageCount;
+  const objectCount = fontObjId;
+
+  const objects = [];
+
+  objects[catalogId] = `${catalogId} 0 obj\n<< /Type /Catalog /Pages ${pagesId} 0 R >>\nendobj\n`;
+
+  const kids = pages
+    .map((_, index) => `${pageObjStartId + index} 0 R`)
+    .join(' ');
+  objects[pagesId] = `${pagesId} 0 obj\n<< /Type /Pages /Kids [${kids}] /Count ${pageCount} >>\nendobj\n`;
+
+  pages.forEach((pageLines, index) => {
+    const pageId = pageObjStartId + index;
+    const contentId = contentObjStartId + index;
+    const contentStream = buildPageContentStream(pageLines);
+    const streamLength = contentStream.length;
+
+    objects[pageId] = `${pageId} 0 obj\n<< /Type /Page /Parent ${pagesId} 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 ${fontObjId} 0 R >> >> /Contents ${contentId} 0 R >>\nendobj\n`;
+    objects[contentId] = `${contentId} 0 obj\n<< /Length ${streamLength} >>\nstream\n${contentStream}\nendstream\nendobj\n`;
+  });
+
+  objects[fontObjId] = `${fontObjId} 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj\n`;
+
+  let pdf = '%PDF-1.4\n';
+  const offsets = [0];
+
+  for (let id = 1; id <= objectCount; id += 1) {
+    const objectContent = objects[id] || `${id} 0 obj\nendobj\n`;
+    offsets[id] = pdf.length;
+    pdf += objectContent;
+  }
+
+  const xrefOffset = pdf.length;
+  pdf += `xref\n0 ${objectCount + 1}\n`;
+  pdf += '0000000000 65535 f \n';
+
+  for (let id = 1; id <= objectCount; id += 1) {
+    const offset = offsets[id] || 0;
+    pdf += `${String(offset).padStart(10, '0')} 00000 n \n`;
+  }
+
+  pdf += `trailer\n<< /Size ${objectCount + 1} /Root ${catalogId} 0 R >>\nstartxref\n${xrefOffset}\n%%EOF`;
+  return pdf;
+}
+
+function normalizeLinesForPdf(lines, maxLength = 100) {
+  const normalized = [];
+
+  lines.forEach((line) => {
+    if (!line) {
+      normalized.push('');
+      return;
+    }
+
+    const match = line.match(/^\s*/);
+    const indent = match ? match[0] : '';
+    const baseText = line.slice(indent.length);
+    const wrapped = wrapSingleLine(baseText, Math.max(20, maxLength - indent.length));
+    wrapped.forEach((segment) => {
+      normalized.push(`${indent}${segment}`);
+    });
+  });
+
+  return normalized;
+}
+
+function buildPageContentStream(lines) {
+  const startY = 780;
+  const leading = 14;
+  let content = 'BT\n';
+  content += '/F1 12 Tf\n';
+  content += `${leading} TL\n`;
+  content += `1 0 0 1 50 ${startY} Tm\n`;
+
+  lines.forEach((line, index) => {
+    const escaped = escapePdfString(line || '');
+    if (index === 0) {
+      content += `(${escaped}) Tj\n`;
+    } else {
+      content += `T* (${escaped}) Tj\n`;
+    }
+  });
+
+  content += 'ET';
+  return content;
+}
+
+function escapePdfString(value) {
+  return (value || '')
+    .replace(/\\/g, '\\\\')
+    .replace(/\(/g, '\\(')
+    .replace(/\)/g, '\\)');
 }
 
 function openReferenceMaterials() {

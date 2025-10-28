@@ -211,6 +211,30 @@ textarea {
   border-radius: 8px;
 }
 
+.completion-message__note {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.download-report-button {
+  align-self: center;
+  background: #3440eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-report-button:hover,
+.download-report-button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 @media (max-width: 600px) {
   .app-header {
     align-items: flex-start;
