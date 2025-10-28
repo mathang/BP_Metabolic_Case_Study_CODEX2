@@ -346,7 +346,7 @@ const SLIDE_DECK_CONTENT = [
   }
 ];
 
-const REFERENCE_SLIDE_NUMBERS = [3, 5];
+const REFERENCE_SLIDE_NUMBERS = [3, 4, 5];
 const REFERENCE_PDF_URL =
   'https://github.com/mathang/BP_Metabolic_Case_Study_CODEX/blob/main/Pre-exercise%20Screen.pdf';
 
