@@ -1368,11 +1368,6 @@ function getSlideContentLinesForReport(slide) {
     });
   }
 
-  if (slide.feedback) {
-    lines.push('  Feedback:');
-    appendWrappedLines(lines, slide.feedback, '    ');
-  }
-
   if (Array.isArray(slide.studentFields) && slide.studentFields.length > 0) {
     lines.push('  Student Fields:');
     slide.studentFields.forEach((field) => {
