@@ -489,7 +489,7 @@ function createReferenceButton() {
   const button = document.createElement('button');
   button.type = 'button';
   button.classList.add('reference-button');
-  button.textContent = 'Open Patient History References';
+  button.textContent = 'Click to Open Patient History References';
   button.addEventListener('click', openReferenceMaterials);
   return button;
 }
