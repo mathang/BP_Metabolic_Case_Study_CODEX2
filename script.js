@@ -366,18 +366,10 @@ let googleUrlWarningShown = false;
 let submissionMode = 'cors';
 
 const slideContainer = document.getElementById('slideContainer');
-const scoreValue = document.getElementById('scoreValue');
-const modalOverlay = document.getElementById('modalOverlay');
-const modalTitle = document.getElementById('modalTitle');
-const modalMessage = document.getElementById('modalMessage');
-const modalNextButton = document.getElementById('modalNextButton');
 
 let currentSlideIndex = 0;
-let score = 0;
 let completionShown = false;
 
-const maxScore =
-  SLIDE_DECK_CONTENT.filter((slide) => !['info', 'introForm'].includes(slide.type)).length * 10;
 const slides = SLIDE_DECK_CONTENT.map((slideData, index) => {
   const slideElement = createSlide(slideData, index);
   slideContainer.appendChild(slideElement);
@@ -385,11 +377,6 @@ const slides = SLIDE_DECK_CONTENT.map((slideData, index) => {
 });
 
 showSlide(0);
-
-modalNextButton.addEventListener('click', () => {
-  hideModal();
-  goToNextSlide();
-});
 
 function createSlide(slideData, index) {
   const section = document.createElement('section');
@@ -469,15 +456,7 @@ function createSlide(slideData, index) {
 
     recordSlideResponse(section, slideData, validation);
 
-    if (validation.correct === true && section.dataset.answeredCorrectly !== 'true') {
-      score += 10;
-      updateScoreDisplay();
-      section.dataset.answeredCorrectly = 'true';
-    }
-
-    const isLastSlide = isNextSlideBeyondEnd();
-    const modalHeading = determineModalTitle(validation.correct);
-    showModal(modalHeading, slideData.feedback || '', isLastSlide);
+    goToNextSlide();
   });
 
   section.appendChild(nextButton);
@@ -1012,10 +991,6 @@ function normalizeText(text) {
     .trim();
 }
 
-function updateScoreDisplay() {
-  scoreValue.textContent = score.toString();
-}
-
 function recordSlideResponse(slideElement, slideData, validation) {
   if (!slideData || slideData.type === 'info') {
     return;
@@ -1134,16 +1109,6 @@ function upsertResponseLog(entry) {
   }
 }
 
-function determineModalTitle(correctValue) {
-  if (correctValue === true) {
-    return 'Correct!';
-  }
-  if (correctValue === false) {
-    return 'Incorrect';
-  }
-  return 'Response recorded';
-}
-
 function queueProgressSubmission(context = {}) {
   if (!GOOGLE_SCRIPT_URL) {
     if (!googleUrlWarningShown) {
@@ -1221,8 +1186,6 @@ function buildSubmissionPayload(context = {}) {
   return {
     sessionId,
     timestamp: new Date().toISOString(),
-    score,
-    maxScore,
     studentDetails: { ...studentDetails },
     responses: responseLog.map((entry) => ({
       slideNumber: entry.slideNumber,
@@ -1233,17 +1196,6 @@ function buildSubmissionPayload(context = {}) {
     })),
     context,
   };
-}
-
-function showModal(title, message, isFinalStep) {
-  modalTitle.textContent = title;
-  modalMessage.innerHTML = message.replace(/\n/g, '<br>');
-  modalNextButton.textContent = isFinalStep ? 'Finish' : 'Next';
-  modalOverlay.classList.remove('hidden');
-}
-
-function hideModal() {
-  modalOverlay.classList.add('hidden');
 }
 
 function showSlide(index) {
@@ -1289,14 +1241,6 @@ function shouldSkipSlide(index) {
   return Boolean(slideData && slideData.skip === true);
 }
 
-function isNextSlideBeyondEnd() {
-  let nextIndex = currentSlideIndex + 1;
-  while (nextIndex < slides.length && shouldSkipSlide(nextIndex)) {
-    nextIndex += 1;
-  }
-  return nextIndex >= slides.length;
-}
-
 function showCompletionMessage() {
   if (completionShown) {
     return;
@@ -1310,7 +1254,7 @@ function showCompletionMessage() {
   completion.appendChild(heading);
 
   const summary = document.createElement('p');
-  summary.innerHTML = `Great work! Your final score is <strong>${score}</strong> out of <strong>${maxScore}</strong>.`;
+  summary.textContent = 'Thank you for completing the case study.';
   completion.appendChild(summary);
 
   slideContainer.innerHTML = '';
