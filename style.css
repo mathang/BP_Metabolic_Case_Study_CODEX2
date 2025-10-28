@@ -53,8 +53,9 @@ body {
   content: "";
   position: absolute;
   inset: clamp(16px, 4vw, 48px);
-  background: url("assets/unisc-logo.svg") center/contain no-repeat;
-  opacity: 0.25;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbL5RQRadj4eJJBrTLtNKa8WdDFbQCguI0ng&s")
+    center/contain no-repeat;
+  opacity: 0.15;
   z-index: 0;
   pointer-events: none;
 }
