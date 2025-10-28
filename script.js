@@ -53,7 +53,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 7,
     "type": "textInput",
     "title": "Calculating Calvin's BMI",
-    "question": "In order to treat Calvin effectively we must first do a preliminary clinical assessment to identify his risk factors. Firstly, we must calculate his BMI based on his: Height: 186 cm, Weight: 100 kg...",
+    "question": "In order to treat Calvin effectively we must first do a preliminary clinical assessment to identify his risk factors. Firstly, we must calculate his BMI based on his: Height: 186 cm\nWeight: 100 kg\n\nType your answer in the text box below (keep all working to 1 decimal place).",
     "label": "Enter Answer:",
     "correctAnswer": "28.9",
     "feedback": "Click 'Next' to continue."
@@ -62,22 +62,22 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 8,
     "type": "radio",
     "title": "The Cholesterol Test",
-    "question": "Calvin’s current physical activity includes lifting weights (if he is somewhere where there is a gym) and a game of golf each week. Family history: father alive at 77 years, but had previous cardiac disease...",
+    "question": "Calvin’s current physical activity includes lifting weights (if he is somewhere where there is a gym) and a game of golf each week. Family history: father alive at 77 years, but had a heart attack from 45 years of age. No other family history of note. The aim of this case study is for you, as an exercise professional, to identify safe and effective strategies that will help Calvin reduce his blood pressure to a normal level, and improve his waist measurement and overall cardiovascular health.Before we move on, we must consider an important factor in Calvin’s assessment. Is there a problem with having cholesterol checked at a health booth and if so what is the most likley effect? Select from the key words.",
     "options": ["Yes", "No", "False positive", "False negative"],
     "correctAnswer": ["False positive"],
-    "feedback": "Potentially, yes. If the person is not fasting or has a fatty residue from a hand cream on their hands, this test will not give you a true indication of the cholesterol level. For example, it may be a false positive..."
+    "feedback": "Potentially, yes. If the person is not fasting or has a fatty residue from a hand cream on their hands, this test will not give you a true indication of the cholesterol level. For example, the patient may give a false positive result, that is, a result higher than usual."
   },
   {
     "slideNumber": 9,
     "type": "textInput",
     "title": "Defining and Translating Personal Goals",
-    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish realistic goals. Calvin wants to exercise regularly, reduce his blood pressure and lose weight...",
+    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish realistic goals. Calvin wants to exercise regularly, reduce his weight, blood pressure and waist measurement. Based on this information and the doctor’s referral/clinical indications, please write one short-term goal for his blood pressure and one long-term goal for his participation in regular exercise.List one short term goal below:",
     "labels": [
       "List one short term goal below:",
       "List one LONG term goal below:"
     ],
     "correctAnswer": null,
-    "feedback": "Your short term goal for his blood pressure should look something like this: To reduce his resting blood pressure to less than 150/85mmHg within 8-12 weeks. \n\nYour long term goal for his weight should be more ambitious and longer term..."
+    "feedback": "Your short term goal for his blood pressure should look something like this: To reduce his resting blood pressure to less than 150/85mmHg within 8-12 weeks. \n\nYour long term goal for regular exercise should look something like this: To have Calvin completing any form of exercise for >40 minutes five days per week in 6 months from now.\n\nIf your goals look similar to these, congratulations, you are correct!"
   },
   {
     "slideNumber": 10,
@@ -97,7 +97,7 @@ const SLIDE_DECK_CONTENT = [
       },
       {
         "label": "Hypertension",
-        "criteria": "SBP≥140mmHg or DBP≥90mmHg confirmed by measurements on at least two separate occasions, or on antihypertensive medication",
+        "criteria": "SBP≥140mmHg or DBP≥90mmHg confirmed by measurements on at least two separate occasions, or on antihypertensive medication.",
         "correct": "Yes"
       },
       {
@@ -136,13 +136,13 @@ const SLIDE_DECK_CONTENT = [
     "question": "From the previous slide we learnt that Calvin's Risk Score was 6. What is Calvin's Initial ACSM Risk Category?",
     "options": ["Low", "Moderate", "High"],
     "correctAnswer": "Moderate",
-    "feedback": "Calvin's Initial ACSM Risk Category is Moderate. Calvin has six risk factors and is automatically moderate risk as he is male and over the age of 45 years. He falls into the moderate category..."
+    "feedback": "Calvin's Initial ACSM Risk Category is Moderate. Calvin has six risk factors and is automatically moderate risk as he is male and over the age of 45 years. He falls into the moderate risk category. He is not high risk because he does not have diagnosed disease, or symptoms. High HDL level is 1.0 mmol/L which is not high enough to be protective. Therefore, you cannot subtract one for this risk score."
   },
   {
     "slideNumber": 12,
     "type": "dropdown_multi",
     "title": "Physician Supervision Recommendation",
-    "content": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that should be asked...",
+    "content": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below.",
     "questions": [
       {
         "q": "What is the recommendation for Calvin with respect to requiring a physician to supervise him during his submaximal exercise test?",
@@ -174,7 +174,7 @@ const SLIDE_DECK_CONTENT = [
     "question": "Given what you have learnt so far, do you believe this man has metabolic syndrome? (Select Yes/No and Justify)",
     "label": "Justify your answer:",
     "correctAnswer": "He has increased waist, increased LDL, low HDL and increased fasting blood glucose",
-    "feedback": "Calvin is moderately at risk of developing cardiovascular disease. In addition he meets the criteria listed by the International Diabetes Federation for Metabolic Syndrome. He has central obesity, dyslipidaemia and elevated fasting glucose..."
+    "feedback": "Calvin is moderately at risk of developing cardiovascular disease. In addition he meets the criteria listed by the International Diabetes Federation for Metabolic Syndrome. He has central obesity with a waist circumference >94cm. He has hypertension and a fasting blood glucose level over 5.6 mmol/L. He satisfies the federation's criteria for metabolic syndrome. In addition his HDL is less than 1.03 mmol/L."
   },
   {
     "slideNumber": 14,
