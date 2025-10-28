@@ -161,7 +161,7 @@ const SLIDE_DECK_CONTENT = [
     "content": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below.",
     "questions": [
       {
-        "q": "What is the recommendation for Calvin with respect to requiring a physician to supervise him during his submaximal exercise test?",
+        "q": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below. /n/n What is the recommendation for Calvin with respect to requiring a physician to supervise him during his submaximal exercise test?",
         "options": ["Not Necessary", "Recommended"],
         "correct": "Not Necessary"
       },
