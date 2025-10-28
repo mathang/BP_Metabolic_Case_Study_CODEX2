@@ -248,7 +248,7 @@ const SLIDE_DECK_CONTENT = [
       {
         "id": "adherence",
         "prompt": "What question would you ask to ensure Calvin adheres to an exercise program?",
-        "type": "radio",
+        "type": "single",
         "options": [
           "Tell Calvin to join a gym.",
           "Identify an exercise he can do easily away from home, when overseas.",
