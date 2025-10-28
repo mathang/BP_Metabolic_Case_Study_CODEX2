@@ -24,19 +24,11 @@ body {
   color: #ffffff;
   padding: 20px;
   border-radius: 12px 12px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
 .app-header h1 {
   margin: 0;
   font-size: 1.8rem;
-}
-
-.scoreboard {
-  font-size: 1.1rem;
-  font-weight: 600;
 }
 
 .slide-container {
@@ -201,42 +193,6 @@ textarea {
 
 .hidden {
   display: none !important;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  z-index: 100;
-}
-
-.modal-overlay.hidden {
-  display: none;
-}
-
-.modal {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 30px;
-  max-width: 520px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  text-align: center;
-}
-
-.modal h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #3440eb;
 }
 
 .completion-message {
