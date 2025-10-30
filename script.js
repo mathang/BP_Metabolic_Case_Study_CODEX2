@@ -371,7 +371,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 26,
     "type": "textInput",
     "title": "Cultural Safety Question",
-    "question": "Calvin is keen to work on the goals you have set, but is worried about his capacity to meet these goals during Ramadan, an upcoming time of fasting (avoiding all food and drink) between sunrise and sunset that lasts for about 1 month. Please write a consideration you would make to ensure cultural safety for Calvin, knowing that he is of Islamic faith.",
+    "question": "Calvin is keen to work on the goals you have set, but is worried about his capacity to meet these goals during Ramadan, an upcoming time of fasting (avoiding all food and drink) between sunrise and sunset that lasts for about 1 month. Please write a consideration you would make to ensure cultural safety for Calvin, knowing that he is of Islamic faith. Maximum of three sentences.",
     "label": "Your response:",
     "feedback": "Think about adjustments to scheduling, communication, and support that respect Calvin’s cultural and religious practices."
   },
@@ -408,7 +408,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 29,
     "type": "multiQuestion",
     "title": "Relative Contraindications",
-    "question": "You have identified that Calvin may be at increased risk of inadequate nutrition and hydration if he exercises in the middle of the day while fasting for Ramadan. Answer both questions below.",
+    "question": "<strong> You have identified that Calvin may be at increased risk of inadequate nutrition and hydration if he exercises in the middle of the day while fasting for Ramadan. Answer both questions below.",
     "questions": [
       {
         "id": "stop-signs",
@@ -428,7 +428,7 @@ const SLIDE_DECK_CONTENT = [
       },
       {
         "id": "referral",
-        "prompt": "For each of the correct responses you identified above, who would you refer to?",
+        "prompt": "<p><strong>For each of the correct responses you identified above, who would you refer to (single answer only)?</strong>",
         "type": "single",
         "options": [
           "Calvin’s usual General Practitioner",
