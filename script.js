@@ -371,7 +371,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 26,
     "type": "textInput",
     "title": "Cultural Safety Question",
-    "question": "Calvin is keen to work on the goals you have set, but is worried about his capacity to meet these goals during Ramadan, an upcoming time of fasting (avoiding all food and drink) between sunrise and sunset that lasts for about 1 month. Please write a consideration you would make to ensure cultural safety for Calvin, knowing that he is of Islamic faith.",
+    "question": "Calvin is keen to work on the goals you have set, but is worried about his capacity to meet these goals during Ramadan, an upcoming time of fasting (avoiding all food and drink) between sunrise and sunset that lasts for about 1 month. Please write a consideration you would make to ensure cultural safety for Calvin, knowing that he is of Islamic faith. Maximum of three sentences.",
     "label": "Your response:",
     "feedback": "Think about adjustments to scheduling, communication, and support that respect Calvin’s cultural and religious practices."
   },
@@ -406,21 +406,40 @@ const SLIDE_DECK_CONTENT = [
   },
   {
     "slideNumber": 29,
-    "type": "checkbox",
+    "type": "multiQuestion",
     "title": "Relative Contraindications",
-    "question": "You have identified that Calvin may be at increased risk of inadequate nutrition and hydration if he exercises in the middle of the day while fasting for Ramadan. What advice would you give Calvin regarding signs and symptoms to stop exercise?  <strong>Select all that apply.</strong>",
-    "options": [
-      "A drop in blood pressure compared to normal after starting exercise, that when remeasured 2 minutes later, continues to drop.",
-      "Dizziness, light-headedness, or a feeling of significant fatigue",
-      "An RPE of 15 on the 6 – 20 Borg Scale",
-      "Shortness of breath that doesn’t resolve if he reduces the workload or rests"
+    "question": "<strong> You have identified that Calvin may be at increased risk of inadequate nutrition and hydration if he exercises in the middle of the day while fasting for Ramadan. Answer both questions below.",
+    "questions": [
+      {
+        "id": "stop-signs",
+        "prompt": "What advice would you give Calvin regarding signs and symptoms to stop exercise? <strong>Select all that apply.</strong>",
+        "type": "checkbox",
+        "options": [
+          "A drop in blood pressure compared to normal after starting exercise, that when remeasured 2 minutes later, continues to drop.",
+          "Dizziness, light-headedness, or a feeling of significant fatigue",
+          "An RPE of 15 on the 6 – 20 Borg Scale",
+          "Shortness of breath that doesn’t resolve if he reduces the workload or rests"
+        ],
+        "correctAnswer": [
+          "A drop in blood pressure compared to normal after starting exercise, that when remeasured 2 minutes later, continues to drop.",
+          "Dizziness, light-headedness, or a feeling of significant fatigue",
+          "Shortness of breath that doesn’t resolve if he reduces the workload or rests"
+        ]
+      },
+      {
+        "id": "referral",
+        "prompt": "<p><strong>For each of the correct responses you identified above, who would you refer to (single answer only)?</strong>",
+        "type": "single",
+        "options": [
+          "Calvin’s usual General Practitioner",
+          "A General Practitioner that you know well and is good with cardiovascular disease",
+          "The Cardiologist who is managing Calvin’s cardiovascular condition",
+          "The emergency department of the local hospital"
+        ],
+        "correctAnswer": "The emergency department of the local hospital"
+      }
     ],
-    "correctAnswer": [
-      "A drop in blood pressure compared to normal after starting exercise, that when remeasured 2 minutes later, continues to drop.",
-      "Dizziness, light-headedness, or a feeling of significant fatigue",
-      "Shortness of breath that doesn’t resolve if he reduces the workload or rests"
-    ],
-    "feedback": "Calvin should stop exercising if he experiences a notable drop in blood pressure, dizziness or significant fatigue, or shortness of breath that does not ease with rest. An RPE of 15 may be acceptable during vigorous training when tolerated and monitored."
+    "feedback": "Calvin should stop exercising if he experiences a notable drop in blood pressure, dizziness or significant fatigue, or shortness of breath that does not ease with rest. These symptoms warrant urgent assessment, so refer him to the emergency department of the local hospital. An RPE of 15 may be acceptable during vigorous training when tolerated and monitored."
   }
 ];
 
