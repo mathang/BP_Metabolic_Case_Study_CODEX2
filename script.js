@@ -364,8 +364,45 @@ const SLIDE_DECK_CONTENT = [
     "title": "Progressive Resistance Training Exercise Prescription",
     "question": "Using the <strong>FITT principle</strong>, write out your recommendations for <strong>progressive resistance training (PRT)</strong> for someone with <strong>metabolic syndrome</strong>.",
     "label": "Enter answer here:",
-  "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–20 reps depending on intensity.",
-  "feedback": "Using the FITT principle, an appropriate answer would be:\\n\\n• Frequency: 2–3 days per week\\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until you know their response to PRT.\\n• Type: Circuit or whole-body training of the large muscle groups\\n• Time (Volume): Low intensity = high volume (2–3 × 12–20 reps); Moderate intensity = moderate volume (2–3 × 8–10 reps)."
+    "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–20 reps depending on intensity.",
+    "feedback": "Using the FITT principle, an appropriate answer would be:\\n\\n• Frequency: 2–3 days per week\\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until you know their response to PRT.\\n• Type: Circuit or whole-body training of the large muscle groups\\n• Time (Volume): Low intensity = high volume (2–3 × 12–20 reps); Moderate intensity = moderate volume (2–3 × 8–10 reps)."
+  },
+  {
+    "slideNumber": 26,
+    "type": "textInput",
+    "title": "Cultural Safety Question",
+    "question": "Calvin is keen to work on the goals you have set, but is worried about his capacity to meet these goals during Ramadan, an upcoming time of fasting (avoiding all food and drink) between sunrise and sunset that lasts for about 1 month. Please write a consideration you would make to ensure cultural safety for Calvin, knowing that he is of Islamic faith.",
+    "label": "Your response:",
+    "feedback": "Think about adjustments to scheduling, communication, and support that respect Calvin’s cultural and religious practices."
+  },
+  {
+    "slideNumber": 27,
+    "type": "checkbox",
+    "title": "Exercise Safety",
+    "question": "Which of the following recommendations would you give to Calvin? <strong>Select all that apply.</strong>",
+    "options": [
+      "Your health is so important, I recommend that you break your fast with water only to ensure adequate hydration and be able to continue to exercise safely",
+      "Ensure adequately hydrating fluids and plenty of them between sunset and sunrise",
+      "Don’t exercise just for this month to respect your religion, we can start again next month",
+      "Try to exercise in the early morning before the pre-dawn meal (Suhoor) or after the sunset meal (Iftar) if you can, to align with your nutrition and hydration schedule",
+      "Ensure you are eating protein- and nutrient-rich foods between sunset and sunrise",
+      "Aim for maintaining fitness and strength with lower-intensity cardiovascular and resistance workouts"
+    ],
+    "correctAnswer": [
+      "Ensure adequately hydrating fluids and plenty of them between sunset and sunrise",
+      "Try to exercise in the early morning before the pre-dawn meal (Suhoor) or after the sunset meal (Iftar) if you can, to align with your nutrition and hydration schedule",
+      "Ensure you are eating protein- and nutrient-rich foods between sunset and sunrise",
+      "Aim for maintaining fitness and strength with lower-intensity cardiovascular and resistance workouts"
+    ],
+    "feedback": "Support Calvin by aligning exercise with his fasting schedule, prioritising hydration and nutrient-dense meals overnight, and emphasising maintenance with lower-intensity training during Ramadan."
+  },
+  {
+    "slideNumber": 28,
+    "type": "textInput",
+    "title": "Supporting Calvin During Ramadan",
+    "question": "Outline one strategy you would use to help Calvin maintain progress on his exercise goals throughout Ramadan while respecting his fasting commitments (no more than 2 sentences).",
+    "label": "Enter your strategy:",
+    "feedback": "Consider collaborative planning, flexibility in scheduling, and monitoring Calvin’s wellbeing during the fasting period."
   }
 ];
 
