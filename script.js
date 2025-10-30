@@ -403,6 +403,24 @@ const SLIDE_DECK_CONTENT = [
     "question": "Outline one strategy you would use to help Calvin maintain progress on his exercise goals throughout Ramadan while respecting his fasting commitments (no more than 2 sentences).",
     "label": "Enter your strategy:",
     "feedback": "Consider collaborative planning, flexibility in scheduling, and monitoring Calvin’s wellbeing during the fasting period."
+  },
+  {
+    "slideNumber": 29,
+    "type": "checkbox",
+    "title": "Relative Contraindications",
+    "question": "You have identified that Calvin may be at increased risk of inadequate nutrition and hydration if he exercises in the middle of the day while fasting for Ramadan. What advice would you give Calvin regarding signs and symptoms to stop exercise?  <strong>Select all that apply.</strong>",
+    "options": [
+      "A drop in blood pressure compared to normal after starting exercise",
+      "Dizziness, light-headedness, or a feeling of significant fatigue",
+      "An RPE of 15 on the 6 – 20 Borg Scale",
+      "Shortness of breath that doesn’t resolve with rest"
+    ],
+    "correctAnswer": [
+      "A drop in blood pressure compared to normal after starting exercise",
+      "Dizziness, light-headedness, or a feeling of significant fatigue",
+      "Shortness of breath that doesn’t resolve with rest"
+    ],
+    "feedback": "Calvin should stop exercising if he experiences a notable drop in blood pressure, dizziness or significant fatigue, or shortness of breath that does not ease with rest. An RPE of 15 may be acceptable during vigorous training when tolerated and monitored."
   }
 ];
 
