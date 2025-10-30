@@ -362,7 +362,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 25,
     "type": "textInput",
     "title": "Progressive Resistance Training Exercise Prescription",
-    "question": "Using the <strong>FITT principle</strong>, write out your recommendations for <strong>progressive resistance training (PRT)</strong> for someone with <strong>metabolic syndrome</strong>.",
+    "question": "Using the <strong>FITT principle</strong>, write out your recommendations for <strong>progressive resistance training (PRT)</strong> for someone with <strong>metabolic syndrome</strong>. One sentence per FITT item.",
     "label": "Enter answer here:",
     "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–20 reps depending on intensity.",
     "feedback": "Using the FITT principle, an appropriate answer would be:\\n\\n• Frequency: 2–3 days per week\\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until you know their response to PRT.\\n• Type: Circuit or whole-body training of the large muscle groups\\n• Time (Volume): Low intensity = high volume (2–3 × 12–20 reps); Moderate intensity = moderate volume (2–3 × 8–10 reps)."
