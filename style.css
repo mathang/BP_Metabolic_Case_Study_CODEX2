@@ -45,6 +45,28 @@ body {
   display: none;
   flex-direction: column;
   gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  width: 202px;
+  height: 249px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbL5RQRadj4eJJBrTLtNKa8WdDFbQCguI0ng&s")
+    center/202px 249px no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.slide > * {
+  position: relative;
+  z-index: 1;
 }
 
 .slide.active {
@@ -90,8 +112,8 @@ body {
 
 .reference-button {
   align-self: flex-start;
-  background: #3440eb;
-  color: #ffffff;
+  background: #fae932;
+  color: #000000;
   border: none;
   border-radius: 6px;
   padding: 10px 20px;
@@ -209,6 +231,30 @@ textarea {
   margin: 0 auto;
   padding: 12px 24px;
   border-radius: 8px;
+}
+
+.completion-message__note {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.download-report-button {
+  align-self: center;
+  background: #eb3443;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 36px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-report-button:hover,
+.download-report-button:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(235, 52, 67, 0.35);
 }
 
 @media (max-width: 600px) {

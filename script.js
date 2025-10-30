@@ -3,7 +3,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 1,
     "type": "introForm",
     "title": "Metabolic Syndrome",
-    "content": "Course Code: BCEP Competency Assurance Check \nCourse Convenor: Dr. Belinda Parmenter\n\nPlease enter your details below to begin the case study.",
+    "content": "Course Code: BCEP Competency Assurance Check \nCourse Convenor: Professor Belinda Parmenter\n\nPlease enter your details below to begin the case study.",
     "studentFields": [
       {
         "id": "firstName",
@@ -53,18 +53,18 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 6,
     "type": "checkbox",
     "title": "Non-modifiable Risk Factors",
-    "question": "Of these risk factors, which of them would be defined as non-modifiable risk factors? **There is more than one correct answer",
+    "question": "Of these risk factors, which of them would be defined as <strong>non-modifiable risk factors</strong>? <strong>There is more than one correct answer.</strong>",
     "options": [
-      "BMI",
-      "Waist Measurement",
-      "Age",
-      "Resting BP",
-      "Fasting blood glucose",
-      "Male gender",
-      "LDL",
-      "Total cholesterol",
-      "Triglycerides",
-      "Sedentary Profession"
+      "<strong>BMI</strong>",
+      "<strong>Waist Measurement</strong>",
+      "<strong>Age</strong>",
+      "<strong>Resting BP</strong>",
+      "<strong>Fasting blood glucose</strong>",
+      "<strong>Male gender</strong>",
+      "<strong>LDL</strong>",
+      "<strong>Total cholesterol</strong>",
+      "<strong>Triglycerides</strong>",
+      "<strong>Sedentary Profession</strong>"
     ],
     "feedback": "Age and male gender are non-modifiable risk factors. In contrast, the others are modifiable, which means they can be addressed or brought to within normal ranges through diet, exercise, medications and/or lifestyle changes. In particular it is important to note, that even though his profession is sedentary, we can modify this risk factor by including regular activity breaks."
   },
@@ -72,7 +72,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 7,
     "type": "textInput",
     "title": "Calculating Calvin's BMI",
-    "question": "In order to treat Calvin effectively we must first do a preliminary clinical assessment to identify his risk factors. Firstly, we must calculate his BMI based on his: \nHeight: 186 cm\nWeight: 100 kg\n\nType your answer in the text box below (keep all working to 1 decimal place).",
+    "question": "In order to treat Calvin effectively we must first do a <strong>preliminary clinical assessment</strong> to identify his risk factors. Firstly, we must <strong>calculate his BMI</strong> based on his: \nHeight: <strong>186 cm</strong>\nWeight: <strong>100 kg</strong>\n\nType your answer in the text box below (<strong>keep all working to 1 decimal place</strong>).",
     "label": "Enter Answer:",
     "feedback": "Click 'Next' to continue."
   },
@@ -80,18 +80,18 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 8,
     "type": "radio",
     "title": "The Cholesterol Test",
-    "question": "Calvin’s current physical activity includes lifting weights (if he is somewhere where there is a gym) and a game of golf each week. Family history: father alive at 77 years, but had a heart attack from 45 years of age. No other family history of note. The aim of this case study is for you, as an exercise professional, to identify safe and effective strategies that will help Calvin reduce his blood pressure to a normal level, and improve his waist measurement and overall cardiovascular health.Before we move on, we must consider an important factor in Calvin’s assessment. Is there a problem with having cholesterol checked at a health booth and if so what is the most likley effect? Select from the key words.",
-    "options": ["Yes - False positive", "No", "Yes - False negative"],
+    "question": "Calvin’s current physical activity includes lifting weights (if he is somewhere where there is a gym) and a game of golf each week. Family history: father alive at 77 years, but had a heart attack from 45 years of age. No other family history of note. The aim of this case study is for you, as an exercise professional, to identify safe and effective strategies that will help Calvin reduce his blood pressure to a normal level, and improve his waist measurement and overall cardiovascular health. Before we move on, we must consider an important factor in Calvin’s assessment. Is there a problem with having <strong>cholesterol checked</strong> at a <strong>health booth</strong> and, if so, what is the most likely effect? <strong>Select from the key words.</strong>",
+    "options": ["Yes - <strong>False positive</strong>", "<strong>No</strong>", "Yes - <strong>False negative</strong>"],
     "feedback": "Potentially, yes. If the person is not fasting or has a fatty residue from a hand cream on their hands, this test will not give you a true indication of the cholesterol level. For example, the patient may give a false positive result, that is, a result higher than usual."
   },
   {
     "slideNumber": 9,
     "type": "textInput",
     "title": "Defining and Translating Personal Goals",
-    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish realistic goals. Calvin wants to exercise regularly, reduce his weight, blood pressure and waist measurement. Based on this information and the doctor’s referral/clinical indications, please write one short-term goal for his blood pressure and one long-term goal for his participation in regular exercise. \n List one short term goal below:",
+    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish <strong>realistic goals</strong>. Calvin wants to <strong>exercise regularly</strong>, reduce his <strong>weight</strong>, <strong>blood pressure</strong> and <strong>waist measurement</strong>. Based on this information and the doctor’s referral/clinical indications, please write one <strong>short-term goal</strong> for his blood pressure and one <strong>long-term goal</strong> for his participation in regular exercise.",
     "labels": [
-      "List one short term goal below:",
-      "List one LONG term goal below:"
+      "<strong>List one short term goal</strong> below:",
+      "<strong>List one LONG term goal</strong> below:"
     ],
     "feedback": "Your short term goal for his blood pressure should look something like this: To reduce his resting blood pressure to less than 150/85mmHg within 8-12 weeks. \n\nYour long term goal for regular exercise should look something like this: To have Calvin completing any form of exercise for >40 minutes five days per week in 6 months from now.\n\nIf your goals look similar to these, congratulations, you are correct!"
   },
@@ -99,7 +99,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 10,
     "type": "form",
     "title": "ACSM Risk Stratification",
-    "question": "Now it's time to Risk Stratify Calvin. According to the ACSM Risk Stratification what is Calvin's Total Risk Score?",
+    "question": "Now it's time to <strong>Risk Stratify Calvin</strong>. According to the <strong>ACSM Risk Stratification</strong> what is Calvin's <strong>Total Risk Score</strong>?",
     "fields": [
       {
         "label": "Family History",
@@ -149,7 +149,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 11,
     "type": "dropdown",
     "title": "ACSM Risk Category",
-    "question": "From the previous slide we learnt that Calvin's Risk Score was 6. What is Calvin's Initial ACSM Risk Category?",
+    "question": "From the previous slide we learnt that Calvin's <strong>Risk Score</strong> was 6. What is Calvin's <strong>Initial ACSM Risk Category</strong>?",
     "options": ["Low", "Moderate", "High"],
     "correctAnswer": "Moderate",
     "feedback": "Calvin's Initial ACSM Risk Category is Moderate. Calvin has six risk factors and is automatically moderate risk as he is male and over the age of 45 years. He falls into the moderate risk category. He is not high risk because he does not have diagnosed disease, or symptoms. High HDL level is 1.0 mmol/L which is not high enough to be protective. Therefore, you cannot subtract one for this risk score."
@@ -158,26 +158,26 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 12,
     "type": "dropdown_multi",
     "title": "Physician Supervision Recommendation",
-    "content": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below.",
+    "content": "With an initial ACSM Risk Category of <strong>moderate</strong>, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either <strong>Not Necessary</strong> or <strong>Recommended</strong> for each question below.",
     "questions": [
-      {
-        "q": "With an initial ACSM Risk Category of moderate, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either Not Necessary or Recommended for each question below. \n\n What is the recommendation for Calvin with respect to requiring a physician to supervise him during his submaximal exercise test?",
-        "options": ["Not Necessary", "Recommended"],
+        {
+          "q": "With an initial ACSM Risk Category of <strong>moderate</strong>, what is the recommendation for Calvin with respect to requiring <strong>physician supervision</strong> during his <strong>submaximal exercise test</strong>?",
+        "options": ["<strong>Not Necessary</strong>", "<strong>Recommended</strong>"],
         "correct": "Not Necessary"
       },
-      {
-        "q": "What is the recommendation for Calvin with respect to requiring a physician to supervise him during his maximal exercise test?",
-        "options": ["Not Necessary", "Recommended"],
+        {
+          "q": "What is the recommendation for Calvin with respect to requiring <strong>physician supervision</strong> during his <strong>maximal exercise test</strong>?",
+        "options": ["<strong>Not Necessary</strong>", "<strong>Recommended</strong>"],
         "correct": "Recommended"
       },
-      {
-        "q": "What is the recommendation for Calvin with respect to requiring a physician to supervise him during moderate intensity exercise (40-60% VO2reserve)?",
-        "options": ["Not Necessary", "Recommended"],
+        {
+          "q": "What is the recommendation for Calvin with respect to requiring <strong>physician supervision</strong> during <strong>moderate intensity exercise</strong> (40-60% VO2reserve)?",
+        "options": ["<strong>Not Necessary</strong>", "<strong>Recommended</strong>"],
         "correct": "Not Necessary"
       },
-      {
-        "q": "What is the recommendation for Calvin with respect to requiring a physician to supervise him during high or vigorous intensity exercise (>60% VO2reserve)?",
-        "options": ["Not Necessary", "Recommended"],
+        {
+          "q": "What is the recommendation for Calvin with respect to requiring <strong>physician supervision</strong> during <strong>high or vigorous intensity exercise</strong> (>60% VO2reserve)?",
+        "options": ["<strong>Not Necessary</strong>", "<strong>Recommended</strong>"],
         "correct": "Recommended"
       }
     ],
@@ -187,7 +187,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 13,
     "type": "textInput",
     "title": "Is this Metabolic Syndrome?",
-    "question": "Given what you have learnt so far, do you believe this man has metabolic syndrome? (Type Yes or No and then your 1-2 sentence justification for why you chose this)",
+    "question": "Given what you have learnt so far, do you believe this man has <strong>metabolic syndrome</strong>? (<strong>Type Yes or No</strong> and then your 1-2 sentence justification for why you chose this)",
     "label": "Your answer:",
     "correctAnswer": "He has increased waist, increased LDL, low HDL and increased fasting blood glucose",
     "feedback": "Calvin is moderately at risk of developing cardiovascular disease. In addition he meets the criteria listed by the International Diabetes Federation for Metabolic Syndrome. He has central obesity with a waist circumference >94cm. He has hypertension and a fasting blood glucose level over 5.6 mmol/L. He satisfies the federation's criteria for metabolic syndrome. In addition his HDL is less than 1.03 mmol/L."
@@ -196,12 +196,12 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 14,
     "type": "checkbox",
     "title": "Barriers to Exercise",
-    "question": "What are the patient's potential barriers to exercise that can be determined based on the available information?",
+    "question": "What are the patient's potential <strong>barriers to exercise</strong> that can be determined based on the available information?",
     "options": [
-      "Profession",
-      "Availability of exercise facilities",
-      "Supportive home environment",
-      "Equally at-risk spouse"
+      "<strong>Profession</strong>",
+      "<strong>Availability of exercise facilities</strong>",
+      "Supportive <strong>home environment</strong>",
+      "Equally at-risk <strong>spouse</strong>"
     ],
     "correctAnswer": ["Profession", "Availability of exercise facilities"],
     "feedback": "Profession: As an airline pilot he would be doing a lot of travel, hence time would be an issue. Availability of exercise facilities: Long flights and odd working hours would mean that immediate access to gym facilities would be limited. Supportive home environment: Is his wife supportive of his much needed life style change, or does she share her husband's unhealthy choice of lifestyle? For the moment, this is not a potential barrier, however, more questions would need to be asked to confirm this."
@@ -210,13 +210,13 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 15,
     "type": "radio",
     "title": "Supervision and Monitoring during Exercise",
-    "question": "From the list below, choose the most appropriate method for monitoring this person during his exercise training?",
+    "question": "From the list below, choose the most appropriate method for <strong>monitoring</strong> this person during his exercise training?",
     "options": [
-      "RPE at 10 minute intervals during exercise.",
-      "Heart rate, BP and RPE at 10 minute intervals during exercise",
-      "Pre and post HR and BP, as well as HR and RPE at 5-10 minute intervals during exercise.",
-      "HR and BP pre and post exercise and heart rate, BP and RPE at 5-10 minute intervals during exercise unless exercise response is predictable.",
-      "HR and BP pre and post exercise and heart rate, BP and RPE at 3-5 minute intervals during exercise."
+      "<strong>RPE</strong> at <strong>10 minute intervals</strong> during exercise.",
+      "<strong>Heart rate</strong>, <strong>BP</strong> and <strong>RPE</strong> at <strong>10 minute intervals</strong> during exercise",
+      "Pre and post <strong>HR</strong> and <strong>BP</strong>, as well as <strong>HR</strong> and <strong>RPE</strong> at <strong>5-10 minute intervals</strong> during exercise.",
+      "<strong>HR</strong> and <strong>BP</strong> pre and post exercise and <strong>heart rate</strong>, <strong>BP</strong> and <strong>RPE</strong> at <strong>5-10 minute intervals</strong> during exercise unless exercise response is predictable.",
+      "<strong>HR</strong> and <strong>BP</strong> pre and post exercise and <strong>heart rate</strong>, <strong>BP</strong> and <strong>RPE</strong> at <strong>3-5 minute intervals</strong> during exercise."
     ],
     "correctAnswer": "Pre and post HR and BP, as well as HR and RPE at 5-10 minute intervals during exercise.",
     "feedback": "As we do not have any results of a clinical exercise test, we have to keep him clinically safe. Therefore, if training is supervised HR, BP (pre, post & at 5-10 min intervals during exercise) until predictable response is occurring then once per mode of exercise. RPE should be monitored as well to ensure it is not too high. He should be instructed that his RPE should be kept within a definite range below his hypertensive threshold determined from his clinical exercise test."
@@ -225,13 +225,13 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 16,
     "type": "checkbox",
     "title": "Exercise Prescription",
-    "question": "It's now time to write an exercise program for your client. We first need to choose an appropriate mode of exercise to help Calvin reduce his risk (there are at least two correct answers - select all you think are applicable)",
+    "question": "It's now time to write an <strong>exercise program</strong> for your client. We first need to choose an appropriate mode of exercise to help Calvin reduce his risk (<strong>there are at least two correct answers</strong> - select all you think are applicable)",
     "options": [
-      "Flexibility Training",
-      "Aerobic Exercise Training",
-      "Core Stability Training",
-      "Progressive Resistance Training",
-      "Plyometric Training"
+      "<strong>Flexibility Training</strong>",
+      "<strong>Aerobic Exercise Training</strong>",
+      "<strong>Core Stability Training</strong>",
+      "<strong>Progressive Resistance Training</strong>",
+      "<strong>Plyometric Training</strong>"
     ],
     "correctAnswer": [
       "Aerobic Exercise Training",
@@ -247,12 +247,12 @@ const SLIDE_DECK_CONTENT = [
     "questions": [
       {
         "id": "adherence",
-        "prompt": "What question would you ask to ensure Calvin adheres to an exercise program?",
+        "prompt": "What question would you ask to ensure Calvin <strong>adheres</strong> to an <strong>exercise program</strong>?",
         "type": "single",
         "options": [
-          "Tell Calvin to join a gym.",
-          "Identify an exercise he can do easily away from home, when overseas.",
-          "Ask Calvin which type of exercise he likes to do most.",
+          "Tell Calvin to <strong>join a gym</strong>.",
+          "Identify an exercise he can do <strong>easily away from home</strong>, when overseas.",
+          "Ask Calvin which type of exercise he <strong>likes to do most</strong>.",
           "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home."
         ],
         "correctAnswer": "Ask Calvin which type of exercise he likes to do the most, and identify which types of exercise he could easily complete away from home.",
@@ -260,12 +260,12 @@ const SLIDE_DECK_CONTENT = [
       },
       {
         "id": "precautions",
-        "prompt": "Are there any precautions to take into account for his exercise intensity? (Select all that apply.)",
+        "prompt": "Are there any <strong>precautions</strong> to take into account for his <strong>exercise intensity</strong>? (Select all that apply.)",
         "type": "checkbox",
         "options": [
-          "His knee and lower back pain.",
-          "Whether he has a hypertensive threshold.",
-          "Exercise training location."
+          "His <strong>knee</strong> and <strong>lower back pain</strong>.",
+          "Whether he has a <strong>hypertensive threshold</strong>.",
+          "Exercise training <strong>location</strong>."
         ],
         "correctAnswer": [
           "His knee and lower back pain.",
@@ -279,15 +279,15 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 18,
     "type": "dropdown",
     "title": "What form of strength testing is appropriate?",
-    "question": "We have already learnt that progressive resistance or strength training is going to be effective for Calvin, but what strength tests are appropriate to assess Calvin's strength?",
+    "question": "We have already learnt that <strong>progressive resistance</strong> or <strong>strength training</strong> is going to be effective for Calvin, but what strength tests are appropriate to assess Calvin's <strong>strength</strong>?",
     "options": [
-      "1RM",
-      "3RM",
-      "10RM",
-      "Upper body functional testing",
-      "Lower body functional testing",
-      "Abdominal/Core",
-      "All of the above"
+      "<strong>1RM</strong>",
+      "<strong>3RM</strong>",
+      "<strong>10RM</strong>",
+      "<strong>Upper body</strong> functional testing",
+      "<strong>Lower body</strong> functional testing",
+      "<strong>Abdominal/Core</strong>",
+      "<strong>All of the above</strong>"
     ],
     "correctAnswer": "All of the above",
     "feedback": "All these tests could be appropriate. If he can join a gym that has global locations, then you should complete a RM test for each of the major muscle groups. If he can not and does not want to join the gym, you should use functional tests such as the lunge, squat, push up, abdominal flexor endurance and plank to assess his muscle strength."
@@ -296,14 +296,14 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 19,
     "type": "radio",
     "title": "Exercise Precautions",
-    "question": "What, if any, precautions should Calvin take?",
+    "question": "What, if any, <strong>precautions</strong> should Calvin take?",
     "options": [
-      "Monitor his blood pressure regularly at rest and during exercise if possible.",
-      "His exercise technique.",
-      "Be aware of current or previous injuries and stop if he feels any joint pain.",
-      "Have his blood glucose levels checked in a few months to see what is happening with them.",
-      "Supervision",
-      "All of the above"
+      "<strong>Monitor his blood pressure</strong> regularly at rest and during exercise if possible.",
+      "His <strong>exercise technique</strong>.",
+      "Be aware of current or previous <strong>injuries</strong> and stop if he feels any joint pain.",
+      "Have his <strong>blood glucose levels checked</strong> in a few months to see what is happening with them.",
+      "<strong>Supervision</strong>",
+      "<strong>All of the above</strong>"
     ],
     "correctAnswer": "All of the above",
     "feedback": "Blood pressure: Calvin will need to have his blood pressure monitored regularly and make sure he exercises below any thresholds. If possible he should get his BP measured at least once in the unengaged limb, during the active phase of weight training to check it is not spiking. He should also have it monitored on the upright bike and with overhead resistance training. His exercise technique needs to be watched. Watch the patient continues to breathe properly during each mode of exercise. And if doing free standing functional training ensure the technique is correct so he doesn't cause any knee or back pain. He should have his blood glucose levels checked regularly to ensure he does not develop diabetes. When he is at home in Sydney, he should complete supervised exercise sessions to ensure he is on track and training at the correct intensities."
@@ -312,8 +312,8 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 20,
     "type": "radio",
     "title": "Aerobic Exercise Intensity",
-    "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what intensity should the aerobic component of the exercise program start at?",
-    "options": ["40% VO2Reserve", "60% VO2Reserve", "80% VO2Reserve"],
+    "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what <strong>intensity</strong> should the aerobic component of the exercise program start at?",
+    "options": ["<strong>40% VO2Reserve</strong>", "<strong>60% VO2Reserve</strong>", "<strong>80% VO2Reserve</strong>"],
     "correctAnswer": "60% VO2Reserve",
     "feedback": "Current recommendations for metabolic syndrome are to exercise at about 60% VO2max or ~70% HRmax. This level maximizes benefits while minimizing possible adverse effects of more vigorous exercise. For weight loss, exercising at a lower intensity for longer decreases RER toward ~0.7, and longer durations increase total energy expenditure. If intensity is set too high, the patient may exceed a hypertensive threshold, which would blunt the exercise training effect on blood pressure."
   },
@@ -321,8 +321,8 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 21,
     "type": "radio",
     "title": "Aerobic Exercise Duration",
-    "question": "What time duration would you recommend for Calvin?",
-    "options": ["<20 minutes", "20-30 minutes", ">40 minutes"],
+    "question": "What <strong>time duration</strong> would you recommend for Calvin?",
+    "options": ["<strong>&lt;20 minutes</strong>", "<strong>20-30 minutes</strong>", "<strong>&gt;40 minutes</strong>"],
     "correctAnswer": ">40 minutes",
     "feedback": "Current recommendations are for >40 minutes, in fact the longer the better, as the overall aim for obesity and dyslipidaemia is to increase total energy expenditure."
   },
@@ -330,8 +330,8 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 22,
     "type": "radio",
     "title": "Aerobic Exercise Frequency",
-    "question": "How often per week would you tell Calvin to complete his exercise program?",
-    "options": ["Daily", "3-4 days per week", "5 days per week"],
+    "question": "How often per week would you tell Calvin to complete his <strong>exercise program</strong>?",
+    "options": ["<strong>Daily</strong>", "<strong>3-4 days per week</strong>", "<strong>5 days per week</strong>"],
     "correctAnswer": "5 days per week",
     "feedback": "Current recommendations for metabolic syndrome are to exercise 5 days per week. The effect of a single bout of exercise on insulin sensitivity lasts 24-72 hours. Depending on the exercise intensity and duration, the effect on insulin sensitivity is generally not greater than 72 hours, therefore it is recommended that the time between successive sessions is no more than 72 hours. That is, no more than 2 consecutive days without aerobic activity."
   },
@@ -339,14 +339,14 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 23,
     "type": "textInput",
     "title": "Progressive Resistance Training Exercise Prescription",
-    "question": "Using the FITT principle, write out your recommendations for progressive resistance training (PRT) for someone with metabolic syndrome.",
+    "question": "Using the <strong>FITT principle</strong>, write out your recommendations for <strong>progressive resistance training (PRT)</strong> for someone with <strong>metabolic syndrome</strong>.",
     "label": "Enter answer here:",
   "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–20 reps depending on intensity.",
   "feedback": "Using the FITT principle, an appropriate answer would be:\\n\\n• Frequency: 2–3 days per week\\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until you know their response to PRT.\\n• Type: Circuit or whole-body training of the large muscle groups\\n• Time (Volume): Low intensity = high volume (2–3 × 12–20 reps); Moderate intensity = moderate volume (2–3 × 8–10 reps)."
   }
 ];
 
-const REFERENCE_SLIDE_NUMBERS = [3, 5];
+const REFERENCE_SLIDE_NUMBERS = [3, 4, 5];
 const REFERENCE_PDF_URL =
   'https://github.com/mathang/BP_Metabolic_Case_Study_CODEX/blob/main/Pre-exercise%20Screen.pdf';
 
@@ -378,6 +378,28 @@ const slides = SLIDE_DECK_CONTENT.map((slideData, index) => {
 
 showSlide(0);
 
+function formatHtmlText(text) {
+  return (text || '')
+    .toString()
+    .replace(/\r\n?/g, '\n')
+    .replace(/\n/g, '<br>');
+}
+
+function decodeBasicEntities(text) {
+  return (text || '')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'");
+}
+
+function stripHtml(text) {
+  const withoutTags = (text || '').toString().replace(/<[^>]*>/g, '');
+  return decodeBasicEntities(withoutTags).trim();
+}
+
 function createSlide(slideData, index) {
   const section = document.createElement('section');
   section.classList.add('slide');
@@ -404,7 +426,7 @@ function createSlide(slideData, index) {
 
   if (slideData.question) {
     const questionParagraph = document.createElement('p');
-    questionParagraph.innerHTML = (slideData.question || '').replace(/\n/g, '<br>');
+    questionParagraph.innerHTML = formatHtmlText(slideData.question || '');
     section.appendChild(questionParagraph);
   }
 
@@ -467,7 +489,7 @@ function createReferenceButton() {
   const button = document.createElement('button');
   button.type = 'button';
   button.classList.add('reference-button');
-  button.textContent = 'Open Patient History References';
+  button.textContent = 'Click to Open Patient History References';
   button.addEventListener('click', openReferenceMaterials);
   return button;
 }
@@ -551,15 +573,19 @@ function createRadioOptions(slideData) {
   container.classList.add('options-group');
   const name = `radio-${slideData.slideNumber}`;
   slideData.options.forEach((option, idx) => {
+    const rawOption = option == null ? '' : option;
+    const optionText = typeof rawOption === 'string' ? rawOption : String(rawOption);
+    const value = stripHtml(optionText);
+    const displayHtml = formatHtmlText(optionText);
     const label = document.createElement('label');
     const input = document.createElement('input');
     input.type = 'radio';
     input.name = name;
-    input.value = option;
+    input.value = value;
     input.id = `${name}-${idx}`;
 
     const span = document.createElement('span');
-    span.textContent = option;
+    span.innerHTML = displayHtml;
 
     label.setAttribute('for', input.id);
     label.appendChild(input);
@@ -573,14 +599,18 @@ function createCheckboxOptions(slideData) {
   const container = document.createElement('div');
   container.classList.add('options-group');
   slideData.options.forEach((option, idx) => {
+    const rawOption = option == null ? '' : option;
+    const optionText = typeof rawOption === 'string' ? rawOption : String(rawOption);
+    const value = stripHtml(optionText);
+    const displayHtml = formatHtmlText(optionText);
     const label = document.createElement('label');
     const input = document.createElement('input');
     input.type = 'checkbox';
-    input.value = option;
+    input.value = value;
     input.id = `checkbox-${slideData.slideNumber}-${idx}`;
 
     const span = document.createElement('span');
-    span.textContent = option;
+    span.innerHTML = displayHtml;
 
     label.setAttribute('for', input.id);
     label.appendChild(input);
@@ -601,11 +631,11 @@ function createTextInput(slideData) {
     const group = document.createElement('div');
     group.classList.add('textinput-group');
     const label = document.createElement('label');
-    label.textContent = lbl;
+    label.innerHTML = formatHtmlText(lbl);
     const textarea = document.createElement('textarea');
     textarea.classList.add('text-input');
     textarea.dataset.index = i;
-    textarea.setAttribute('aria-label', lbl || `Answer ${i + 1}`);
+    textarea.setAttribute('aria-label', stripHtml(lbl) || `Answer ${i + 1}`);
     group.appendChild(label);
     group.appendChild(textarea);
     wrapper.appendChild(group);
@@ -621,8 +651,10 @@ function createDropdown(slideData) {
   select.innerHTML = `<option value="" disabled selected>Select an option</option>`;
   slideData.options.forEach((option) => {
     const opt = document.createElement('option');
-    opt.value = option;
-    opt.textContent = option;
+    const optionText = option == null ? '' : option;
+    const displayText = typeof optionText === 'string' ? optionText : String(optionText);
+    opt.value = stripHtml(displayText);
+    opt.innerHTML = formatHtmlText(displayText);
     select.appendChild(opt);
   });
   wrapper.appendChild(select);
@@ -637,7 +669,7 @@ function createMultiDropdown(slideData) {
     container.classList.add('form-card');
 
     const label = document.createElement('p');
-    label.innerHTML = question.q.replace(/\n/g, '<br>');
+    label.innerHTML = formatHtmlText(question.q || '');
     container.appendChild(label);
 
     const select = document.createElement('select');
@@ -645,8 +677,10 @@ function createMultiDropdown(slideData) {
     select.innerHTML = `<option value="" disabled selected>Select an option</option>`;
     question.options.forEach((option) => {
       const opt = document.createElement('option');
-      opt.value = option;
-      opt.textContent = option;
+      const optionText = option == null ? '' : option;
+      const displayText = typeof optionText === 'string' ? optionText : String(optionText);
+      opt.value = stripHtml(displayText);
+      opt.innerHTML = formatHtmlText(displayText);
       select.appendChild(opt);
     });
     container.appendChild(select);
@@ -721,36 +755,53 @@ function createMultiQuestionSection(slideData) {
     container.dataset.qIndex = qi;
 
     const prompt = document.createElement('p');
-    prompt.textContent = q.prompt;
+    prompt.innerHTML = formatHtmlText(q.prompt || '');
     container.appendChild(prompt);
 
-    if (q.type === 'single') {
-      const name = `multi-${slideData.slideNumber}-${qi}`;
-      q.options.forEach((opt, idx) => {
-        const label = document.createElement('label');
-        const input = document.createElement('input');
-        input.type = 'radio';
-        input.name = name;
-        input.value = opt;
-        input.id = `${name}-${idx}`;
-        label.setAttribute('for', input.id);
-        label.appendChild(input);
-        label.appendChild(document.createTextNode(opt));
-        container.appendChild(label);
-      });
-    } else if (q.type === 'checkbox') {
-      q.options.forEach((opt, idx) => {
-        const id = `multi-cb-${slideData.slideNumber}-${qi}-${idx}`;
-        const label = document.createElement('label');
-        const input = document.createElement('input');
-        input.type = 'checkbox';
-        input.value = opt;
-        input.id = id;
-        label.setAttribute('for', id);
-        label.appendChild(input);
-        label.appendChild(document.createTextNode(opt));
-        container.appendChild(label);
-      });
+    if (q.type === 'single' || q.type === 'checkbox') {
+      const optionsContainer = document.createElement('div');
+      optionsContainer.classList.add('options-group');
+
+      if (q.type === 'single') {
+        const name = `multi-${slideData.slideNumber}-${qi}`;
+        q.options.forEach((opt, idx) => {
+          const optionText = opt == null ? '' : opt;
+          const displayText = typeof optionText === 'string' ? optionText : String(optionText);
+          const value = stripHtml(displayText);
+          const label = document.createElement('label');
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = name;
+          input.value = value;
+          input.id = `${name}-${idx}`;
+          label.setAttribute('for', input.id);
+          label.appendChild(input);
+          const span = document.createElement('span');
+          span.innerHTML = formatHtmlText(displayText);
+          label.appendChild(span);
+          optionsContainer.appendChild(label);
+        });
+      } else {
+        q.options.forEach((opt, idx) => {
+          const optionText = opt == null ? '' : opt;
+          const displayText = typeof optionText === 'string' ? optionText : String(optionText);
+          const value = stripHtml(displayText);
+          const id = `multi-cb-${slideData.slideNumber}-${qi}-${idx}`;
+          const label = document.createElement('label');
+          const input = document.createElement('input');
+          input.type = 'checkbox';
+          input.value = value;
+          input.id = id;
+          label.setAttribute('for', id);
+          label.appendChild(input);
+          const span = document.createElement('span');
+          span.innerHTML = formatHtmlText(displayText);
+          label.appendChild(span);
+          optionsContainer.appendChild(label);
+        });
+      }
+
+      container.appendChild(optionsContainer);
     }
 
     wrapper.appendChild(container);
@@ -1254,11 +1305,434 @@ function showCompletionMessage() {
   completion.appendChild(heading);
 
   const summary = document.createElement('p');
-  summary.textContent = 'Thank you for completing the case study.';
+  summary.classList.add('completion-message__note');
+  summary.textContent =
+    'Thank you for completing the case study - You MUST download this report for your records. Download by clicking the "Click to Download Report" button';
   completion.appendChild(summary);
+
+  const downloadButton = document.createElement('button');
+  downloadButton.type = 'button';
+  downloadButton.classList.add('download-report-button');
+  downloadButton.textContent = 'Click to Download Report';
+  downloadButton.addEventListener('click', () => {
+    try {
+      generateAndDownloadReport();
+    } catch (error) {
+      console.error('Failed to generate the PDF report.', error);
+      alert('Unable to generate the PDF report at this time. Please try again.');
+    }
+  });
+  completion.appendChild(downloadButton);
 
   slideContainer.innerHTML = '';
   slideContainer.appendChild(completion);
+}
+
+function generateAndDownloadReport() {
+  const reportLines = buildReportLines();
+  const pdfString = createSimplePdf(reportLines);
+  const encoder = new TextEncoder();
+  const pdfBytes = encoder.encode(pdfString);
+  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+  const url = URL.createObjectURL(blob);
+
+  const { firstName, lastName } = studentDetails;
+  const namePortion = [firstName, lastName]
+    .map((part) => (part || '').trim())
+    .filter(Boolean)
+    .join('_');
+  const fileName = `${namePortion ? `${namePortion}_` : ''}metabolic_case_study_report.pdf`;
+
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = fileName;
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
+  URL.revokeObjectURL(url);
+}
+
+function buildReportLines() {
+  const lines = [];
+  const now = new Date();
+
+  lines.push('SPX Metabolic Syndrome Case Study Report');
+  lines.push(`Generated on: ${now.toLocaleString()}`);
+  lines.push('');
+  lines.push('Student Details:');
+  appendWrappedLines(lines, `First name: ${studentDetails.firstName || 'Not provided'}`, '  ');
+  appendWrappedLines(lines, `Last name: ${studentDetails.lastName || 'Not provided'}`, '  ');
+  appendWrappedLines(lines, `Student email: ${studentDetails.studentEmail || 'Not provided'}`, '  ');
+
+  lines.push('');
+  lines.push('Case Study Content and Responses:');
+
+  SLIDE_DECK_CONTENT.forEach((slide) => {
+    lines.push('');
+    appendWrappedLines(lines, `Slide ${slide.slideNumber}: ${slide.title}`, '');
+    appendWrappedLines(lines, `Slide Type: ${formatSlideType(slide.type)}`, '  ');
+
+    const slideContentLines = getSlideContentLinesForReport(slide);
+    slideContentLines.forEach((line) => {
+      lines.push(line);
+    });
+
+    const responseEntry = responseLog.find((entry) => entry.slideNumber === slide.slideNumber);
+    lines.push('  Learner Response:');
+    const responseLines = formatResponseLinesForReport(responseEntry ? responseEntry.response : null);
+    responseLines.forEach((line) => {
+      lines.push(line);
+    });
+  });
+
+  return lines;
+}
+
+function formatSlideType(type) {
+  if (!type) {
+    return 'Unknown';
+  }
+  return type
+    .toString()
+    .split(/[_-]/)
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(' ');
+}
+
+function getSlideContentLinesForReport(slide) {
+  const lines = [];
+
+  if (slide.content) {
+    lines.push('  Content:');
+    appendWrappedLines(lines, stripHtml(slide.content), '    ');
+  }
+
+  if (slide.question) {
+    lines.push('  Question:');
+    appendWrappedLines(lines, stripHtml(slide.question), '    ');
+  }
+
+  if (Array.isArray(slide.options) && slide.options.length > 0) {
+    lines.push('  Options:');
+    slide.options.forEach((option, index) => {
+      const optionText = option == null ? '' : option;
+      const displayText = typeof optionText === 'string' ? optionText : String(optionText);
+      appendWrappedLines(lines, `${index + 1}. ${stripHtml(displayText)}`, '    ');
+    });
+  }
+
+  if (Array.isArray(slide.studentFields) && slide.studentFields.length > 0) {
+    lines.push('  Student Fields:');
+    slide.studentFields.forEach((field) => {
+      appendWrappedLines(lines, `${field.label || field.id || 'Field'} (${field.type || 'input'})`, '    ');
+    });
+  }
+
+  if (Array.isArray(slide.fields) && slide.fields.length > 0) {
+    lines.push('  Form Fields:');
+    slide.fields.forEach((field) => {
+      appendWrappedLines(lines, `${field.label || 'Field'} - Criteria: ${field.criteria || 'Not specified'}`, '    ');
+    });
+  }
+
+  if (Array.isArray(slide.questions) && slide.questions.length > 0) {
+    lines.push('  Additional Questions:');
+    slide.questions.forEach((question, index) => {
+      const prompt = question.q || question.prompt || `Question ${index + 1}`;
+      appendWrappedLines(lines, stripHtml(prompt), '    ');
+      if (Array.isArray(question.options) && question.options.length > 0) {
+        question.options.forEach((option, optionIndex) => {
+          const optionText = option == null ? '' : option;
+          const displayText = typeof optionText === 'string' ? optionText : String(optionText);
+          appendWrappedLines(lines, `${optionIndex + 1}. ${stripHtml(displayText)}`, '      ');
+        });
+      }
+    });
+  }
+
+  return lines;
+}
+
+function formatResponseLinesForReport(response) {
+  const lines = [];
+  const indent = '    ';
+
+  if (response == null || (typeof response === 'string' && !response.trim())) {
+    lines.push(`${indent}No response provided.`);
+    return lines;
+  }
+
+  if (Array.isArray(response)) {
+    if (response.length === 0) {
+      lines.push(`${indent}No response provided.`);
+      return lines;
+    }
+
+    response.forEach((item, index) => {
+      if (typeof item === 'string') {
+        appendWrappedLines(lines, item, indent);
+      } else if (item && typeof item === 'object') {
+        const label = item.question || item.prompt || item.label || `Item ${index + 1}`;
+        const answerText = formatAnswerValue(item.answer);
+        appendWrappedLines(lines, `${label}: ${answerText}`, indent);
+      } else {
+        appendWrappedLines(lines, String(item), indent);
+      }
+    });
+
+    return lines;
+  }
+
+  if (typeof response === 'object') {
+    if (Array.isArray(response.fields)) {
+      response.fields.forEach((field, index) => {
+        const label = field.label || `Field ${index + 1}`;
+        appendWrappedLines(lines, `${label}: ${formatAnswerValue(field.answer)}`, indent);
+      });
+    }
+
+    if (Object.prototype.hasOwnProperty.call(response, 'total')) {
+      appendWrappedLines(lines, `Total: ${formatAnswerValue(response.total)}`, indent);
+    }
+
+    const remainingKeys = Object.keys(response).filter((key) => key !== 'fields' && key !== 'total');
+    remainingKeys.forEach((key) => {
+      appendWrappedLines(lines, `${formatLabel(key)}: ${formatAnswerValue(response[key])}`, indent);
+    });
+
+    if (!lines.length) {
+      lines.push(`${indent}No response provided.`);
+    }
+
+    return lines;
+  }
+
+  appendWrappedLines(lines, formatAnswerValue(response), indent);
+  return lines;
+}
+
+function appendWrappedLines(target, text, indent = '') {
+  const wrapped = wrapTextBlock(text || '');
+  if (!wrapped.length) {
+    target.push(indent ? indent.trimEnd() : '');
+    return;
+  }
+
+  wrapped.forEach((line) => {
+    if (!line) {
+      target.push('');
+    } else {
+      target.push(`${indent}${line}`);
+    }
+  });
+}
+
+function wrapTextBlock(text) {
+  const lines = [];
+  const normalized = (text || '')
+    .toString()
+    .replace(/\r/g, '')
+    .split('\n');
+
+  normalized.forEach((rawLine) => {
+    const trimmed = rawLine.trim();
+    if (!trimmed) {
+      lines.push('');
+      return;
+    }
+    lines.push(...wrapSingleLine(trimmed));
+  });
+
+  return lines;
+}
+
+function wrapSingleLine(line, maxLength = 90) {
+  const words = line.split(/\s+/).filter(Boolean);
+  if (!words.length) {
+    return [''];
+  }
+
+  const wrapped = [];
+  let current = '';
+
+  words.forEach((word) => {
+    if (!current) {
+      current = word;
+      return;
+    }
+
+    if ((current + ' ' + word).length > maxLength) {
+      wrapped.push(current);
+      if (word.length > maxLength) {
+        const segments = word.match(new RegExp(`.{1,${maxLength}}`, 'g')) || [];
+        segments.forEach((segment, index) => {
+          if (index === segments.length - 1) {
+            current = segment;
+          } else {
+            wrapped.push(segment);
+          }
+        });
+      } else {
+        current = word;
+      }
+    } else {
+      current += ` ${word}`;
+    }
+  });
+
+  if (current) {
+    wrapped.push(current);
+  }
+
+  return wrapped;
+}
+
+function formatAnswerValue(value) {
+  if (Array.isArray(value)) {
+    if (!value.length) {
+      return 'No selection';
+    }
+    return value
+      .map((item) => {
+        if (typeof item === 'string') {
+          return item;
+        }
+        if (item && typeof item === 'object') {
+          return Object.values(item)
+            .filter(Boolean)
+            .join(' - ');
+        }
+        return String(item);
+      })
+      .join(', ');
+  }
+
+  if (value == null || value === '') {
+    return 'No response provided';
+  }
+
+  return String(value);
+}
+
+function formatLabel(text) {
+  return text
+    .toString()
+    .split(/[_-]/)
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join(' ');
+}
+
+function createSimplePdf(lines) {
+  const normalizedLines = normalizeLinesForPdf(lines);
+  const pageLineLimit = 45;
+  const pages = [];
+
+  for (let i = 0; i < normalizedLines.length; i += pageLineLimit) {
+    pages.push(normalizedLines.slice(i, i + pageLineLimit));
+  }
+
+  if (!pages.length) {
+    pages.push(['']);
+  }
+
+  const pageCount = pages.length;
+  const catalogId = 1;
+  const pagesId = 2;
+  const pageObjStartId = 3;
+  const contentObjStartId = pageObjStartId + pageCount;
+  const fontObjId = contentObjStartId + pageCount;
+  const objectCount = fontObjId;
+
+  const objects = [];
+
+  objects[catalogId] = `${catalogId} 0 obj\n<< /Type /Catalog /Pages ${pagesId} 0 R >>\nendobj\n`;
+
+  const kids = pages
+    .map((_, index) => `${pageObjStartId + index} 0 R`)
+    .join(' ');
+  objects[pagesId] = `${pagesId} 0 obj\n<< /Type /Pages /Kids [${kids}] /Count ${pageCount} >>\nendobj\n`;
+
+  pages.forEach((pageLines, index) => {
+    const pageId = pageObjStartId + index;
+    const contentId = contentObjStartId + index;
+    const contentStream = buildPageContentStream(pageLines);
+    const streamLength = contentStream.length;
+
+    objects[pageId] = `${pageId} 0 obj\n<< /Type /Page /Parent ${pagesId} 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 ${fontObjId} 0 R >> >> /Contents ${contentId} 0 R >>\nendobj\n`;
+    objects[contentId] = `${contentId} 0 obj\n<< /Length ${streamLength} >>\nstream\n${contentStream}\nendstream\nendobj\n`;
+  });
+
+  objects[fontObjId] = `${fontObjId} 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj\n`;
+
+  let pdf = '%PDF-1.4\n';
+  const offsets = [0];
+
+  for (let id = 1; id <= objectCount; id += 1) {
+    const objectContent = objects[id] || `${id} 0 obj\nendobj\n`;
+    offsets[id] = pdf.length;
+    pdf += objectContent;
+  }
+
+  const xrefOffset = pdf.length;
+  pdf += `xref\n0 ${objectCount + 1}\n`;
+  pdf += '0000000000 65535 f \n';
+
+  for (let id = 1; id <= objectCount; id += 1) {
+    const offset = offsets[id] || 0;
+    pdf += `${String(offset).padStart(10, '0')} 00000 n \n`;
+  }
+
+  pdf += `trailer\n<< /Size ${objectCount + 1} /Root ${catalogId} 0 R >>\nstartxref\n${xrefOffset}\n%%EOF`;
+  return pdf;
+}
+
+function normalizeLinesForPdf(lines, maxLength = 100) {
+  const normalized = [];
+
+  lines.forEach((line) => {
+    if (!line) {
+      normalized.push('');
+      return;
+    }
+
+    const match = line.match(/^\s*/);
+    const indent = match ? match[0] : '';
+    const baseText = line.slice(indent.length);
+    const wrapped = wrapSingleLine(baseText, Math.max(20, maxLength - indent.length));
+    wrapped.forEach((segment) => {
+      normalized.push(`${indent}${segment}`);
+    });
+  });
+
+  return normalized;
+}
+
+function buildPageContentStream(lines) {
+  const startY = 780;
+  const leading = 14;
+  let content = 'BT\n';
+  content += '/F1 12 Tf\n';
+  content += `${leading} TL\n`;
+  content += `1 0 0 1 50 ${startY} Tm\n`;
+
+  lines.forEach((line, index) => {
+    const escaped = escapePdfString(line || '');
+    if (index === 0) {
+      content += `(${escaped}) Tj\n`;
+    } else {
+      content += `T* (${escaped}) Tj\n`;
+    }
+  });
+
+  content += 'ET';
+  return content;
+}
+
+function escapePdfString(value) {
+  return (value || '')
+    .replace(/\\/g, '\\\\')
+    .replace(/\(/g, '\\(')
+    .replace(/\)/g, '\\)');
 }
 
 function openReferenceMaterials() {
@@ -1266,9 +1740,9 @@ function openReferenceMaterials() {
     SLIDE_DECK_CONTENT.find((slide) => slide.slideNumber === slideNumber)
   ).filter(Boolean);
 
-  referenceSlides.forEach((slide) => {
-    openReferenceSlideWindow(slide);
-  });
+  if (referenceSlides.length > 0) {
+    openReferenceSlidesWindow(referenceSlides);
+  }
 
   const pdfWindow = window.open(REFERENCE_PDF_URL, '_blank', 'noopener');
   if (pdfWindow) {
@@ -1276,87 +1750,164 @@ function openReferenceMaterials() {
   }
 }
 
-function openReferenceSlideWindow(slideData) {
-  const referenceWindow = window.open('', '_blank', 'noopener');
+function openReferenceSlidesWindow(slides) {
+  const html = buildReferenceSlidesDocument(slides);
+  const referenceWindow = window.open('about:blank', '_blank');
   if (!referenceWindow) {
     console.warn('Reference window blocked by browser.');
     return;
   }
 
-  referenceWindow.opener = null;
-  referenceWindow.document.open();
-  referenceWindow.document.write(`<!DOCTYPE html>
+  try {
+    referenceWindow.opener = null;
+    referenceWindow.document.open('text/html', 'replace');
+    referenceWindow.document.write(html);
+    referenceWindow.document.close();
+  } catch (error) {
+    console.error('Unable to inject reference slide content into the new window.', error);
+    referenceWindow.location = `data:text/html;charset=utf-8,${encodeURIComponent(html)}`;
+  }
+}
+
+function buildReferenceSlidesDocument(slides) {
+  const slideSections = slides.map((slide) => buildReferenceSlideSection(slide)).join('');
+
+  return `<!DOCTYPE html>
     <html lang="en">
       <head>
         <meta charset="UTF-8">
-        <title>${escapeHtml(slideData.title)}</title>
+        <title>Patient History References</title>
         <style>
+          :root {
+            color-scheme: light;
+          }
           body {
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 30px;
-            background: #f0f4ff;
+            padding: 40px 16px;
+            background: #eef3ff;
             color: #1f1f1f;
           }
-          .reference-content {
-            max-width: 760px;
+          .reference-wrapper {
+            max-width: 860px;
             margin: 0 auto;
-            background: #ffffff;
-            border: 4px solid #3440eb;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
           }
-          .reference-content h1 {
-            margin-top: 0;
+          .reference-slide {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 4px solid #3440eb;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+            overflow: hidden;
+          }
+          .reference-slide + .reference-slide {
+            margin-top: 28px;
+          }
+          .reference-header {
             background: #3440eb;
             color: #ffffff;
-            padding: 18px 22px;
-            border-radius: 8px;
-            font-size: 1.6rem;
+            padding: 20px 24px;
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
           }
-          .reference-content p {
-            line-height: 1.6;
+          .reference-number {
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: 0.85;
+          }
+          .reference-title {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+          }
+          .reference-body {
+            padding: 26px 28px 32px;
+            line-height: 1.65;
             font-size: 1rem;
           }
-          .reference-content ul {
-            padding-left: 20px;
+          .reference-body p {
+            margin-top: 0;
+            margin-bottom: 1.2em;
           }
-          .reference-content li {
-            line-height: 1.6;
-            font-size: 1rem;
+          .reference-body ul {
+            margin: 0 0 1.2em;
+            padding-left: 24px;
+          }
+          .reference-body li {
+            margin-bottom: 0.75em;
+          }
+          strong {
+            font-weight: 700;
           }
         </style>
       </head>
       <body>
-        <main class="reference-content">
-          <h1>${escapeHtml(slideData.title)}</h1>
-          ${buildReferenceContent(slideData)}
+        <main class="reference-wrapper">
+          ${slideSections}
         </main>
       </body>
-    </html>`);
-  referenceWindow.document.close();
+    </html>`;
+}
+
+function buildReferenceSlideSection(slideData) {
+  const title = escapeHtml(slideData.title || '');
+  const slideLabel =
+    typeof slideData.slideNumber === 'number'
+      ? `<span class="reference-number">Slide ${slideData.slideNumber}</span>`
+      : '';
+
+  return `<article class="reference-slide" id="reference-slide-${slideData.slideNumber || 'section'}">
+      <header class="reference-header">
+        ${slideLabel}
+        <h2 class="reference-title">${title}</h2>
+      </header>
+      <div class="reference-body">
+        ${buildReferenceContent(slideData)}
+      </div>
+    </article>`;
 }
 
 function buildReferenceContent(slideData) {
   if (slideData.type === 'info') {
     return (slideData.content || '')
       .split(/\n\n+/)
-      .map((segment) => `<p>${formatTextBlock(segment)}</p>`)
+      .map((segment) => `<p>${formatReferenceTextBlock(segment)}</p>`)
       .join('');
   }
 
   let html = '';
   if (slideData.question) {
-    html += `<p>${formatTextBlock(slideData.question)}</p>`;
+    html += `<p>${formatReferenceTextBlock(slideData.question)}</p>`;
   }
 
   if (Array.isArray(slideData.options) && slideData.options.length > 0) {
-    const listItems = slideData.options.map((option) => `<li>${escapeHtml(option)}</li>`).join('');
+    const listItems = slideData.options
+      .map((option) => `<li>${formatReferenceOption(option)}</li>`)
+      .join('');
     html += `<ul>${listItems}</ul>`;
   }
 
   return html;
+}
+
+function formatReferenceTextBlock(text) {
+  return escapeHtmlPreservingStrong(text)
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line)
+    .join('<br>');
+}
+
+function formatReferenceOption(text) {
+  return escapeHtmlPreservingStrong(text).trim();
+}
+
+function escapeHtmlPreservingStrong(text) {
+  return escapeHtml(text)
+    .replace(/&lt;strong&gt;/gi, '<strong>')
+    .replace(/&lt;\/strong&gt;/gi, '</strong>');
 }
 
 function formatTextBlock(text) {
