@@ -29,7 +29,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 2,
     "type": "info",
     "title": "Referral Details",
-    "content": "Calvin is a 57 year old male who has been referred to you by his GP to help reduce his risk of cardiovascular disease. His GP has started him on Asprin and referred him to you for lifestyle changes. He is hoping he can avoid pressing medication for the hypertension. Firstly, it is important to learn a bit more about the patient - click the Open Patient History button to open the 1) Completed pre-exercise screening form, 2) Pre-exercise screening information and 3) Family history details."
+    "content": "Calvin is a 57 year old male who has been referred to you by his GP to help reduce his risk of cardiovascular disease. His GP has started him on Asprin and referred him to you for lifestyle changes. He is hoping he can avoid taking medication for the hypertension. Firstly, it is important to learn a bit more about the patient - click the Open Patient History button to open the 1) Completed pre-exercise screening form, 2) Pre-exercise screening information and 3) Family history details."
   },
   {
     "slideNumber": 3,
@@ -80,7 +80,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 8,
     "type": "radio",
     "title": "The Cholesterol Test",
-    "question": "Calvin’s current physical activity includes lifting weights (if he is somewhere where there is a gym) and a game of golf each week. Family history: father alive at 77 years, but had a heart attack from 45 years of age. No other family history of note. The aim of this case study is for you, as an exercise professional, to identify safe and effective strategies that will help Calvin reduce his blood pressure to a normal level, and improve his waist measurement and overall cardiovascular health. Before we move on, we must consider an important factor in Calvin’s assessment. Is there a problem with having <strong>cholesterol checked</strong> at a <strong>health booth</strong> and, if so, what is the most likely effect? <strong>Select from the key words.</strong>",
+    "question": "Calvin’s current physical activity includes lifting weights (if he is somewhere where there is a gym) and a game of bowls each week that he is home on a Saturday. Family history: father alive at 77 years, but had a heart attack at 45 years of age. The aim of this case study is for you, as an exercise professional, to identify safe and effective strategies that will help Calvin reduce his blood pressure to a normal level, and improve his waist measurement and overall cardiovascular health. Before we move on, we must consider an important factor in Calvin’s assessment. Calvin expresses his concern for his sister’s cholesterol too. Is there a problem with having <strong>cholesterol checked</strong> at a <strong>health booth</strong> and, if so, what is the most likely effect? <strong>Select from the key words.</strong>",
     "options": ["Yes - <strong>False positive</strong>", "<strong>No</strong>", "Yes - <strong>False negative</strong>"],
     "feedback": "Potentially, yes. If the person is not fasting or has a fatty residue from a hand cream on their hands, this test will not give you a true indication of the cholesterol level. For example, the patient may give a false positive result, that is, a result higher than usual."
   },
@@ -88,7 +88,7 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 9,
     "type": "textInput",
     "title": "Defining and Translating Personal Goals",
-    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish <strong>realistic goals</strong>. Calvin wants to <strong>exercise regularly</strong>, reduce his <strong>weight</strong>, <strong>blood pressure</strong> and <strong>waist measurement</strong>. Based on this information and the doctor’s referral/clinical indications, please write one <strong>short-term goal</strong> for his blood pressure and one <strong>long-term goal</strong> for his participation in regular exercise.",
+    "question": "Looking back at Calvin’s Pre-Exercise Screening and the information you have gathered, it’s important to help him establish <strong>realistic goals</strong>. Calvin wants to <strong>exercise regularly</strong>, reduce his <strong>weight</strong>, <strong>blood pressure</strong> and <strong>waist measurement</strong>. Based on this information and the doctor’s referral/clinical indications, please write one <strong>short-term goal</strong> for his blood pressure and one <strong>long-term goal</strong> for his participation in regular exercise. Use a SMART format to structure your goals for Calvin",
     "labels": [
       "<strong>List one short term goal</strong> below:",
       "<strong>List one LONG term goal</strong> below:"
@@ -270,7 +270,7 @@ const SLIDE_DECK_CONTENT = [
     "questions": [
       {
         "id": "adherence",
-        "prompt": "What question would you ask to ensure Calvin <strong>adheres</strong> to an <strong>exercise program</strong>?",
+        "prompt": "What strategies would you use to improve Calvin's <strong>adherence</strong> to an <strong>exercise program</strong>?",
         "type": "single",
         "options": [
           "Tell Calvin to <strong>join a gym</strong>.",
@@ -283,7 +283,7 @@ const SLIDE_DECK_CONTENT = [
       },
       {
         "id": "precautions",
-        "prompt": "Are there any <strong>precautions</strong> to take into account for his <strong>exercise intensity</strong>? (Select all that apply.)",
+        "prompt": "Which <strong>precautions</strong> would you take into account when recommending his <strong>exercise intensity</strong>? (Select all that apply.)",
         "type": "checkbox",
         "options": [
           "His <strong>knee</strong> and <strong>lower back pain</strong>.",
