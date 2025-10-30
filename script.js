@@ -410,15 +410,15 @@ const SLIDE_DECK_CONTENT = [
     "title": "Relative Contraindications",
     "question": "You have identified that Calvin may be at increased risk of inadequate nutrition and hydration if he exercises in the middle of the day while fasting for Ramadan. What advice would you give Calvin regarding signs and symptoms to stop exercise?  <strong>Select all that apply.</strong>",
     "options": [
-      "A drop in blood pressure compared to normal after starting exercise",
+      "A drop in blood pressure compared to normal after starting exercise, that when remeasured 2 minutes later, continues to drop.",
       "Dizziness, light-headedness, or a feeling of significant fatigue",
       "An RPE of 15 on the 6 – 20 Borg Scale",
-      "Shortness of breath that doesn’t resolve with rest"
+      "Shortness of breath that doesn’t resolve if he reduces the workload or rests"
     ],
     "correctAnswer": [
-      "A drop in blood pressure compared to normal after starting exercise",
+      "A drop in blood pressure compared to normal after starting exercise, that when remeasured 2 minutes later, continues to drop.",
       "Dizziness, light-headedness, or a feeling of significant fatigue",
-      "Shortness of breath that doesn’t resolve with rest"
+      "Shortness of breath that doesn’t resolve if he reduces the workload or rests"
     ],
     "feedback": "Calvin should stop exercising if he experiences a notable drop in blood pressure, dizziness or significant fatigue, or shortness of breath that does not ease with rest. An RPE of 15 may be acceptable during vigorous training when tolerated and monitored."
   }
