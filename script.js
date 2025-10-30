@@ -242,6 +242,29 @@ const SLIDE_DECK_CONTENT = [
   },
   {
     "slideNumber": 17,
+    "type": "radio",
+    "title": "Stage of Readiness",
+    "question": "Given what you have learned about Calvin, what stage of readiness to change do you think he is at?",
+    "options": [
+      "Precontemplation",
+      "Contemplation",
+      "Preparation",
+      "Action",
+      "Maintenance"
+    ],
+    "correctAnswer": "Preparation",
+    "feedback": "Calvin is seeking support and is ready to start making changes, which places him in the preparation stage."
+  },
+  {
+    "slideNumber": 18,
+    "type": "textInput",
+    "title": "Social Determinants of Health",
+    "question": "The 5 social health determinants are:<br>• Neighbourhood and Built Environment<br>• Social and Community Context<br>• Education Access and Quality<br>• Healthcare Access and Quality<br>• Economic Stability<br><br>Describe one barrier to Calvin’s exercise goals (no more than 1 sentence) and indicate which social health determinant category it falls into.",
+    "label": "Your response:",
+    "feedback": "Reflect on the social health determinant that best matches Calvin’s barrier and explain your reasoning."
+  },
+  {
+    "slideNumber": 19,
     "type": "multiQuestion",
     "title": "Aerobic Exercise Training",
     "questions": [
@@ -276,7 +299,7 @@ const SLIDE_DECK_CONTENT = [
     ]
   },
   {
-    "slideNumber": 18,
+    "slideNumber": 20,
     "type": "dropdown",
     "title": "What form of strength testing is appropriate?",
     "question": "We have already learnt that <strong>progressive resistance</strong> or <strong>strength training</strong> is going to be effective for Calvin, but what strength tests are appropriate to assess Calvin's <strong>strength</strong>?",
@@ -293,7 +316,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "All these tests could be appropriate. If he can join a gym that has global locations, then you should complete a RM test for each of the major muscle groups. If he can not and does not want to join the gym, you should use functional tests such as the lunge, squat, push up, abdominal flexor endurance and plank to assess his muscle strength."
   },
   {
-    "slideNumber": 19,
+    "slideNumber": 21,
     "type": "radio",
     "title": "Exercise Precautions",
     "question": "What, if any, <strong>precautions</strong> should Calvin take?",
@@ -309,7 +332,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Blood pressure: Calvin will need to have his blood pressure monitored regularly and make sure he exercises below any thresholds. If possible he should get his BP measured at least once in the unengaged limb, during the active phase of weight training to check it is not spiking. He should also have it monitored on the upright bike and with overhead resistance training. His exercise technique needs to be watched. Watch the patient continues to breathe properly during each mode of exercise. And if doing free standing functional training ensure the technique is correct so he doesn't cause any knee or back pain. He should have his blood glucose levels checked regularly to ensure he does not develop diabetes. When he is at home in Sydney, he should complete supervised exercise sessions to ensure he is on track and training at the correct intensities."
   },
   {
-    "slideNumber": 20,
+    "slideNumber": 22,
     "type": "radio",
     "title": "Aerobic Exercise Intensity",
     "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what <strong>intensity</strong> should the aerobic component of the exercise program start at?",
@@ -318,7 +341,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Current recommendations for metabolic syndrome are to exercise at about 60% VO2max or ~70% HRmax. This level maximizes benefits while minimizing possible adverse effects of more vigorous exercise. For weight loss, exercising at a lower intensity for longer decreases RER toward ~0.7, and longer durations increase total energy expenditure. If intensity is set too high, the patient may exceed a hypertensive threshold, which would blunt the exercise training effect on blood pressure."
   },
   {
-    "slideNumber": 21,
+    "slideNumber": 23,
     "type": "radio",
     "title": "Aerobic Exercise Duration",
     "question": "What <strong>time duration</strong> would you recommend for Calvin?",
@@ -327,7 +350,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Current recommendations are for >40 minutes, in fact the longer the better, as the overall aim for obesity and dyslipidaemia is to increase total energy expenditure."
   },
   {
-    "slideNumber": 22,
+    "slideNumber": 24,
     "type": "radio",
     "title": "Aerobic Exercise Frequency",
     "question": "How often per week would you tell Calvin to complete his <strong>exercise program</strong>?",
@@ -336,7 +359,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Current recommendations for metabolic syndrome are to exercise 5 days per week. The effect of a single bout of exercise on insulin sensitivity lasts 24-72 hours. Depending on the exercise intensity and duration, the effect on insulin sensitivity is generally not greater than 72 hours, therefore it is recommended that the time between successive sessions is no more than 72 hours. That is, no more than 2 consecutive days without aerobic activity."
   },
   {
-    "slideNumber": 23,
+    "slideNumber": 25,
     "type": "textInput",
     "title": "Progressive Resistance Training Exercise Prescription",
     "question": "Using the <strong>FITT principle</strong>, write out your recommendations for <strong>progressive resistance training (PRT)</strong> for someone with <strong>metabolic syndrome</strong>.",
