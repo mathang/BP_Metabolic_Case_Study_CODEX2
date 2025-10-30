@@ -242,6 +242,29 @@ const SLIDE_DECK_CONTENT = [
   },
   {
     "slideNumber": 17,
+    "type": "radio",
+    "title": "Stage of Readiness",
+    "question": "Given what you have learned about Calvin, what stage of readiness to change do you think he is at?",
+    "options": [
+      "Precontemplation",
+      "Contemplation",
+      "Preparation",
+      "Action",
+      "Maintenance"
+    ],
+    "correctAnswer": "Preparation",
+    "feedback": "Calvin is seeking support and is ready to start making changes, which places him in the preparation stage."
+  },
+  {
+    "slideNumber": 18,
+    "type": "textInput",
+    "title": "Social Determinants of Health",
+    "question": "The 5 social health determinants are:<br>• Neighbourhood and Built Environment<br>• Social and Community Context<br>• Education Access and Quality<br>• Healthcare Access and Quality<br>• Economic Stability<br><br>Describe one barrier to Calvin’s exercise goals (no more than 1 sentence) and indicate which social health determinant category it falls into.",
+    "label": "Your response:",
+    "feedback": "Reflect on the social health determinant that best matches Calvin’s barrier and explain your reasoning."
+  },
+  {
+    "slideNumber": 19,
     "type": "multiQuestion",
     "title": "Aerobic Exercise Training",
     "questions": [
@@ -276,7 +299,7 @@ const SLIDE_DECK_CONTENT = [
     ]
   },
   {
-    "slideNumber": 18,
+    "slideNumber": 20,
     "type": "dropdown",
     "title": "What form of strength testing is appropriate?",
     "question": "We have already learnt that <strong>progressive resistance</strong> or <strong>strength training</strong> is going to be effective for Calvin, but what strength tests are appropriate to assess Calvin's <strong>strength</strong>?",
@@ -293,7 +316,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "All these tests could be appropriate. If he can join a gym that has global locations, then you should complete a RM test for each of the major muscle groups. If he can not and does not want to join the gym, you should use functional tests such as the lunge, squat, push up, abdominal flexor endurance and plank to assess his muscle strength."
   },
   {
-    "slideNumber": 19,
+    "slideNumber": 21,
     "type": "radio",
     "title": "Exercise Precautions",
     "question": "What, if any, <strong>precautions</strong> should Calvin take?",
@@ -309,7 +332,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Blood pressure: Calvin will need to have his blood pressure monitored regularly and make sure he exercises below any thresholds. If possible he should get his BP measured at least once in the unengaged limb, during the active phase of weight training to check it is not spiking. He should also have it monitored on the upright bike and with overhead resistance training. His exercise technique needs to be watched. Watch the patient continues to breathe properly during each mode of exercise. And if doing free standing functional training ensure the technique is correct so he doesn't cause any knee or back pain. He should have his blood glucose levels checked regularly to ensure he does not develop diabetes. When he is at home in Sydney, he should complete supervised exercise sessions to ensure he is on track and training at the correct intensities."
   },
   {
-    "slideNumber": 20,
+    "slideNumber": 22,
     "type": "radio",
     "title": "Aerobic Exercise Intensity",
     "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what <strong>intensity</strong> should the aerobic component of the exercise program start at?",
@@ -318,7 +341,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Current recommendations for metabolic syndrome are to exercise at about 60% VO2max or ~70% HRmax. This level maximizes benefits while minimizing possible adverse effects of more vigorous exercise. For weight loss, exercising at a lower intensity for longer decreases RER toward ~0.7, and longer durations increase total energy expenditure. If intensity is set too high, the patient may exceed a hypertensive threshold, which would blunt the exercise training effect on blood pressure."
   },
   {
-    "slideNumber": 21,
+    "slideNumber": 23,
     "type": "radio",
     "title": "Aerobic Exercise Duration",
     "question": "What <strong>time duration</strong> would you recommend for Calvin?",
@@ -327,7 +350,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Current recommendations are for >40 minutes, in fact the longer the better, as the overall aim for obesity and dyslipidaemia is to increase total energy expenditure."
   },
   {
-    "slideNumber": 22,
+    "slideNumber": 24,
     "type": "radio",
     "title": "Aerobic Exercise Frequency",
     "question": "How often per week would you tell Calvin to complete his <strong>exercise program</strong>?",
@@ -336,13 +359,68 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Current recommendations for metabolic syndrome are to exercise 5 days per week. The effect of a single bout of exercise on insulin sensitivity lasts 24-72 hours. Depending on the exercise intensity and duration, the effect on insulin sensitivity is generally not greater than 72 hours, therefore it is recommended that the time between successive sessions is no more than 72 hours. That is, no more than 2 consecutive days without aerobic activity."
   },
   {
-    "slideNumber": 23,
+    "slideNumber": 25,
     "type": "textInput",
     "title": "Progressive Resistance Training Exercise Prescription",
     "question": "Using the <strong>FITT principle</strong>, write out your recommendations for <strong>progressive resistance training (PRT)</strong> for someone with <strong>metabolic syndrome</strong>.",
     "label": "Enter answer here:",
-  "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–20 reps depending on intensity.",
-  "feedback": "Using the FITT principle, an appropriate answer would be:\\n\\n• Frequency: 2–3 days per week\\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until you know their response to PRT.\\n• Type: Circuit or whole-body training of the large muscle groups\\n• Time (Volume): Low intensity = high volume (2–3 × 12–20 reps); Moderate intensity = moderate volume (2–3 × 8–10 reps)."
+    "correctAnswer": "Frequency: 2–3 times per week; Intensity: 40–80% 1RM (start below 50% for hypertensives); Type: Whole body or circuit training for large muscle groups; Time: 2–3 sets of 8–20 reps depending on intensity.",
+    "feedback": "Using the FITT principle, an appropriate answer would be:\\n\\n• Frequency: 2–3 days per week\\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until you know their response to PRT.\\n• Type: Circuit or whole-body training of the large muscle groups\\n• Time (Volume): Low intensity = high volume (2–3 × 12–20 reps); Moderate intensity = moderate volume (2–3 × 8–10 reps)."
+  },
+  {
+    "slideNumber": 26,
+    "type": "textInput",
+    "title": "Cultural Safety Question",
+    "question": "Calvin is keen to work on the goals you have set, but is worried about his capacity to meet these goals during Ramadan, an upcoming time of fasting (avoiding all food and drink) between sunrise and sunset that lasts for about 1 month. Please write a consideration you would make to ensure cultural safety for Calvin, knowing that he is of Islamic faith.",
+    "label": "Your response:",
+    "feedback": "Think about adjustments to scheduling, communication, and support that respect Calvin’s cultural and religious practices."
+  },
+  {
+    "slideNumber": 27,
+    "type": "checkbox",
+    "title": "Exercise Safety",
+    "question": "Which of the following recommendations would you give to Calvin? <strong>Select all that apply.</strong>",
+    "options": [
+      "Your health is so important, I recommend that you break your fast with water only to ensure adequate hydration and be able to continue to exercise safely",
+      "Ensure adequately hydrating fluids and plenty of them between sunset and sunrise",
+      "Don’t exercise just for this month to respect your religion, we can start again next month",
+      "Try to exercise in the early morning before the pre-dawn meal (Suhoor) or after the sunset meal (Iftar) if you can, to align with your nutrition and hydration schedule",
+      "Ensure you are eating protein- and nutrient-rich foods between sunset and sunrise",
+      "Aim for maintaining fitness and strength with lower-intensity cardiovascular and resistance workouts"
+    ],
+    "correctAnswer": [
+      "Ensure adequately hydrating fluids and plenty of them between sunset and sunrise",
+      "Try to exercise in the early morning before the pre-dawn meal (Suhoor) or after the sunset meal (Iftar) if you can, to align with your nutrition and hydration schedule",
+      "Ensure you are eating protein- and nutrient-rich foods between sunset and sunrise",
+      "Aim for maintaining fitness and strength with lower-intensity cardiovascular and resistance workouts"
+    ],
+    "feedback": "Support Calvin by aligning exercise with his fasting schedule, prioritising hydration and nutrient-dense meals overnight, and emphasising maintenance with lower-intensity training during Ramadan."
+  },
+  {
+    "slideNumber": 28,
+    "type": "textInput",
+    "title": "Supporting Calvin During Ramadan",
+    "question": "Outline one strategy you would use to help Calvin maintain progress on his exercise goals throughout Ramadan while respecting his fasting commitments (no more than 2 sentences).",
+    "label": "Enter your strategy:",
+    "feedback": "Consider collaborative planning, flexibility in scheduling, and monitoring Calvin’s wellbeing during the fasting period."
+  },
+  {
+    "slideNumber": 29,
+    "type": "checkbox",
+    "title": "Relative Contraindications",
+    "question": "You have identified that Calvin may be at increased risk of inadequate nutrition and hydration if he exercises in the middle of the day while fasting for Ramadan. What advice would you give Calvin regarding signs and symptoms to stop exercise?  <strong>Select all that apply.</strong>",
+    "options": [
+      "A drop in blood pressure compared to normal after starting exercise",
+      "Dizziness, light-headedness, or a feeling of significant fatigue",
+      "An RPE of 15 on the 6 – 20 Borg Scale",
+      "Shortness of breath that doesn’t resolve with rest"
+    ],
+    "correctAnswer": [
+      "A drop in blood pressure compared to normal after starting exercise",
+      "Dizziness, light-headedness, or a feeling of significant fatigue",
+      "Shortness of breath that doesn’t resolve with rest"
+    ],
+    "feedback": "Calvin should stop exercising if he experiences a notable drop in blood pressure, dizziness or significant fatigue, or shortness of breath that does not ease with rest. An RPE of 15 may be acceptable during vigorous training when tolerated and monitored."
   }
 ];
 
