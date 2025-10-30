@@ -444,6 +444,7 @@ let googleUrlWarningShown = false;
 let submissionMode = 'cors';
 
 const slideContainer = document.getElementById('slideContainer');
+const progressTrackers = [];
 
 let currentSlideIndex = 0;
 let completionShown = false;
@@ -454,6 +455,7 @@ const slides = SLIDE_DECK_CONTENT.map((slideData, index) => {
   return slideElement;
 });
 
+initializeProgressTrackers();
 showSlide(0);
 
 function formatHtmlText(text) {
@@ -499,6 +501,7 @@ function createSlide(slideData, index) {
     const nextButton = createNextButton();
     nextButton.addEventListener('click', () => goToNextSlide());
     section.appendChild(nextButton);
+    attachProgressTracker(section, index);
     return section;
   }
 
@@ -560,6 +563,7 @@ function createSlide(slideData, index) {
   });
 
   section.appendChild(nextButton);
+  attachProgressTracker(section, index);
   return section;
 }
 
@@ -570,6 +574,32 @@ function createReferenceButton() {
   button.textContent = 'Click to Open Patient History References';
   button.addEventListener('click', openReferenceMaterials);
   return button;
+}
+
+function attachProgressTracker(section, index) {
+  const container = document.createElement('div');
+  container.classList.add('progress-tracker');
+
+  const bar = document.createElement('div');
+  bar.classList.add('progress-tracker__bar');
+
+  const fill = document.createElement('div');
+  fill.classList.add('progress-tracker__fill');
+  bar.appendChild(fill);
+
+  const text = document.createElement('div');
+  text.classList.add('progress-tracker__text');
+
+  container.appendChild(bar);
+  container.appendChild(text);
+  section.appendChild(container);
+
+  progressTrackers[index] = {
+    fill,
+    text,
+    position: null,
+    total: null,
+  };
 }
 
 function appendInfoContent(section, content) {
@@ -1327,19 +1357,63 @@ function buildSubmissionPayload(context = {}) {
   };
 }
 
+function initializeProgressTrackers() {
+  const visibleIndices = slides.reduce((acc, _, idx) => {
+    if (!shouldSkipSlide(idx)) {
+      acc.push(idx);
+    }
+    return acc;
+  }, []);
+
+  const total = visibleIndices.length;
+
+  if (total === 0) {
+    return;
+  }
+
+  visibleIndices.forEach((slideIdx, position) => {
+    const tracker = progressTrackers[slideIdx];
+    if (!tracker) {
+      return;
+    }
+
+    const percent = Math.round(((position + 1) / total) * 100);
+    tracker.position = position;
+    tracker.total = total;
+    tracker.fill.style.width = '0%';
+    tracker.text.textContent = `Slide ${position + 1} of ${total} (${percent}% complete)`;
+  });
+}
+
+function updateProgressIndicator(activeIndex) {
+  const tracker = progressTrackers[activeIndex];
+  if (!tracker || typeof tracker.position !== 'number' || typeof tracker.total !== 'number' || tracker.total === 0) {
+    return;
+  }
+
+  const { position, total, fill, text } = tracker;
+  const progressFraction = (position + 1) / total;
+  const percent = Math.round(progressFraction * 100);
+
+  fill.style.width = `${progressFraction * 100}%`;
+  text.textContent = `Slide ${position + 1} of ${total} (${percent}% complete)`;
+}
+
 function showSlide(index) {
+  if (index < 0 || index >= slides.length) {
+    return;
+  }
+
   slides.forEach((slide, idx) => {
     slide.classList.toggle('active', idx === index);
   });
+
+  currentSlideIndex = index;
+  updateProgressIndicator(index);
 }
 
 function goToNextSlide() {
   const currentSlideData = SLIDE_DECK_CONTENT[currentSlideIndex];
-  const currentSlide = slides[currentSlideIndex];
-  if (currentSlide) {
-    currentSlide.classList.remove('active');
-  }
-
   let nextIndex = currentSlideIndex + 1;
   while (nextIndex < slides.length && shouldSkipSlide(nextIndex)) {
     nextIndex += 1;
@@ -1359,7 +1433,7 @@ function goToNextSlide() {
   currentSlideIndex = nextIndex;
 
   if (currentSlideIndex < slides.length) {
-    slides[currentSlideIndex].classList.add('active');
+    showSlide(currentSlideIndex);
   } else {
     showCompletionMessage();
   }
