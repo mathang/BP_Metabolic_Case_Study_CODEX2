@@ -1822,18 +1822,15 @@ function openReferenceMaterials() {
     SLIDE_DECK_CONTENT.find((slide) => slide.slideNumber === slideNumber)
   ).filter(Boolean);
 
-  if (referenceSlides.length > 0) {
-    openReferenceSlidesWindow(referenceSlides);
+  if (referenceSlides.length === 0 && !REFERENCE_PDF_URL) {
+    return;
   }
 
-  const pdfWindow = window.open(REFERENCE_PDF_URL, '_blank', 'noopener');
-  if (pdfWindow) {
-    pdfWindow.opener = null;
-  }
+  openReferenceSlidesWindow(referenceSlides, REFERENCE_PDF_URL);
 }
 
-function openReferenceSlidesWindow(slides) {
-  const html = buildReferenceSlidesDocument(slides);
+function openReferenceSlidesWindow(slides, pdfUrl) {
+  const html = buildReferenceSlidesDocument(slides, pdfUrl);
   const referenceWindow = window.open('about:blank', '_blank');
   if (!referenceWindow) {
     console.warn('Reference window blocked by browser.');
@@ -1851,8 +1848,9 @@ function openReferenceSlidesWindow(slides) {
   }
 }
 
-function buildReferenceSlidesDocument(slides) {
+function buildReferenceSlidesDocument(slides, pdfUrl) {
   const slideSections = slides.map((slide) => buildReferenceSlideSection(slide)).join('');
+  const pdfSection = pdfUrl ? buildReferencePdfSection(pdfUrl) : '';
 
   return `<!DOCTYPE html>
     <html lang="en">
@@ -1923,14 +1921,106 @@ function buildReferenceSlidesDocument(slides) {
           strong {
             font-weight: 700;
           }
+          .reference-pdf {
+            margin-top: 32px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 4px solid #3440eb;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+            overflow: hidden;
+          }
+          .reference-pdf__header {
+            background: #3440eb;
+            color: #ffffff;
+            padding: 20px 24px;
+          }
+          .reference-pdf__header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+          }
+          .reference-pdf__body {
+            padding: 20px 24px 28px;
+            background: #f5f7ff;
+          }
+          .reference-pdf__frame {
+            width: 100%;
+            min-height: 640px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: inset 0 0 0 1px rgba(52, 64, 235, 0.18);
+          }
+          .reference-pdf__fallback {
+            margin-top: 18px;
+            font-size: 0.95rem;
+          }
+          .reference-pdf__fallback a {
+            color: #1f30d3;
+            font-weight: 600;
+          }
         </style>
       </head>
       <body>
         <main class="reference-wrapper">
-          ${slideSections}
+          ${slideSections}${pdfSection}
         </main>
       </body>
     </html>`;
+}
+
+function buildReferencePdfSection(pdfUrl) {
+  const embedUrl = resolvePdfEmbedUrl(pdfUrl) || pdfUrl;
+  const escapedEmbedUrl = embedUrl.replace(/"/g, '&quot;');
+  const escapedOriginalUrl = pdfUrl.replace(/"/g, '&quot;');
+
+  return `
+        <section class="reference-pdf">
+          <div class="reference-pdf__header">
+            <h3>Pre-exercise Screen</h3>
+          </div>
+          <div class="reference-pdf__body">
+            <iframe
+              class="reference-pdf__frame"
+              src="${escapedEmbedUrl}"
+              title="Pre-exercise Screen PDF"
+              loading="lazy"
+            ></iframe>
+            <p class="reference-pdf__fallback">
+              If the preview does not load, <a href="${escapedOriginalUrl}" target="_blank" rel="noopener">download the Pre-exercise Screen PDF</a>.
+            </p>
+          </div>
+        </section>`;
+}
+
+function resolvePdfEmbedUrl(pdfUrl) {
+  if (!pdfUrl) {
+    return '';
+  }
+
+  try {
+    if (typeof URL === 'function') {
+      const baseHref =
+        typeof window !== 'undefined' && window.location
+          ? window.location.href
+          : undefined;
+      const parsed = new URL(pdfUrl, baseHref);
+      if (parsed.hostname === 'github.com' && parsed.pathname.includes('/blob/')) {
+        parsed.hostname = 'raw.githubusercontent.com';
+        parsed.pathname = parsed.pathname.replace('/blob/', '/');
+        return parsed.toString();
+      }
+
+      if (parsed.hostname === 'www.github.com' && parsed.pathname.includes('/blob/')) {
+        parsed.hostname = 'raw.githubusercontent.com';
+        parsed.pathname = parsed.pathname.replace('/blob/', '/');
+        return parsed.toString();
+      }
+    }
+  } catch (error) {
+    console.warn('Unable to normalize PDF URL for embedding.', error);
+  }
+
+  return pdfUrl;
 }
 
 function buildReferenceSlideSection(slideData) {
