@@ -97,94 +97,6 @@ const SLIDE_DECK_CONTENT = [
   },
   {
     "slideNumber": 10,
-    "type": "form",
-    "title": "ACSM Risk Stratification",
-    "question": "Now it's time to <strong>Risk Stratify Calvin</strong>. According to the <strong>ACSM Risk Stratification</strong> what is Calvin's <strong>Total Risk Score</strong>?",
-    "fields": [
-      {
-        "label": "Family History",
-        "criteria": "MI, coronary revascularisation, or sudden death in an immediate relative (male <55 years or female <65 years)",
-        "correct": "Yes"
-      },
-      {
-        "label": "Cigarette Smoking",
-        "criteria": "Current smoker or those who quit within the past 6 months",
-        "correct": "No"
-      },
-      {
-        "label": "Hypertension",
-        "criteria": "SBP≥140mmHg or DBP≥90mmHg confirmed by measurements on at least two separate occasions, or on antihypertensive medication.",
-        "correct": "Yes"
-      },
-      {
-        "label": "Dyslipidemia",
-        "criteria": "Total >5.1mmol/L or HDL<1.0mmol/L or LDL>3.36mmol/L. If LDL>3.36mmol/L, use LDL rather than total >5.1mmol/L, or on lipid-lowering medication.",
-        "correct": "Yes"
-      },
-      {
-        "label": "Impaired Fasting Glucose",
-        "criteria": "Fasting blood glucose ≥5.5mmol/L confirmed on two separate occasions.",
-        "correct": "Yes"
-      },
-      {
-        "label": "Obesity",
-        "criteria": "BMI≥30, or waist girth >102cm for men and >88cm for women, or waist-to-hip ratio >0.95 for men and >0.86 for women.",
-        "correct": "Yes"
-      },
-      {
-        "label": "Sedentary Lifestyle",
-        "criteria": "Persons not participating in a regular exercise program or accumulating 30 minutes or more of moderate physical activity on most days of the week.",
-        "correct": "Yes"
-      },
-      {
-        "label": "High Serum HDL",
-        "criteria": "≥1.55mmol/L",
-        "correct": "No"
-      }
-    ],
-    "correctAnswer": "6",
-    "feedback": "The total score is 6."
-  },
-  {
-    "slideNumber": 11,
-    "type": "dropdown",
-    "title": "ACSM Risk Category",
-    "question": "From the previous slide we learnt that Calvin's <strong>Risk Score</strong> was 6. What is Calvin's <strong>Initial ACSM Risk Category</strong>?",
-    "options": ["Low", "Moderate", "High"],
-    "correctAnswer": "Moderate",
-    "feedback": "Calvin's Initial ACSM Risk Category is Moderate. Calvin has six risk factors and is automatically moderate risk as he is male and over the age of 45 years. He falls into the moderate risk category. He is not high risk because he does not have diagnosed disease, or symptoms. High HDL level is 1.0 mmol/L which is not high enough to be protective. Therefore, you cannot subtract one for this risk score."
-  },
-  {
-    "slideNumber": 12,
-    "type": "dropdown_multi",
-    "title": "Physician Supervision Recommendation",
-    "content": "With an initial ACSM Risk Category of <strong>moderate</strong>, it is now necessary to examine whether Calvin needs to be supervised by a physician during testing. There are several key questions that need to be asked to complete the assessment. Answer either <strong>Not Necessary</strong> or <strong>Recommended</strong> for each question below.",
-    "questions": [
-        {
-          "q": "With an initial ACSM Risk Category of <strong>moderate</strong>, what is the recommendation for Calvin with respect to requiring <strong>physician supervision</strong> during his <strong>submaximal exercise test</strong>?",
-        "options": ["<strong>Not Necessary</strong>", "<strong>Recommended</strong>"],
-        "correct": "Not Necessary"
-      },
-        {
-          "q": "What is the recommendation for Calvin with respect to requiring <strong>physician supervision</strong> during his <strong>maximal exercise test</strong>?",
-        "options": ["<strong>Not Necessary</strong>", "<strong>Recommended</strong>"],
-        "correct": "Recommended"
-      },
-        {
-          "q": "What is the recommendation for Calvin with respect to requiring <strong>physician supervision</strong> during <strong>moderate intensity exercise</strong> (40-60% VO2reserve)?",
-        "options": ["<strong>Not Necessary</strong>", "<strong>Recommended</strong>"],
-        "correct": "Not Necessary"
-      },
-        {
-          "q": "What is the recommendation for Calvin with respect to requiring <strong>physician supervision</strong> during <strong>high or vigorous intensity exercise</strong> (>60% VO2reserve)?",
-        "options": ["<strong>Not Necessary</strong>", "<strong>Recommended</strong>"],
-        "correct": "Recommended"
-      }
-    ],
-    "feedback": "The correct responses are as follows:\n- Submaximal test: Not necessary\n- Maximal exercise test: Recommended\n- Moderate intensity exercise: Not necessary\n- High or vigorous intensity exercise: Recommended"
-  },
-  {
-    "slideNumber": 13,
     "type": "textInput",
     "title": "Is this Metabolic Syndrome?",
     "question": "Given what you have learnt so far, do you believe this man has <strong>metabolic syndrome</strong>? (<strong>Type Yes or No</strong> and then your 1-2 sentence justification for why you chose this)",
@@ -193,7 +105,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Calvin is moderately at risk of developing cardiovascular disease. In addition he meets the criteria listed by the International Diabetes Federation for Metabolic Syndrome. He has central obesity with a waist circumference >94cm. He has hypertension and a fasting blood glucose level over 5.6 mmol/L. He satisfies the federation's criteria for metabolic syndrome. In addition his HDL is less than 1.03 mmol/L."
   },
   {
-    "slideNumber": 14,
+    "slideNumber": 11,
     "type": "checkbox",
     "title": "Barriers to Exercise",
     "question": "What are the patient's potential <strong>barriers to exercise</strong> that can be determined based on the available information?",
@@ -207,7 +119,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Profession: As an airline pilot he would be doing a lot of travel, hence time would be an issue. Availability of exercise facilities: Long flights and odd working hours would mean that immediate access to gym facilities would be limited. Supportive home environment: Is his wife supportive of his much needed life style change, or does she share her husband's unhealthy choice of lifestyle? For the moment, this is not a potential barrier, however, more questions would need to be asked to confirm this."
   },
   {
-    "slideNumber": 15,
+    "slideNumber": 12,
     "type": "radio",
     "title": "Supervision and Monitoring during Exercise",
     "question": "From the list below, choose the most appropriate method for <strong>monitoring</strong> this person during his exercise training?",
@@ -222,7 +134,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "As we do not have any results of a clinical exercise test, we have to keep him clinically safe. Therefore, if training is supervised HR, BP (pre, post & at 5-10 min intervals during exercise) until predictable response is occurring then once per mode of exercise. RPE should be monitored as well to ensure it is not too high. He should be instructed that his RPE should be kept within a definite range below his hypertensive threshold determined from his clinical exercise test."
   },
   {
-    "slideNumber": 16,
+    "slideNumber": 13,
     "type": "checkbox",
     "title": "Exercise Prescription",
     "question": "It's now time to write an <strong>exercise program</strong> for your client. We first need to choose an appropriate mode of exercise to help Calvin reduce his risk (<strong>there are at least two correct answers</strong> - select all you think are applicable)",
@@ -241,7 +153,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Calvin would benefit from both aerobic and progressive resistance training. If you added core stability, that's excellent, as with his back pain he would definitely benefit from this."
   },
   {
-    "slideNumber": 17,
+    "slideNumber": 14,
     "type": "radio",
     "title": "Stage of Readiness",
     "question": "Given what you have learned about Calvin, what stage of readiness to change do you think he is at?",
@@ -256,7 +168,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Calvin is seeking support and is ready to start making changes, which places him in the preparation stage."
   },
   {
-    "slideNumber": 18,
+    "slideNumber": 15,
     "type": "textInput",
     "title": "Social Determinants of Health",
     "question": "The 5 social health determinants are:<br>• Neighbourhood and Built Environment<br>• Social and Community Context<br>• Education Access and Quality<br>• Healthcare Access and Quality<br>• Economic Stability<br><br>Describe one barrier to Calvin’s exercise goals (no more than 1 sentence) and indicate which social health determinant category it falls into.",
@@ -264,7 +176,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Reflect on the social health determinant that best matches Calvin’s barrier and explain your reasoning."
   },
   {
-    "slideNumber": 19,
+    "slideNumber": 16,
     "type": "multiQuestion",
     "title": "Aerobic Exercise Training",
     "questions": [
@@ -299,7 +211,7 @@ const SLIDE_DECK_CONTENT = [
     ]
   },
   {
-    "slideNumber": 20,
+    "slideNumber": 17,
     "type": "dropdown",
     "title": "What form of strength testing is appropriate?",
     "question": "We have already learnt that <strong>progressive resistance</strong> or <strong>strength training</strong> is going to be effective for Calvin, but what strength tests are appropriate to assess Calvin's <strong>strength</strong>?",
@@ -316,7 +228,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "All these tests could be appropriate. If he can join a gym that has global locations, then you should complete a RM test for each of the major muscle groups. If he can not and does not want to join the gym, you should use functional tests such as the lunge, squat, push up, abdominal flexor endurance and plank to assess his muscle strength."
   },
   {
-    "slideNumber": 21,
+    "slideNumber": 18,
     "type": "radio",
     "title": "Exercise Precautions",
     "question": "What, if any, <strong>precautions</strong> should Calvin take?",
@@ -332,7 +244,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Blood pressure: Calvin will need to have his blood pressure monitored regularly and make sure he exercises below any thresholds. If possible he should get his BP measured at least once in the unengaged limb, during the active phase of weight training to check it is not spiking. He should also have it monitored on the upright bike and with overhead resistance training. His exercise technique needs to be watched. Watch the patient continues to breathe properly during each mode of exercise. And if doing free standing functional training ensure the technique is correct so he doesn't cause any knee or back pain. He should have his blood glucose levels checked regularly to ensure he does not develop diabetes. When he is at home in Sydney, he should complete supervised exercise sessions to ensure he is on track and training at the correct intensities."
   },
   {
-    "slideNumber": 22,
+    "slideNumber": 19,
     "type": "radio",
     "title": "Aerobic Exercise Intensity",
     "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what <strong>intensity</strong> should the aerobic component of the exercise program start at?",
@@ -341,7 +253,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Current recommendations for metabolic syndrome are to exercise at about 60% VO2max or ~70% HRmax. This level maximizes benefits while minimizing possible adverse effects of more vigorous exercise. For weight loss, exercising at a lower intensity for longer decreases RER toward ~0.7, and longer durations increase total energy expenditure. If intensity is set too high, the patient may exceed a hypertensive threshold, which would blunt the exercise training effect on blood pressure."
   },
   {
-    "slideNumber": 23,
+    "slideNumber": 20,
     "type": "radio",
     "title": "Aerobic Exercise Duration",
     "question": "What <strong>time duration</strong> would you recommend for Calvin?",
@@ -350,7 +262,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Current recommendations are for >40 minutes, in fact the longer the better, as the overall aim for obesity and dyslipidaemia is to increase total energy expenditure."
   },
   {
-    "slideNumber": 24,
+    "slideNumber": 21,
     "type": "radio",
     "title": "Aerobic Exercise Frequency",
     "question": "How often per week would you tell Calvin to complete his <strong>exercise program</strong>?",
@@ -359,7 +271,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Current recommendations for metabolic syndrome are to exercise 5 days per week. The effect of a single bout of exercise on insulin sensitivity lasts 24-72 hours. Depending on the exercise intensity and duration, the effect on insulin sensitivity is generally not greater than 72 hours, therefore it is recommended that the time between successive sessions is no more than 72 hours. That is, no more than 2 consecutive days without aerobic activity."
   },
   {
-    "slideNumber": 25,
+    "slideNumber": 22,
     "type": "textInput",
     "title": "Progressive Resistance Training Exercise Prescription",
     "question": "Using the <strong>FITT principle</strong>, write out your recommendations for <strong>progressive resistance training (PRT)</strong> for someone with <strong>metabolic syndrome</strong>. One sentence per FITT item.",
@@ -368,7 +280,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Using the FITT principle, an appropriate answer would be:\\n\\n• Frequency: 2–3 days per week\\n• Intensity: A range of intensities, but keep below 50% 1RM for hypertensives until you know their response to PRT.\\n• Type: Circuit or whole-body training of the large muscle groups\\n• Time (Volume): Low intensity = high volume (2–3 × 12–20 reps); Moderate intensity = moderate volume (2–3 × 8–10 reps)."
   },
   {
-    "slideNumber": 26,
+    "slideNumber": 23,
     "type": "textInput",
     "title": "Cultural Safety Question",
     "question": "Calvin is keen to work on the goals you have set, but is worried about his capacity to meet these goals during Ramadan, an upcoming time of fasting (avoiding all food and drink) between sunrise and sunset that lasts for about 1 month. Please write a consideration you would make to ensure cultural safety for Calvin, knowing that he is of Islamic faith. Maximum of three sentences.",
@@ -376,7 +288,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Think about adjustments to scheduling, communication, and support that respect Calvin’s cultural and religious practices."
   },
   {
-    "slideNumber": 27,
+    "slideNumber": 24,
     "type": "checkbox",
     "title": "Exercise Safety",
     "question": "Which of the following recommendations would you give to Calvin? <strong>Select all that apply.</strong>",
@@ -397,7 +309,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Support Calvin by aligning exercise with his fasting schedule, prioritising hydration and nutrient-dense meals overnight, and emphasising maintenance with lower-intensity training during Ramadan."
   },
   {
-    "slideNumber": 28,
+    "slideNumber": 25,
     "type": "textInput",
     "title": "Supporting Calvin During Ramadan",
     "question": "Outline one strategy you would use to help Calvin maintain progress on his exercise goals throughout Ramadan while respecting his fasting commitments (no more than 2 sentences).",
@@ -405,7 +317,7 @@ const SLIDE_DECK_CONTENT = [
     "feedback": "Consider collaborative planning, flexibility in scheduling, and monitoring Calvin’s wellbeing during the fasting period."
   },
   {
-    "slideNumber": 29,
+    "slideNumber": 26,
     "type": "multiQuestion",
     "title": "Relative Contraindications",
     "question": "<strong> You have identified that Calvin may be at increased risk of inadequate nutrition and hydration if he exercises in the middle of the day while fasting for Ramadan. Answer both questions below.",
@@ -445,6 +357,7 @@ const SLIDE_DECK_CONTENT = [
 
 const REFERENCE_SLIDE_NUMBERS = [3, 4, 5];
 const REFERENCE_PDF_URL = 'https://uniscpreactivityfilled.netlify.app/';
+const LOCAL_REFERENCE_PDF_PATH = 'Pre-exercise Screen.pdf';
 
 // Set this to the Web App URL generated by your Google Apps Script deployment.
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbws4sfNtrxowtBlEBqUQeh8NUKhDxNy4AeGcR95kB9WhNr-YC0ybdMcCDHjXUFLtZJS9w/exec';
@@ -1914,10 +1827,7 @@ function openReferenceMaterials() {
     openReferenceSlidesWindow(referenceSlides);
   }
 
-  const pdfWindow = window.open(REFERENCE_PDF_URL, '_blank', 'noopener');
-  if (pdfWindow) {
-    pdfWindow.opener = null;
-  }
+  openReferencePdfWindow();
 }
 
 function openReferenceSlidesWindow(slides) {
@@ -1937,6 +1847,129 @@ function openReferenceSlidesWindow(slides) {
     console.error('Unable to inject reference slide content into the new window.', error);
     referenceWindow.location = `data:text/html;charset=utf-8,${encodeURIComponent(html)}`;
   }
+}
+
+function openReferencePdfWindow() {
+  const pdfWindow = window.open('about:blank', '_blank');
+  if (!pdfWindow) {
+    console.warn('Reference PDF window blocked by browser. Falling back to opening directly.');
+    openPdfWithHiddenLink(REFERENCE_PDF_URL) || openPdfWithHiddenLink(LOCAL_REFERENCE_PDF_PATH);
+    return;
+  }
+
+  const pdfHtml = buildReferencePdfDocument(REFERENCE_PDF_URL, LOCAL_REFERENCE_PDF_PATH);
+
+  try {
+    pdfWindow.opener = null;
+    pdfWindow.document.open('text/html', 'replace');
+    pdfWindow.document.write(pdfHtml);
+    pdfWindow.document.close();
+  } catch (error) {
+    console.error('Unable to inject reference PDF content into the new window.', error);
+    pdfWindow.location = REFERENCE_PDF_URL;
+  }
+}
+
+function openPdfWithHiddenLink(url) {
+  if (!url) {
+    return false;
+  }
+
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.target = '_blank';
+  anchor.rel = 'noopener';
+  anchor.style.position = 'absolute';
+  anchor.style.left = '-9999px';
+  anchor.style.width = '1px';
+  anchor.style.height = '1px';
+  document.body.appendChild(anchor);
+
+  anchor.click();
+  document.body.removeChild(anchor);
+  return true;
+}
+
+function buildReferencePdfDocument(primaryUrl, fallbackUrl) {
+  const normalizedPrimaryUrl = primaryUrl ? encodeURI(primaryUrl) : '';
+  const normalizedFallbackUrl = fallbackUrl ? encodeURI(fallbackUrl) : '';
+  const escapedPrimaryUrl = escapeHtml(normalizedPrimaryUrl);
+  const escapedFallbackUrl = escapeHtml(normalizedFallbackUrl);
+
+  return `<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pre-exercise Screening Reference</title>
+        <style>
+          body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+          }
+          main {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+          }
+          header {
+            padding: 1rem 1.5rem;
+            background-color: #00447c;
+            color: #fff;
+          }
+          header h1 {
+            margin: 0;
+            font-size: 1.25rem;
+          }
+          iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+            background-color: #fff;
+          }
+          .fallback {
+            padding: 1rem 1.5rem;
+            background-color: #fff;
+            border-top: 1px solid #d9d9d9;
+          }
+          .fallback a {
+            color: #00447c;
+          }
+        </style>
+      </head>
+      <body>
+        <main>
+          <header>
+            <h1>Pre-exercise Screening Reference</h1>
+          </header>
+          <iframe
+            id="reference-pdf-frame"
+            src="${escapedPrimaryUrl}"
+            title="Pre-exercise screening reference PDF"
+          ></iframe>
+          <div class="fallback">
+            <p>If the PDF does not load, <a id="fallback-link" href="${escapedFallbackUrl}" target="_blank" rel="noopener">open the local copy</a>.</p>
+          </div>
+        </main>
+        <script>
+          (function () {
+            var frame = document.getElementById('reference-pdf-frame');
+            if (!frame) {
+              return;
+            }
+
+            frame.addEventListener('error', function () {
+              if ("${escapedFallbackUrl}") {
+                frame.src = "${escapedFallbackUrl}";
+              }
+            });
+          })();
+        </script>
+      </body>
+    </html>`;
 }
 
 function buildReferenceSlidesDocument(slides) {
