@@ -2,7 +2,7 @@ const SLIDE_DECK_CONTENT = [
   {
     "slideNumber": 1,
     "type": "introForm",
-    "title": "Metabolic Syndrome",
+    "title": "Potential Metabolic Syndrome",
     "content": "Course Code: BCEP Competency Assurance Check \nCourse Convenor: Professor Belinda Parmenter\n\nPlease enter your details below to begin the case study.",
     "studentFields": [
       {
