@@ -1823,15 +1823,15 @@ function openReferenceMaterials() {
     SLIDE_DECK_CONTENT.find((slide) => slide.slideNumber === slideNumber)
   ).filter(Boolean);
 
-  if (referenceSlides.length > 0) {
-    openReferenceSlidesWindow(referenceSlides);
+  if (referenceSlides.length === 0) {
+    console.warn('No reference slide content available.');
   }
 
-  openReferencePdfWindow();
+  openReferenceSlidesWindow(referenceSlides, REFERENCE_PDF_URL, LOCAL_REFERENCE_PDF_PATH);
 }
 
-function openReferenceSlidesWindow(slides) {
-  const html = buildReferenceSlidesDocument(slides);
+function openReferenceSlidesWindow(slides, primaryPdfUrl, fallbackPdfUrl) {
+  const html = buildReferenceSlidesDocument(slides, primaryPdfUrl, fallbackPdfUrl);
   const referenceWindow = window.open('about:blank', '_blank');
   if (!referenceWindow) {
     console.warn('Reference window blocked by browser.');
@@ -1849,131 +1849,9 @@ function openReferenceSlidesWindow(slides) {
   }
 }
 
-function openReferencePdfWindow() {
-  const pdfWindow = window.open('about:blank', '_blank');
-  if (!pdfWindow) {
-    console.warn('Reference PDF window blocked by browser. Falling back to opening directly.');
-    openPdfWithHiddenLink(REFERENCE_PDF_URL) || openPdfWithHiddenLink(LOCAL_REFERENCE_PDF_PATH);
-    return;
-  }
-
-  const pdfHtml = buildReferencePdfDocument(REFERENCE_PDF_URL, LOCAL_REFERENCE_PDF_PATH);
-
-  try {
-    pdfWindow.opener = null;
-    pdfWindow.document.open('text/html', 'replace');
-    pdfWindow.document.write(pdfHtml);
-    pdfWindow.document.close();
-  } catch (error) {
-    console.error('Unable to inject reference PDF content into the new window.', error);
-    pdfWindow.location = REFERENCE_PDF_URL;
-  }
-}
-
-function openPdfWithHiddenLink(url) {
-  if (!url) {
-    return false;
-  }
-
-  const anchor = document.createElement('a');
-  anchor.href = url;
-  anchor.target = '_blank';
-  anchor.rel = 'noopener';
-  anchor.style.position = 'absolute';
-  anchor.style.left = '-9999px';
-  anchor.style.width = '1px';
-  anchor.style.height = '1px';
-  document.body.appendChild(anchor);
-
-  anchor.click();
-  document.body.removeChild(anchor);
-  return true;
-}
-
-function buildReferencePdfDocument(primaryUrl, fallbackUrl) {
-  const normalizedPrimaryUrl = primaryUrl ? encodeURI(primaryUrl) : '';
-  const normalizedFallbackUrl = fallbackUrl ? encodeURI(fallbackUrl) : '';
-  const escapedPrimaryUrl = escapeHtml(normalizedPrimaryUrl);
-  const escapedFallbackUrl = escapeHtml(normalizedFallbackUrl);
-
-  return `<!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pre-exercise Screening Reference</title>
-        <style>
-          body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f4f4;
-            color: #222;
-          }
-          main {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-          }
-          header {
-            padding: 1rem 1.5rem;
-            background-color: #00447c;
-            color: #fff;
-          }
-          header h1 {
-            margin: 0;
-            font-size: 1.25rem;
-          }
-          iframe {
-            flex: 1;
-            width: 100%;
-            border: none;
-            background-color: #fff;
-          }
-          .fallback {
-            padding: 1rem 1.5rem;
-            background-color: #fff;
-            border-top: 1px solid #d9d9d9;
-          }
-          .fallback a {
-            color: #00447c;
-          }
-        </style>
-      </head>
-      <body>
-        <main>
-          <header>
-            <h1>Pre-exercise Screening Reference</h1>
-          </header>
-          <iframe
-            id="reference-pdf-frame"
-            src="${escapedPrimaryUrl}"
-            title="Pre-exercise screening reference PDF"
-          ></iframe>
-          <div class="fallback">
-            <p>If the PDF does not load, <a id="fallback-link" href="${escapedFallbackUrl}" target="_blank" rel="noopener">open the local copy</a>.</p>
-          </div>
-        </main>
-        <script>
-          (function () {
-            var frame = document.getElementById('reference-pdf-frame');
-            if (!frame) {
-              return;
-            }
-
-            frame.addEventListener('error', function () {
-              if ("${escapedFallbackUrl}") {
-                frame.src = "${escapedFallbackUrl}";
-              }
-            });
-          })();
-        </script>
-      </body>
-    </html>`;
-}
-
-function buildReferenceSlidesDocument(slides) {
+function buildReferenceSlidesDocument(slides, primaryPdfUrl, fallbackPdfUrl) {
   const slideSections = slides.map((slide) => buildReferenceSlideSection(slide)).join('');
+  const pdfSection = buildReferencePdfSection(primaryPdfUrl, fallbackPdfUrl);
 
   return `<!DOCTYPE html>
     <html lang="en">
@@ -1992,7 +1870,7 @@ function buildReferenceSlidesDocument(slides) {
             color: #1f1f1f;
           }
           .reference-wrapper {
-            max-width: 860px;
+            max-width: 900px;
             margin: 0 auto;
           }
           .reference-slide {
@@ -2001,6 +1879,39 @@ function buildReferenceSlidesDocument(slides) {
             border: 4px solid #3440eb;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
             overflow: hidden;
+          }
+          .reference-pdf {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 4px solid #3440eb;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+            margin-bottom: 28px;
+            overflow: hidden;
+          }
+          .reference-pdf header {
+            background: #3440eb;
+            color: #ffffff;
+            padding: 20px 24px;
+          }
+          .reference-pdf header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+          }
+          .reference-pdf iframe {
+            display: block;
+            width: 100%;
+            height: 600px;
+            border: none;
+            background: #fff;
+          }
+          .reference-pdf .fallback {
+            padding: 18px 24px 24px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            font-size: 0.95rem;
+          }
+          .reference-pdf .fallback a {
+            color: #3440eb;
+            text-decoration: underline;
           }
           .reference-slide + .reference-slide {
             margin-top: 28px;
@@ -2048,10 +1959,55 @@ function buildReferenceSlidesDocument(slides) {
       </head>
       <body>
         <main class="reference-wrapper">
+          ${pdfSection}
           ${slideSections}
         </main>
+        <script>
+          (function () {
+            var frame = document.getElementById('reference-pdf-frame');
+            if (!frame) {
+              return;
+            }
+
+            var triedFallback = false;
+            frame.addEventListener('error', function () {
+              if (!triedFallback && frame.dataset.fallbackUrl) {
+                triedFallback = true;
+                frame.src = frame.dataset.fallbackUrl;
+              }
+            });
+          })();
+        </script>
       </body>
     </html>`;
+}
+
+function buildReferencePdfSection(primaryUrl, fallbackUrl) {
+  const normalizedPrimaryUrl = primaryUrl ? encodeURI(primaryUrl) : '';
+  const normalizedFallbackUrl = fallbackUrl ? encodeURI(fallbackUrl) : '';
+  const escapedPrimaryUrl = escapeHtml(normalizedPrimaryUrl);
+  const escapedFallbackUrl = escapeHtml(normalizedFallbackUrl);
+
+  const fallbackMarkup = escapedFallbackUrl
+    ? `<p>If the PDF does not load, <a href="${escapedFallbackUrl}" target="_blank" rel="noopener">open the local copy</a>.</p>`
+    : '<p>The PDF should appear above. If it does not, try downloading it directly.</p>';
+
+  return `
+    <section class="reference-pdf">
+      <header>
+        <h2>Pre-exercise Screening Reference</h2>
+      </header>
+      <iframe
+        id="reference-pdf-frame"
+        src="${escapedPrimaryUrl}"
+        data-fallback-url="${escapedFallbackUrl}"
+        title="Pre-exercise screening reference PDF"
+      ></iframe>
+      <div class="fallback">
+        ${fallbackMarkup}
+      </div>
+    </section>
+  `;
 }
 
 function buildReferenceSlideSection(slideData) {
