@@ -247,9 +247,9 @@ const SLIDE_DECK_CONTENT = [
     "slideNumber": 19,
     "type": "radio",
     "title": "Aerobic Exercise Intensity",
-    "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what <strong>intensity</strong> should the aerobic component of the exercise program start at?",
-    "options": ["<strong>40% VO2Reserve</strong>", "<strong>60% VO2Reserve</strong>", "<strong>80% VO2Reserve</strong>"],
-    "correctAnswer": "60% VO2Reserve",
+    "question": "Having performed adequate aerobic and strength testing and identified possible barriers to completing a fitness program, what <strong>intensity</strong> should the aerobic component of the exercise program start at? Intensity references are to the 6-20 Borg Scale",
+    "options": ["<strong>40% VO2Reserve:</strong>: Approximately 65% HR Max or low-moderate intensity RPE 12", "<strong>60% VO2Reserve:</strong> Approximately 75% HR Max or low-moderate intensity RPE 14", "<strong>80% VO2Reserve:</strong> Approximately 90% HR Max or low-moderate intensity RPE 16"],
+    "correctAnswer": "60% VO2Reserve Approximately 75% HR Max or low-moderate intensity RPE 14",
     "feedback": "Current recommendations for metabolic syndrome are to exercise at about 60% VO2max or ~70% HRmax. This level maximizes benefits while minimizing possible adverse effects of more vigorous exercise. For weight loss, exercising at a lower intensity for longer decreases RER toward ~0.7, and longer durations increase total energy expenditure. If intensity is set too high, the patient may exceed a hypertensive threshold, which would blunt the exercise training effect on blood pressure."
   },
   {
