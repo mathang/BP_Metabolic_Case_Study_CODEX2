@@ -1,72 +1,89 @@
-# Metabolic Syndrome Case Study App
+# Styled Chatbase Assistant
 
-This repository contains an interactive, browser-based learning module for the HESC3504 Metabolic Syndrome case study. The experience guides students through the patient history, knowledge checks, and programming decisions required to support Calvin, a hypothetical client with metabolic syndrome.
+This project is a single-page web application that routes Chatbase chatbot conversations through a Netlify Function. The UI lets visitors choose one of four storytelling voices before sending a prompt so the chatbot can answer in that style.
 
-## New features
+The front-end is completely static and safe to host on Netlify or any static host. All secrets (chatbot ID and API key) stay on the serverless side so they are never exposed to the browser.
 
-* The opening slide now collects each student's first name, last name, and student email address before they can begin the case study.
-* Every answer a student provides is captured (including multi-part and free-text responses) and the aggregated progress is sent to Google Sheets every time the learner advances to the next slide.
+## Features
 
-## Configuring Google Sheets logging
+- Four response styles: **Crusty Professor**, **Wild West Cowboy Story**, **Futuristic Sci-Fi**, and **Fantasy**.
+- Live conversation view that keeps a running transcript of your session.
+- Secure proxy that appends the selected style to the prompt and forwards the request to Chatbase.
+- Embeddable in other sites or applications with an `<iframe>` (framing headers already configured).
 
-The application expects to send a JSON payload to a published Google Apps Script that appends the submission to your sheet. Follow the steps below to create the script and connect it to the provided Google Sheet.
+## Project structure
 
-1. Open the Google Sheet you want to use for responses.
-2. In the menu choose **Extensions → Apps Script**.
-3. Replace the default script contents with the snippet below and click **Save**.
-
-```javascript
-const SHEET_NAME = 'Sheet1'; // Update if your tab has a different name.
-
-function doPost(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);
-  if (!sheet) {
-    return ContentService.createTextOutput('Missing sheet');
-  }
-
-  const body = JSON.parse(e.postData.contents);
-  sheet.appendRow([
-    new Date(),
-    body.sessionId || '',
-    body.context?.event || '',
-    body.context?.fromSlide || '',
-    body.context?.toSlide || '',
-    body.context?.completed ? 'Yes' : 'No',
-    body.studentDetails?.firstName || '',
-    body.studentDetails?.lastName || '',
-    body.studentDetails?.studentEmail || '',
-    body.score || '',
-    body.maxScore || '',
-    JSON.stringify(body.responses || []),
-  ]);
-
-  const output = ContentService.createTextOutput('Success');
-  output.setMimeType(ContentService.MimeType.TEXT);
-  output.setHeader('Access-Control-Allow-Origin', '*');
-  output.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  return output;
-}
+```
+├── index.html                 # Main page with the UI markup
+├── style.css                  # Styling for the layout and chat log
+├── script.js                  # Client-side logic (style selection, API calls, rendering)
+├── netlify/
+│   └── functions/
+│       └── chatbase-proxy.js  # Netlify Function that calls the Chatbase API
+└── _headers                   # Allows the app to be embedded with iframes when hosted on Netlify
 ```
 
-The `sessionId` column lets you group together all rows created by the same student attempt, while the event and slide columns show which transition triggered the update.
+## Prerequisites
 
-4. Click **Deploy → Test deployments** once to authorise, then choose **Deploy → New deployment**.
-5. Select **Web app**, set **Execute as** to *Me*, and **Who has access** to *Anyone* (or *Anyone with the link*).
-6. Copy the **Web app URL** that Google provides after deployment.
-7. Open `script.js` in this project and set the `GOOGLE_SCRIPT_URL` constant to the copied URL.
+- A Chatbase chatbot with access to the [Chat API](https://www.chatbase.co/docs/api-reference/chat/chat-with-a-chatbot).
+- A Chatbase API key that has permission to talk to the chatbot.
+- A Netlify account. The free tier works fine.
+- (Optional for local development) the [Netlify CLI](https://docs.netlify.com/cli/get-started/) installed globally.
 
-Each time a student moves to the next slide the module sends their details, current score, and the full answer log collected so far to the Apps Script endpoint. This means a single attempt will append multiple rows—one for every slide transition—ensuring partial attempts are retained. If the URL is left blank, the submission step is skipped and a warning is logged in the browser console. When the browser reports a CORS error the app automatically retries the submission in a fallback mode so that responses are still delivered, but adding the headers shown above will prevent those warnings entirely.
+## Local development
 
-## Development
+1. Clone this repository.
+2. Install the Netlify CLI if you do not already have it:
 
-The project is a static HTML/CSS/JavaScript bundle. Any web server that can serve the files in this repository will run the experience. During development you can launch a local server with:
+   ```bash
+   npm install -g netlify-cli
+   ```
 
-```bash
-python3 -m http.server
+3. Create a file named `.env` in the project root with the credentials. Netlify CLI automatically loads this file.
+
+   ```bash
+   echo "CHATBASE_API_KEY=your_api_key_here" >> .env
+   echo "CHATBASE_CHATBOT_ID=your_chatbot_id_here" >> .env
+   ```
+
+4. Start the local dev server. This serves the static site and runs the proxy function on `/.netlify/functions/chatbase-proxy`.
+
+   ```bash
+   netlify dev
+   ```
+
+5. Open the printed URL (usually `http://localhost:8888`) and begin chatting.
+
+## Deploying to Netlify
+
+1. Push this repository to your own Git provider (GitHub, GitLab, Bitbucket, etc.).
+2. In the Netlify dashboard choose **Add new site → Import an existing project** and connect the repo.
+3. Accept the default build settings (no build command and `.` as the publish directory).
+4. After the site is created, open **Site settings → Environment variables** and add:
+
+   - `CHATBASE_API_KEY`
+   - `CHATBASE_CHATBOT_ID`
+
+   Deploys triggered after these variables are set will include them for the serverless function.
+
+5. Trigger a new deploy (Netlify may do this automatically). When the deploy completes, visit the URL to confirm the chatbot responds in different styles.
+
+### Embedding with an iframe
+
+Because the repository ships with an `_headers` file that removes frame restrictions, you can embed the deployed site into other software with a simple iframe:
+
+```html
+<iframe src="https://your-site.netlify.app" width="100%" height="600" style="border:0;" title="Styled Chatbase Assistant"></iframe>
 ```
 
-Then visit `http://localhost:8000` in your browser.
+Adjust the `width`, `height`, or additional attributes as required by your host application.
+
+## Usage tips
+
+- The style selector highlights the active tone. Switching styles mid-conversation keeps the existing transcript but the next answer will use the newly selected voice.
+- Conversation history stays only in the current browser session. Refreshing the page starts a new chat with a fresh `conversationId`.
+- If you see an error message in the status area, check the Netlify function logs (`netlify functions:tail` locally or the Netlify dashboard in production) for more details.
 
 ## License
 
-The original materials were provided as part of the BP Metabolic Case Study. Adaptations in this repository retain the same terms of use as the source content.
+This repository is provided as-is without an explicit license. Add your own license file if you intend to distribute modified versions.

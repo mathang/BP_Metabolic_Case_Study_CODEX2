@@ -3,17 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPX Metabolic Syndrome Case Study</title>
+  <title>Styled Chatbase Assistant</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
+  <div class="app-shell">
     <header class="app-header">
-      <h1>SPX Metabolic Syndrome Case Study</h1>
+      <h1>Chatbase Style Switcher</h1>
+      <p>Pick a storytelling voice, ask a question, and let the chatbot reply in that style.</p>
     </header>
-    <main id="slideContainer" class="slide-container"></main>
+
+    <section class="style-picker" aria-label="Response style selector">
+      <h2>Select a response style</h2>
+      <div class="style-buttons" role="radiogroup" aria-label="Response style">
+        <button class="style-button" type="button" data-style="crustyProfessor" aria-pressed="true">Crusty Professor</button>
+        <button class="style-button" type="button" data-style="wildWest">Wild West Cowboy Story</button>
+        <button class="style-button" type="button" data-style="futuristic">Futuristic Sci-Fi</button>
+        <button class="style-button" type="button" data-style="fantasy">Fantasy</button>
+      </div>
+    </section>
+
+    <main class="chat-panel" aria-live="polite">
+      <ul id="chatLog" class="chat-log" aria-label="Conversation history"></ul>
+    </main>
+
+    <form id="messageForm" class="message-form" autocomplete="off">
+      <label class="sr-only" for="messageInput">Type your message</label>
+      <textarea id="messageInput" rows="3" placeholder="Ask the chatbot anything..." required></textarea>
+      <div class="form-actions">
+        <button id="sendButton" type="submit">Send</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="assertive"></p>
+    </form>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
